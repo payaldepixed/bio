@@ -65,8 +65,12 @@ Route::group(['middleware' => ['auth']], function () {
             return Redirect::to('/');
         })->name('logout');
 
+        Route::get('template', function () {
+            return view('template');
+        })->name('template');
+
     });
 
-    Route::get('/{username}', 'PageController@view')->name('page');
+    Route::get('/link/{username}', 'PageController@view')->name('page');
 
  });
