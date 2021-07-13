@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+input[type=checkbox]:checked + label {
+  background-color: #c5c6c7;
+}
+
 .template-layout {
   background-color: #fff;
 }
@@ -128,12 +132,16 @@
       flex-wrap: wrap;
 }
 
-.template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .social-icon {
+.template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .checkbox-social {
+  width: calc(33.33333% - 3px);
+  margin: 1.5px;
+}
+
+.template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .checkbox-social .social-icon {
   border: 1px solid;
   padding: 0 5px;
-  margin: 1.5px;
   cursor: pointer;
-  width: calc(33.33333% - 3px);
+  width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -144,8 +152,8 @@
   -o-transition: all .1s ease-in-out;
 }
 
-.template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .social-icon:hover {
-  background: #dfe0e1;
+.template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .checkbox-social .social-icon:hover {
+  background: #c5c6c7;
   transition: all .1s ease-in-out;
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
@@ -153,7 +161,7 @@
   -o-transition: all .1s ease-in-out;
 }
 
-.template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .social-icon .social-img {
+.template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .checkbox-social .social-icon .social-img {
   height: 15px;
 }
 

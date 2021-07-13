@@ -9,6 +9,9 @@
 .input-group-text {
     cursor: pointer;
 }
+input[type=checkbox]:checked+label {
+    background-color: #c5c6c7;
+}
 
 // comman css
 
@@ -116,42 +119,49 @@
                                     .social_icons_lists {
                                         display: flex;
                                         flex-wrap: wrap;
-                                        .social-icon {
-                                            border: 1px solid;
-                                            padding: 0 5px;
-                                            margin: 1.5px;
-                                            cursor: pointer;
+                                        .checkbox-social {
                                             width: calc(33.33333% - 3px);
-                                            white-space: nowrap;
-                                            text-overflow: ellipsis;
-                                            overflow: hidden;
-                                            //  -webkit-transform: scale(1);
-                                            //  -moz-transform: scale(1);
-                                            //  -ms-transform: scale(1);
-                                            //  -o-transform: scale(1);
-                                            //  transform: scale(1);
-                                             transition: all .1s ease-in-out;
-                                             -webkit-transition: all .1s ease-in-out;
-                                             -moz-transition: all .1s ease-in-out;
-                                             -ms-transition: all .1s ease-in-out;
-                                             -o-transition: all .1s ease-in-out;
-                                            &:hover {
-                                                background: #dfe0e1;
-                                                // -webkit-transform: scale(1.05);
-                                                // -moz-transform: scale(1.05);
-                                                // -ms-transform: scale(1.05);
-                                                // -o-transform: scale(1.05);
-                                                // transform: scale(1.05);
-                                                transition: all .1s ease-in-out;
-                                                -webkit-transition: all .1s ease-in-out;
-                                                -moz-transition: all .1s ease-in-out;
-                                                -ms-transition: all .1s ease-in-out;
-                                                -o-transition: all .1s ease-in-out;
-                                            }
-                                            .social-img {
-                                                height: 15px;
-                                            }
+                                             margin: 1.5px;
+                                             .social-icon {
+                                                 border: 1px solid;
+                                                 padding: 0 5px;
+
+                                                 cursor: pointer;
+                                                 width: 100%;
+                                                 white-space: nowrap;
+                                                 text-overflow: ellipsis;
+                                                 overflow: hidden;
+                                                 //  -webkit-transform: scale(1);
+                                                 //  -moz-transform: scale(1);
+                                                 //  -ms-transform: scale(1);
+                                                 //  -o-transform: scale(1);
+                                                 //  transform: scale(1);
+                                                 transition: all .1s ease-in-out;
+                                                 -webkit-transition: all .1s ease-in-out;
+                                                 -moz-transition: all .1s ease-in-out;
+                                                 -ms-transition: all .1s ease-in-out;
+                                                 -o-transition: all .1s ease-in-out;
+
+                                                 &:hover {
+                                                     background: #c5c6c7;
+                                                     // -webkit-transform: scale(1.05);
+                                                     // -moz-transform: scale(1.05);
+                                                     // -ms-transform: scale(1.05);
+                                                     // -o-transform: scale(1.05);
+                                                     // transform: scale(1.05);
+                                                     transition: all .1s ease-in-out;
+                                                     -webkit-transition: all .1s ease-in-out;
+                                                     -moz-transition: all .1s ease-in-out;
+                                                     -ms-transition: all .1s ease-in-out;
+                                                     -o-transition: all .1s ease-in-out;
+                                                 }
+
+                                                 .social-img {
+                                                     height: 15px;
+                                                 }
+                                             }
                                         }
+
                                     }
 
                                     .social-inputs {
