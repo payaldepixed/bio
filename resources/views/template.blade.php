@@ -54,7 +54,7 @@ Page Template
             </div>
             <div class="link-item">
                 <div class="my-link">
-                   <span class="my-page"> My Page:</span>  <a href="javascript:void(0)"  target="_blank">links.co/mox</a>
+                   <span class="my-page"> My Page:</span>  <a href="javascript:void(0)"  target="_blank">links.co/mox</a> <img class="" src="{{ asset('static/template_svg/mypage.svg') }}" alt="">
                 </div>
                 <div class="button-links">
                     <button href="#" class="btn btn-primary">
@@ -331,7 +331,7 @@ Page Template
                                     </div>
                                     <div class="block-body">
                                         <div class="block-details">
-                                            <div class="plus-icon">
+                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
                                                 <div class="plus">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -368,7 +368,7 @@ Page Template
                                                 </div>
                                             </div>
 
-                                            <div class="plus-icon">
+                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
                                                 <div class="plus">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -380,6 +380,10 @@ Page Template
 
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="submit-button mt-4">
+                                    <button class="btn btn-primary w-100">Save</button>
                                 </div>
 
                             </div>
@@ -438,15 +442,15 @@ Page Template
                                     </div>
                                 </div>
                             </div>
+                            <div class="footer-text">
+                                <a href="javasctipt:void(0)">
+                                    <div class="powered-by">Powered by</div>
+                                    <div class="link-text">
+                                        <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">Ritesh</div>
+                                </a>
+                            </div>
+                        </div>
 
-                        </div>
-                        <div class="footer-text">
-                            <a href="javasctipt:void(0)">
-                                <div class="powered-by">Powered by</div>
-                                <div class="link-text">
-                                    <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">Ritesh</div>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -454,4 +458,166 @@ Page Template
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+{{-- New Block model  --}}
+
+
+  <div class="modal modal-blur fade" id="modal-large" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered newBlockModel" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title">New Block</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="model-row">
+                <div class="model-card" data-bs-toggle="modal" data-bs-target="#newLink">
+                    <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">
+                    <div class="model-card-title">Link</div>
+                    <div class="model-card-dec">Create a link to anywhere on the web</div>
+                </div>
+                <div class="model-card">
+                    <img class="" src="{{ asset('static/template_svg/divider.svg') }}" alt="">
+                    <div class="model-card-title">Divider</div>
+                    <div class="model-card-dec">Organize your content with dividers</div>
+                </div>
+                <div class="model-card">
+                    <img class="" src="{{ asset('static/template_svg/media.svg') }}" alt="">
+                    <div class="model-card-title">Media</div>
+                    <div class="model-card-dec">Embed YouTube, Spotify, and more...</div>
+                </div>
+                <div class="model-card">
+                    <img class="" src="{{ asset('static/template_svg/text.svg') }}" alt="">
+                    <div class="model-card-title">Text</div>
+                    <div class="model-card-dec">Tell your page's story with a text section</div>
+                </div>
+                <div class="model-card">
+                    <img class="" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
+                    <div class="model-card-title">Instagram Scraper</div>
+                    <div class="model-card-dec">Automatically import links from Instagram captions</div>
+                </div>
+                <div class="model-card">
+                    <img class="" src="{{ asset('static/template_svg/email.svg') }}" alt="">
+                    <div class="model-card-title">Mailing List</div>
+                    <div class="model-card-dec">Collect email addresses and send to Mailchimp</div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- New Block model  --}}
+
+
+
+{{-- New Link model  --}}
+
+<div class="modal modal-blur fade" id="newLink" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered newLinkModel" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title">New Link</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="new-link-model row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">URL or Email</label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" placeholder="http://example.com" autocomplete="off">
+                            <span class="input-group-text">
+                            <img class="" src="{{ asset('static/template_svg/download.svg') }}" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <textarea class="form-control" name="example-textarea-input" rows="2" placeholder="Title"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Link Layout</label>
+                        <div class="select-card-layout">
+                            <div class="card-view-layout selected">
+                                <img class="" src="{{ asset('static/template_svg/new-link/button.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/button-image-background.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-carousel.svg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label class="form-label">Draw Attention</label>
+                        <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
+                           <option value="NONE">None</option>
+                           <option value="HEAD_SHAKE">Shake</option>
+                           <option value="TADA">Tada</option>
+                           <option value="PULSE">Pulse</option>
+                           <option value="JUMP">Jump</option>
+                           <option value="SWING">Swing</option>
+                           <option value="JELLO">Jello</option>
+                           <option value="RUBBER_BAND">Rubber Band</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Link Preview</label>
+                        <div class="link_preview">
+                            <a href="#" class="live-preview">
+                                <div class="details">
+                                    <div class="title">
+                                        Ritesh pandey
+                                    </div>
+                                    <div class="dec">
+                                        Ritesh pandey
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit-button mt-4">
+                <button class="btn btn-primary w-100">Create</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- New Link model  --}}
+
+
 @endsection
