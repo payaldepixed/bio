@@ -51,7 +51,7 @@ $( document ).ready(function() {
             }else{
                 $("#social_link_"+type).hide();
             }
-            $("#social_error_"+type).text(validateUrl(url));
+            $("#social_error_"+type).text(type == 'email' ? validateEmail(url) : validateUrl(url));
         });
 
         $(".types").focusout(function(e) {
@@ -61,8 +61,16 @@ $( document ).ready(function() {
             var url = $(this).val();
             $("#social_link_"+type).show();
             $("#social_link_"+type).attr("href",url);
-            $("#social_error_"+type).text(validateUrl(url));
+            $("#social_error_"+type).text(type == 'email' ? validateEmail(url) : validateUrl(url));
         });
+
+        function validateEmail(url){
+            if(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(url)){
+                return '';
+            } else {
+                return 'Please enter a valid Email Address';
+            }
+        }
 
         function validateUrl(url){
             if(/^(http|https|ftp):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test(url)){

@@ -9,97 +9,34 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="navbar-nav pt-lg-3">
-            <li class="nav-item {{ active(['admin/dashboard']) }}">
-                <a class="nav-link" href="{{route('dashboard')}}">
+            <li class="nav-item {{ active(['admin/page']) }}">
+                <a class="nav-link" href="{{route('page')}}">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                        <!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                             stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                             stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <polyline points="5 12 3 12 12 3 21 12 19 12" />
-                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                            <polyline points="9 11 12 14 20 6" />
+                            <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
                     </span>
                     <span class="nav-link-title">
-                        Dashboard
+                        My Page
                     </span>
                 </a>
             </li>
             @if(@Auth::user()->user_type == 1)
-                <li class="nav-item dropdown {{ active(['admin/user*']) }}">
-
-                    <a class="nav-link dropdown-toggle" href="#navbar-layout" data-bs-toggle="dropdown" role="button"
-                        aria-expanded="false">
+                <li class="nav-item {{ active(['admin/user']) }}">
+                    <a class="nav-link" href="{{route('user')}}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
-                            <!-- Download SVG icon from http://tabler-icons.io/i/layout-2 -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <rect x="4" y="4" width="6" height="5" rx="2" />
-                                <rect x="4" y="13" width="6" height="7" rx="2" />
-                                <rect x="14" y="4" width="6" height="7" rx="2" />
-                                <rect x="14" y="15" width="6" height="5" rx="2" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="9" cy="7" r="4" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
                         </span>
                         <span class="nav-link-title">
-                            Manage Network
+                            Teams
                         </span>
                     </a>
-                    <div class="dropdown-menu @if (is_active(['user*'])) show @endif">
-                        <div class="dropdown-menu-columns">
-                            <div class="dropdown-menu-column">
-                                <a class="dropdown-item {{ active(['user*']) }}" href="{{ route('user') }}">
-                                    Users
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </li>
             @endif
-            <li class="nav-item dropdown {{ active(['admin/page*']) }}">
-                <a class="nav-link dropdown-toggle" href="#navbar-layout" data-bs-toggle="dropdown" role="button"
-                    aria-expanded="false">
-                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/layout-2 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <rect x="4" y="4" width="6" height="5" rx="2" />
-                            <rect x="4" y="13" width="6" height="7" rx="2" />
-                            <rect x="14" y="4" width="6" height="7" rx="2" />
-                            <rect x="14" y="15" width="6" height="5" rx="2" /></svg>
-                    </span>
-                    <span class="nav-link-title">
-                        Manage Page
-                    </span>
-                </a>
-                <div class="dropdown-menu @if (is_active(['admin/page*'])) show @endif">
-                    <div class="dropdown-menu-columns">
-                        <div class="dropdown-menu-column">
-                            <a class="dropdown-item {{ active(['admin/page']) }}" href="{{ route('page') }}">
-                                Page
-                            </a>
-                        </div>
-                        <div class="dropdown-menu-column">
-                            <a class="dropdown-item {{ active(['admin/page/general']) }}" href="{{ route('general') }}">
-                                General
-                            </a>
-                        </div>
-                        {{-- <div class="dropdown-menu-column">
-                            <a class="dropdown-item {{ active(['admin/page/social']) }}" href="{{ route('social') }}">
-                                Social Links
-                            </a>
-                        </div> --}}
-                        <div class="dropdown-menu-column">
-                            <a class="dropdown-item" target="_blank" href="{{ route('mypage',['username'=>@Auth::user()->username]) }}">
-                                My Page
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('template')}}">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -119,13 +56,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('settings')}}">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <polyline points="9 11 12 14 20 6" />
-                            <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
+	                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" /><circle cx="12" cy="12" r="3" /></svg>
                     </span>
                     <span class="nav-link-title">
                         Settings
