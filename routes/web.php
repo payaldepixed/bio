@@ -50,6 +50,8 @@ Route::group(['middleware' => ['auth']], function () {
 
         });
 
+        Route::get('page', 'PageController@index')->name('page');
+
         Route::get('page/general', function () {
             return view('page.general');
         })->name('general');
@@ -71,6 +73,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     });
 
-    Route::get('/link/{username}', 'PageController@view')->name('page');
+    Route::get('/link/{username}', 'PageController@view')->name('mypage');
 
  });

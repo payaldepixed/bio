@@ -13,11 +13,16 @@ use Auth;
 
 class PageController extends Controller
 {
+    public function index()
+    {
+        $user = Auth::user();
+        return view('page.index', compact('user'));
+    }
+
     public function view()
     {
-        $user =Auth::user();
-        $socials = ['facebook','twitter','instagram','email','linkedin','youtube'];
-        return view('page.view', compact('socials','user'));
+        $user = Auth::user();
+        return view('page.view', compact('user'));
     }
 
     public function social()
@@ -67,12 +72,53 @@ class PageController extends Controller
                 }
             }
         }
-        return redirect()->back()->with('success', 'Social links added successfully!');;
+        return 1;
     }
 
     public function deleteSocial(Request $request)
     {
         UserPageSocial::where('id',$request->id)->delete();
+        return 1;
+    }
+
+    public function blockStore(Request $request)
+    {
+        $rules = [
+            'type'  => 'required'
+        ];
+        $validator = Validator::make($request->all(),$rules);
+        if (@$validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors()->first());
+        }
+        $data = $request->only('title','url','type','description','layout','animation');
+        if($request->id){
+            UserPageBlock::where('id',$request->id)->update($data);
+        }else{
+            $data['user_id'] = Auth::user()->id;
+            UserPageBlock::create($data);
+        }
+        return redirect()->back()->with('success', 'Block added successfully!');;
+    }
+
+    public function copyBlock(Request $request)
+    {
+        $block = UserPageBlock::where('id',$request->id)->first();
+        $newBlock = $block->replicate();
+        $newBlock->save();
+        return 1;
+    }
+
+    public function actionBlock(Request $request)
+    {
+        $block = UserPageBlock::where('id',$request->id)->first();
+        $block->is_active = $block->is_active == 1 ? 0 : 1;
+        $block->save();
+        return 1;
+    }
+
+    public function deleteBlock(Request $request)
+    {
+        UserPageBlock::where('id',$request->id)->delete();
         return 1;
     }
 

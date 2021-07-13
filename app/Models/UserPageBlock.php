@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserPageBlock extends Model
 {
-    protected $table = 'user_page_block';
+    protected $table = 'user_page_blocks';
 
     protected $fillable = [
-        'user_id','type','url','title','description','layout','animation'
+        'user_id','type','url','title','description','layout','animation','is_active'
     ];
 
     public function user(){

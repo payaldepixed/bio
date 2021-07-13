@@ -46,7 +46,7 @@
                             Manage Network
                         </span>
                     </a>
-                    <div class="dropdown-menu @if (is_active(['user*'])) show @endif"">
+                    <div class="dropdown-menu @if (is_active(['user*'])) show @endif">
                         <div class="dropdown-menu-columns">
                             <div class="dropdown-menu-column">
                                 <a class="dropdown-item {{ active(['user*']) }}" href="{{ route('user') }}">
@@ -75,20 +75,25 @@
                         Manage Page
                     </span>
                 </a>
-                <div class="dropdown-menu @if (is_active(['admin/page*'])) show @endif"">
+                <div class="dropdown-menu @if (is_active(['admin/page*'])) show @endif">
                     <div class="dropdown-menu-columns">
+                        <div class="dropdown-menu-column">
+                            <a class="dropdown-item {{ active(['admin/page']) }}" href="{{ route('page') }}">
+                                Page
+                            </a>
+                        </div>
                         <div class="dropdown-menu-column">
                             <a class="dropdown-item {{ active(['admin/page/general']) }}" href="{{ route('general') }}">
                                 General
                             </a>
                         </div>
-                        <div class="dropdown-menu-column">
+                        {{-- <div class="dropdown-menu-column">
                             <a class="dropdown-item {{ active(['admin/page/social']) }}" href="{{ route('social') }}">
                                 Social Links
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="dropdown-menu-column">
-                            <a class="dropdown-item" target="_blank" href="{{ route('page',['username'=>@Auth::user()->username]) }}">
+                            <a class="dropdown-item" target="_blank" href="{{ route('mypage',['username'=>@Auth::user()->username]) }}">
                                 My Page
                             </a>
                         </div>
