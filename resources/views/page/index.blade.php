@@ -92,10 +92,12 @@ Page
                                                             @php $socials = Commonhelper::getSocials(); @endphp
                                                             @foreach($socials as $social)
                                                                 @php $name = ucwords(str_replace("_", " ", $social)); @endphp
-                                                                <label for="{{$social}}" class="social-icon">
-                                                                    <input type="checkbox" id="type_{{$social}}" @if(Commonhelper::getSocial($social)) checked @endif value="{{$social}}" name="types[]" class="sociallinks">
-                                                                    <img class="social-img" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="{{$social}}"> <span class="social-icon-name">{{$name}}</span>
-                                                                </label>
+                                                                <div class="checkbox-social">
+                                                                    <input type="checkbox" id="type_{{$social}}" @if(Commonhelper::getSocial($social)) checked @endif value="{{$social}}" name="types[]" class="sociallinks" style="display: none;">
+                                                                    <label for="type_{{$social}}" class="social-icon">
+                                                                        <img class="social-img" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="{{$social}}"> <span class="social-icon-name">{{$name}}</span>
+                                                                    </label>
+                                                                </div>
                                                             @endforeach
                                                         </div>
                                                         @foreach($socials as $social)
