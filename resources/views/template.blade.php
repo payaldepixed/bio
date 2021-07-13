@@ -392,8 +392,8 @@ Page Template
             </div>
 
             <div class="item_two">
-                <div class="card">
-                    {{-- <ul class="nav nav-tabs" data-bs-toggle="tabs">
+                {{-- <div class="card">
+                    <ul class="nav nav-tabs" data-bs-toggle="tabs">
                     <li class="nav-item">
                         <a href="#tabs-home-7" class="nav-link active" data-bs-toggle="tab">Home</a>
                     </li>
@@ -410,8 +410,8 @@ Page Template
                         <div>Fringilla egestas nunc quis tellus diam rhoncus ultricies tristique enim at diam, sem nunc amet, pellentesque id egestas velit sed</div>
                         </div>
                     </div>
-                    </div> --}}
-                </div>
+                    </div>
+                </div> --}}
             </div>
 
         </div>
