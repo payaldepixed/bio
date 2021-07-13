@@ -76,6 +76,7 @@
                             box-shadow: 0 2px 16px #00000014,
                             0 0.25px 2px #00000042;
                             background: #fff;
+                            border: 0px solid;
                                 h2 {
                                     .accordion-button {
                                         background-color: white;
@@ -337,6 +338,109 @@
             background: #f7f7f7;
             flex: 1 1 auto;
             padding-top: 15px;
+             .priview-layout {
+                 .priview-details {
+                        border: 15px solid #333;
+                        border-radius: 5em;
+                    .card-layout {
+                        position: relative;
+                        margin: auto;
+                        max-width: 530px;
+                        padding-bottom: 100px;
+                        padding-top: 33px;
+                        padding-right: 33px;
+                        padding-left: 33px;
+                        box-shadow: 0 7px 29px 0 #64646f33;
+                        text-align: center;
+                        .priview-all {
+                            .priview-img {
+                                max-width: 200px;
+                                margin: auto;
+                                margin-bottom: 33px;
+                            }
+                            .priview-title {
+                                font-weight: 700;
+                                font-size: 15px;
+                                margin-bottom: 20px;
+                            }
+                            .priview-description {
+                                font-size: 13.8px;
+                                font-weight: 400;
+                                margin-bottom: 33px;
+                            }
+                            .selected-social-icon {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-bottom: 33px;
+                                .selected-icon {
+                                    width: 24px;
+                                    margin: 5px;
+                                }
+                            }
+                            .priview-card {
+                                .priview-card-body {
+                                        color: rgb(51, 51, 51);
+                                        background: rgb(241, 223, 213);
+                                        box-shadow: #0000004d 0px 10px 30px 0px;
+                                        margin-bottom: 22px;
+                                        text-align: left;
+                                        border-radius: 10px;
+                                        padding: 16.5px 13.75px;
+                                        .main-title {
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+                                        .subtitle-title {
+                                            font-size: 13px;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+                                }
+                            }
+                        }
+
+                    }
+                    .footer-text {
+                        position: absolute;
+                        bottom: 60px;
+                        left: 0;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100px;
+                        z-index: 2;
+                        .powered-by {
+                            color: #000;
+                            text-transform: uppercase;
+                            letter-spacing: .5px;
+                            font-size: .8em;
+                            font-weight: 500;
+                            margin-bottom: 0;
+                            opacity: .6;
+                        }
+                        .link-text {
+                            font-size: 16px;
+                            font-weight: 800;
+                            color: #000;
+                            img {
+                                height: 16px;
+                                margin-right: 4px;
+                                margin-top: -2px;
+                            }
+                        }
+                    }
+                 }
+             }
         }
     }
 }

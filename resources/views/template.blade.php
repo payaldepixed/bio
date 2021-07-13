@@ -16,7 +16,7 @@ Page Template
 @section('content')
 <div class="container-fluid">
     <!-- Page title -->
-    <div class="page-header d-print-none">
+    {{-- <div class="page-header d-print-none">
         <div class="row align-items-center">
             <div class="col">
                 <!-- Page pre-title -->
@@ -31,7 +31,7 @@ Page Template
             <div class="col-auto ms-auto d-print-none">
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <div class="page-body template-layout">
     <div class="container-fluid">
@@ -392,26 +392,63 @@ Page Template
             </div>
 
             <div class="item_two">
-                {{-- <div class="card">
-                    <ul class="nav nav-tabs" data-bs-toggle="tabs">
-                    <li class="nav-item">
-                        <a href="#tabs-home-7" class="nav-link active" data-bs-toggle="tab">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#tabs-profile-7" class="nav-link" data-bs-toggle="tab">Profile</a>
-                    </li>
-                    </ul>
-                    <div class="card-body">
-                    <div class="tab-content">
-                        <div class="tab-pane active show" id="tabs-home-7">
-                        <div>Cursus turpis vestibulum, dui in pharetra vulputate id sed non turpis ultricies fringilla at sed facilisis lacus pellentesque purus nibh</div>
+                <div class="priview-layout">
+                    <div class="priview-details">
+                        <div class="card-layout">
+                            <div class="priview-all">
+                                <div class="priview-img">
+                                    <img src="{{ asset('static/default.png') }}" alt="">
+                                </div>
+                                <div class="priview-title">
+                                    @Ritesh
+                                </div>
+                                <div class="priview-description">
+                                    Saving humanity from cold & lifeless robots 😉
+                                </div>
+                                <div class="selected-social-icon">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/website.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/email.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/facebook.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/linkedin.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/twitter.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/tiktok.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/share.svg') }}" alt="">
+                                </div>
+                                <div class="priview-card">
+                                    <div class="priview-card-body">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="priview-card-body">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="priview-card-body">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="priview-card-body">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="priview-card-body">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="tab-pane" id="tabs-profile-7">
-                        <div>Fringilla egestas nunc quis tellus diam rhoncus ultricies tristique enim at diam, sem nunc amet, pellentesque id egestas velit sed</div>
+                        <div class="footer-text">
+                            <a href="javasctipt:void(0)">
+                                <div class="powered-by">Powered by</div>
+                                <div class="link-text">
+                                    <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">Ritesh</div>
+                            </a>
                         </div>
                     </div>
-                    </div>
-                </div> --}}
+                </div>
             </div>
 
         </div>
