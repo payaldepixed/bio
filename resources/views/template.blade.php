@@ -273,7 +273,7 @@ Page Template
                                                                 <div class="inputStyle">
                                                                     <input type="text">
                                                                     <div class="social-input-icon">
-                                                                        <img class="" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
+                                                                        <img class="" src="{{ asset('static/template_svg/facebook.svg') }}" alt="">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -291,7 +291,7 @@ Page Template
                                                                 <div class="inputStyle">
                                                                     <input type="text">
                                                                     <div class="social-input-icon">
-                                                                        <img class="" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
+                                                                        <img class="" src="{{ asset('static/template_svg/twitter.svg') }}" alt="">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -309,7 +309,7 @@ Page Template
                                                                 <div class="inputStyle">
                                                                     <input type="text">
                                                                     <div class="social-input-icon">
-                                                                        <img class="" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
+                                                                        <img class="" src="{{ asset('static/template_svg/linkedin.svg') }}" alt="">
                                                                     </div>
                                                                 </div>
                                                             </div>
