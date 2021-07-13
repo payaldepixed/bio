@@ -392,17 +392,17 @@ Page Template
             </div>
 
             <div class="item_two">
-                <div class="priview-layout">
-                    <div class="priview-details">
+                <div class="preview-layout">
+                    <div class="preview-details">
                         <div class="card-layout">
-                            <div class="priview-all">
-                                <div class="priview-img">
+                            <div class="preview-all">
+                                <div class="preview-img">
                                     <img src="{{ asset('static/default.png') }}" alt="">
                                 </div>
-                                <div class="priview-title">
+                                <div class="preview-title">
                                     @Ritesh
                                 </div>
-                                <div class="priview-description">
+                                <div class="preview-description">
                                     Saving humanity from cold & lifeless robots 😉
                                 </div>
                                 <div class="selected-social-icon">
@@ -415,24 +415,24 @@ Page Template
                                     <img class="selected-icon" src="{{ asset('static/template_svg/tiktok.svg') }}" alt="">
                                     <img class="selected-icon" src="{{ asset('static/template_svg/share.svg') }}" alt="">
                                 </div>
-                                <div class="priview-card">
-                                    <div class="priview-card-body">
+                                <div class="preview-card">
+                                    <div class="preview-card-body">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="priview-card-body">
+                                    <div class="preview-card-body">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="priview-card-body">
+                                    <div class="preview-card-body">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="priview-card-body">
+                                    <div class="preview-card-body">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="priview-card-body">
+                                    <div class="preview-card-body">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>

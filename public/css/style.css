@@ -433,12 +433,12 @@
   padding-top: 15px;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details {
+.template-layout .template .item_two .preview-layout .preview-details {
   border: 15px solid #333;
   border-radius: 5em;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout {
   position: relative;
   margin: auto;
   max-width: 530px;
@@ -451,25 +451,25 @@
   text-align: center;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .priview-img {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-img {
   max-width: 200px;
   margin: auto;
   margin-bottom: 33px;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .priview-title {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-title {
   font-weight: 700;
   font-size: 15px;
   margin-bottom: 20px;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .priview-description {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-description {
   font-size: 13.8px;
   font-weight: 400;
   margin-bottom: 33px;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .selected-social-icon {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .selected-social-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -484,12 +484,12 @@
   margin-bottom: 33px;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .selected-social-icon .selected-icon {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .selected-social-icon .selected-icon {
   width: 24px;
   margin: 5px;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .priview-card .priview-card-body {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .preview-card-body {
   color: #333333;
   background: #f1dfd5;
   -webkit-box-shadow: #0000004d 0px 10px 30px 0px;
@@ -500,7 +500,7 @@
   padding: 16.5px 13.75px;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .priview-card .priview-card-body .main-title {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .preview-card-body .main-title {
   font-size: 16px;
   font-weight: 600;
   display: -webkit-box;
@@ -509,7 +509,7 @@
   overflow: hidden;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .card-layout .priview-all .priview-card .priview-card-body .subtitle-title {
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .preview-card-body .subtitle-title {
   font-size: 13px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -517,7 +517,7 @@
   overflow: hidden;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .footer-text {
+.template-layout .template .item_two .preview-layout .preview-details .footer-text {
   position: absolute;
   bottom: 60px;
   left: 0;
@@ -539,7 +539,7 @@
   z-index: 2;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .footer-text .powered-by {
+.template-layout .template .item_two .preview-layout .preview-details .footer-text .powered-by {
   color: #000;
   text-transform: uppercase;
   letter-spacing: .5px;
@@ -549,13 +549,13 @@
   opacity: .6;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .footer-text .link-text {
+.template-layout .template .item_two .preview-layout .preview-details .footer-text .link-text {
   font-size: 16px;
   font-weight: 800;
   color: #000;
 }
 
-.template-layout .template .item_two .priview-layout .priview-details .footer-text .link-text img {
+.template-layout .template .item_two .preview-layout .preview-details .footer-text .link-text img {
   height: 16px;
   margin-right: 4px;
   margin-top: -2px;
