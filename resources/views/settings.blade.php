@@ -68,7 +68,7 @@ Settings
                                 <div class="mb-3">
                                     <label class="form-label required">Username</label>
                                     <div class="input-group mb-2">
-                                        <span class="input-group-text">{{request()->getHttpHost()}}/</span>
+                                        <span class="input-group-text">{{request()->getHttpHost()}}/link/</span>
                                         <input type="text" value="{{Auth::user()->username}}" name="username" class="form-control" placeholder="Enter username" required>
                                         <small class="form-hint"></small>
                                     </div>
