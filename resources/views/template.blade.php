@@ -413,7 +413,7 @@ Page Template
                                     <img class="selected-icon" src="{{ asset('static/template_svg/linkedin.svg') }}" alt="">
                                     <img class="selected-icon" src="{{ asset('static/template_svg/twitter.svg') }}" alt="">
                                     <img class="selected-icon" src="{{ asset('static/template_svg/tiktok.svg') }}" alt="">
-                                    <img class="selected-icon" src="{{ asset('static/template_svg/share.svg') }}" alt="">
+                                    <img class="selected-icon" src="{{ asset('static/template_svg/youtube.svg') }}" alt="">
                                 </div>
                                 <div class="preview-card">
                                     <div class="preview-card-body">
