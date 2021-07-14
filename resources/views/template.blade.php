@@ -468,7 +468,151 @@ Page Template
 
                             </div>
                             <div class="tab-pane" id="Design">
-                            <div>Fringilla egestas nunc quis tellus diam rhoncus ultricies tristique enim at diam, sem nunc amet, pellentesque id egestas velit sed</div>
+                                <div class="general-option">
+
+                                    {{-- General option --}}
+
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">General</div>
+                                            <div class="line"></div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="inputFile" class="input-file">
+                                                <input type="file" id="inputFile">
+                                                <div class="fileRow">
+                                                    <div class="fileLabel">Profile Picture</div>
+                                                    <div class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Profile Bio</label>
+                                            <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Profile Bio"></textarea>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Profile Name</label>
+                                            <input type="text" class="form-control" placeholder="Profile Name">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Primary Text Color</div>
+                                                <div id="primary-text-color"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Primary Background</div>
+                                                <div id="primary-background"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Profile Picture Shadow</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Profile Picture Border</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Profile Picture Border Color</div>
+                                                <div id="profile-picture-border-color"></div>
+                                            </div>
+                                        </div>
+
+                                    {{-- General option --}}
+
+
+                                    {{-- Cards option --}}
+
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Cards</div>
+                                            <div class="line"></div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Card Shadow</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Card Spacing</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+
+                                    {{-- Cards option --}}
+
+
+
+                                    {{-- Buttons option --}}
+
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Buttons</div>
+                                            <div class="line"></div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Button Color</div>
+                                                <div id="button-color"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Button Text Color</div>
+                                                <div id="button-text-color"></div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Card Shadow</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Card Spacing</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Button Border Color</div>
+                                                <div id="button-border-color"></div>
+                                            </div>
+                                        </div>
+
+
+                                    {{-- Buttons option --}}
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -765,23 +909,23 @@ Page Template
                     <div class="mb-3">
                         <label class="form-label">Link Layout</label>
                         <div class="select-card-layout">
+                            <div class="card-view-layout ">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button.svg') }}" alt="">
+                            </div>
                             <div class="card-view-layout selected">
-                                <img class="" src="{{ asset('static/template_svg/new-link/button.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
                             </div>
                             <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button-image-background.svg') }}" alt="">
                             </div>
                             <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/button-image-background.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
                             </div>
                             <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
                             </div>
                             <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-carousel.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-carousel.svg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -802,7 +946,7 @@ Page Template
 
                     <div class="mb-3">
                         <label class="form-label">Link Preview</label>
-                        <div class="link_preview normal">
+                        <div class="link_preview thumbnail-grid">
 
                             {{-- normal --}}
                             <a href="#" class="live-preview normal-view animate__animated animate__shakeX">
@@ -1170,16 +1314,16 @@ Page Template
                         <label class="form-label">Scraped Link Layout</label>
                          <div class="select-card-layout">
                             <div class="card-view-layout selected">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
                             </div>
                             <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
                             </div>
                             <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
                             </div>
                             <div class="card-view-layout">
-                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-grid-3.svg') }}" alt="">
+                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-3.svg') }}" alt="">
                             </div>
                         </div>
                     </div>

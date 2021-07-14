@@ -23,6 +23,7 @@
     <link href="{{ asset('css/tabler-vendors.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/jcolor-picker.min.css') }}" rel="stylesheet" />
     <!-- include libraries(jQuery, bootstrap) -->
         {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> --}}
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -53,8 +54,42 @@
     <!-- JS -->
     <script src="{{ asset('js/tabler.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jcolor-picker.min.js') }}"></script>
     <script>
+
+// $(document).ready(function() {
+//     $('img[src$=".svg"]').each(function() {
+//         var $img = jQuery(this);
+//         var imgURL = $img.attr('src');
+//         var attributes = $img.prop("attributes");
+
+//         $.get(imgURL, function(data) {
+//             // Get the SVG tag, ignore the rest
+//             var $svg = jQuery(data).find('svg');
+
+//             // Remove any invalid XML tags
+//             $svg = $svg.removeAttr('xmlns:a');
+
+//             // Loop through IMG attributes and apply on SVG
+//             $.each(attributes, function() {
+//                 $svg.attr(this.name, this.value);
+//             });
+
+//             // Replace IMG with SVG
+//             $img.replaceWith($svg);
+//         }, 'xml');
+//     });
+// });
+
+
     $(document).ready(function() {
+        $('#primary-text-color').jColorPicker();
+        $('#primary-background').jColorPicker();
+        $('#profile-picture-border-color').jColorPicker();
+        $('#button-color').jColorPicker();
+        $('#button-text-color').jColorPicker();
+        $('#button-border-color').jColorPicker();
+
         $('#summernote').summernote({
             placeholder: 'Add text here...',
             height: 100,

@@ -3342,7 +3342,12 @@ jest-worker@^27.0.2:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jquery@^3.6.0:
+jquery-ui@>=1.7:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
+  integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
+
+jquery@>=1.5, jquery@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
@@ -5423,6 +5428,14 @@ v8-compile-cache@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
+
+vanderlee-colorpicker@^1.2.16:
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/vanderlee-colorpicker/-/vanderlee-colorpicker-1.2.16.tgz#f871cb5383407a39857aec847dc036090e71c9b0"
+  integrity sha1-+HHLU4NAejmFeuyEfcA2CQ5xybA=
+  dependencies:
+    jquery ">=1.5"
+    jquery-ui ">=1.7"
 
 vary@~1.1.2:
   version "1.1.2"
