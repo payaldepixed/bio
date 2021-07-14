@@ -599,6 +599,9 @@ Page Template
                                         </div>-->
 
 
+
+
+
                                     <div class="preview-card-body">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
@@ -1108,8 +1111,7 @@ Page Template
 
 
                     <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Add text here..."></textarea>
+                        <div id="summernote"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
