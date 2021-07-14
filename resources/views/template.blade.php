@@ -441,7 +441,7 @@ Page Template
                                                         <div class="action-icon">
                                                             <img class="" src="{{ asset('static/template_svg/copy.svg') }}" alt="">
                                                         </div>
-                                                        <div class="action-icon">
+                                                        <div class="action-icon" data-bs-toggle="modal" data-bs-target="#modal-danger">
                                                             <img class="" src="{{ asset('static/template_svg/delete_red.svg') }}" alt="">
                                                         </div>
                                                     </div>
@@ -1058,7 +1058,7 @@ Page Template
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-              <div class="instagram-subtitle">
+              <div class="instagram-subtitle text-center">
                   The Instagram Scraper block will automatically add links from your Instagram post captions to your Liinks page. Links in captions of new Instagram posts will automatically be added beneath this block using the selected layout.
               </div>
             <div class="new-instagram-Scraper-model row mt-3">
@@ -1216,7 +1216,7 @@ Page Template
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-              <div class="new-mailing-subtitle">
+              <div class="new-mailing-subtitle text-center">
                   The Mailing List block allows you to collect email addresses and automatically send them to Mailchimp.
               </div>
             <div class="new-mailing-model row mt-3">
@@ -1273,5 +1273,41 @@ Page Template
 
 
 {{-- New Mailing List model  --}}
+
+
+
+
+
+
+{{-- delete block model --}}
+
+    <div class="modal modal-blur fade" id="modal-danger" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-status bg-danger"></div>
+          <div class="modal-body text-center py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v2m0 4v.01" /><path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" /></svg>
+            <h3>Are you sure?</h3>
+            <div class="text-muted">Do you really want to remove this block? What you've done cannot be undone.</div>
+          </div>
+          <div class="modal-footer">
+            <div class="w-100">
+              <div class="row">
+                <div class="col"><a href="#" class="btn btn-white w-100" data-bs-dismiss="modal">
+                    Cancel
+                  </a></div>
+                <div class="col"><a href="#" class="btn btn-danger w-100" data-bs-dismiss="modal">
+                    Delete
+                  </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- delete block model --}}
 
 @endsection
