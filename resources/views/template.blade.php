@@ -614,8 +614,9 @@ Page Template
                         <label class="form-label">URL or Email</label>
                         <div class="input-group mb-2">
                             <input type="text" class="form-control" placeholder="http://example.com" autocomplete="off">
-                            <span class="input-group-text">
-                            <img class="" src="{{ asset('static/template_svg/download.svg') }}" alt="">
+                            <span class="input-group-text tooltip-layout">
+                                <img class="" src="{{ asset('static/template_svg/download.svg') }}" alt="">
+                            <span class="tooltiptext tooltip-top">Click to extract title, description and thumbnail from URL</span>
                             </span>
                         </div>
                     </div>
@@ -626,6 +627,36 @@ Page Template
                     <div class="mb-3">
                         <label class="form-label">Description</label>
                         <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Description"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Grid Size</label>
+                        <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <span class="tooltip-layout">
+                                <img class="question_mark" src="{{ asset('static/template_svg/question_icon.svg') }}" alt="">
+                                <span class="tooltiptext tooltip-top">Use a label to display a snippet of information like a price or category. After adding a label, you can configure it's colors in the Design tab.</span>
+                            </span>Label
+                        </label>
+                        <input type="text" class="form-control" placeholder="Label">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputFile" class="input-file">
+                            <input type="file" id="inputFile">
+                            <div class="fileRow">
+                                <div class="fileLabel">Image</div>
+                                <div class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
+                                    {{-- <img class="" src="{{ asset('static/template_svg/image_icon.svg') }}" alt=""> --}}
+                                </div>
+                            </div>
+                        </label>
+
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -653,7 +684,7 @@ Page Template
                         </div>
                     </div>
 
-                     <div class="mb-3">
+                    <div class="mb-3">
                         <label class="form-label">Draw Attention</label>
                         <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
                            <option value="NONE">None</option>
@@ -704,7 +735,6 @@ Page Template
                             {{-- thumbnail-basic layout --}}
 
 
-
                             {{-- button-image-background layout --}}
 
                             <a href="#" class="live-preview image-background-view">
@@ -719,7 +749,6 @@ Page Template
                             </a>
 
                             {{-- button-image-background layout --}}
-
 
 
                             {{-- thumbnail-highlight layout --}}
@@ -740,7 +769,6 @@ Page Template
                             {{-- thumbnail-highlight layout --}}
 
 
-
                             {{-- thumbnail-grid layout --}}
                             <div class="live-preview grid-2 thumbnail-grid-view">
                                 <a href="#" class="">
@@ -754,8 +782,7 @@ Page Template
                             {{-- thumbnail-grid layout --}}
 
 
-
-                        {{-- thumbnail-carousel layout --}}
+                            {{-- thumbnail-carousel layout --}}
                             <div class="live-preview thumbnail-carousel-view">
                                 <a href="#" class="">
                                     <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">

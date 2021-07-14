@@ -22,7 +22,7 @@
     <link href="{{ asset('css/tabler-payments.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/tabler-vendors.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-    <link href="https://fontawesome.com/v4.7/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     @yield('css_after')
 </head>

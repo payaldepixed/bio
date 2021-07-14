@@ -20,6 +20,44 @@ input[type=checkbox]:checked + label {
   margin-bottom: 0;
 }
 
+.tooltip-layout {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-top {
+  bottom: 125%;
+  left: calc(50% - 150px);
+}
+
+.tooltip-layout .tooltiptext {
+  visibility: hidden;
+  background-color: #dfe0e1;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  min-width: 300px;
+  background: #dfe0e1;
+  padding: 11px;
+  max-width: 400px;
+  -webkit-box-shadow: 0 2px 4px 0 #4c4c4b1a;
+          box-shadow: 0 2px 4px 0 #4c4c4b1a;
+  border: 1px solid #bababa;
+}
+
+.tooltip-layout:hover .tooltiptext {
+  visibility: visible;
+}
+
+img.question_mark {
+  height: 17px;
+  vertical-align: sub;
+  margin-right: 5px;
+  cursor: help;
+}
+
 .template-layout {
   background-color: #fff;
 }
@@ -949,6 +987,57 @@ input[type=checkbox]:checked + label {
 
 .link_preview .live-preview {
   display: none;
+}
+
+label.input-file {
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 2px 16px #00000014, 0 0.25px 2px #00000042;
+          box-shadow: 0 2px 16px #00000014, 0 0.25px 2px #00000042;
+  background: #fff;
+  height: 77px;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+label.input-file input {
+  display: none;
+}
+
+label.input-file .fileRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 11px;
+}
+
+label.input-file .fileRow .fileLabel {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #1a1a1a;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 22px;
+  font-weight: 600;
+}
+
+label.input-file .fileRow .fileImg {
+  border-radius: 5px;
+  width: 55px;
+  height: 55px;
+  border: 1px solid #dfe0e1;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (max-width: 1300px) {
