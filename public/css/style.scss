@@ -967,6 +967,20 @@ label.input-file {
     }
 }
 
+.preview-card {
+    .link_preview {
+        border: 0px solid #dfe0e1;
+        padding: 0;
+        .details {
+            text-align: left;
+            .title {
+                font-size: 16px !important;
+                font-weight: 700 !important;
+            }
+        }
+    }
+}
+
 @media screen and (max-width:1300px) {
     .template-layout {
         .template-header {

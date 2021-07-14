@@ -1099,6 +1099,20 @@ label.input-file .fileRow .fileImg {
   text-align: center;
 }
 
+.preview-card .link_preview {
+  border: 0px solid #dfe0e1;
+  padding: 0;
+}
+
+.preview-card .link_preview .details {
+  text-align: left;
+}
+
+.preview-card .link_preview .details .title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
 @media screen and (max-width: 1300px) {
   .template-layout .template-header .link-item .my-link .my-page {
     display: none;

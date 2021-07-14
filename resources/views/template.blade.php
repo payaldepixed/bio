@@ -500,6 +500,105 @@ Page Template
                                     <img class="selected-icon" src="{{ asset('static/template_svg/youtube.svg') }}" alt="">
                                 </div>
                                 <div class="preview-card">
+
+                                        <!--<div class="link_preview thumbnail-basic">
+
+
+                                            {{-- thumbnail-basic --}}
+
+                                            <a href="#" class="live-preview thumbnail-view">
+                                                <div class="thumbnail-img">
+                                                    <img class="" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                                </div>
+                                                <div class="details">
+                                                    <div class="title">
+                                                        Ritesh pandey
+                                                    </div>
+                                                    <div class="dec">
+                                                        Ritesh pandey
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            {{-- thumbnail-basic --}}
+
+
+                                            {{-- thumbnail-highlight --}}
+
+                                            <a href="#" class="live-preview thumbnail-highlight-view">
+                                                <div class="thumbnail-highlight-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                                </div>
+                                                <div class="details">
+                                                    <div class="title">
+                                                        Ritesh pandey
+                                                    </div>
+                                                    <div class="dec">
+                                                        Ritesh pandey
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            {{-- thumbnail-highlight --}}
+
+
+                                            {{-- thumbnail-grid --}}
+                                            <div class="live-preview grid-2 thumbnail-grid-view">
+                                                <a href="#" class="">
+                                                    <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                                </a>
+                                                <a href="#" class="">
+                                                    <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                                </a>
+                                            </div>
+
+                                            {{-- thumbnail-grid --}}
+
+
+                                            {{-- thumbnail-carousel --}}
+                                            <div class="live-preview thumbnail-carousel-view">
+                                                <a href="#" class="">
+                                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                                    </div>
+                                                    <div class="details">
+                                                        <div class="title">
+                                                            Ritesh pandey
+                                                        </div>
+                                                        <div class="dec">
+                                                            Ritesh pandey
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="">
+                                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                                    </div>
+                                                    <div class="details">
+                                                        <div class="title">
+                                                            Ritesh pandey
+                                                        </div>
+                                                        <div class="dec">
+                                                            Ritesh pandey
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="">
+                                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                                    </div>
+                                                    <div class="details">
+                                                        <div class="title">
+                                                            Ritesh pandey
+                                                        </div>
+                                                        <div class="dec">
+                                                            Ritesh pandey
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            {{-- thumbnail-carousel --}}
+
+                                        </div>-->
+
+
                                     <div class="preview-card-body">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
