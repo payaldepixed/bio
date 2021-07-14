@@ -562,27 +562,27 @@ Page Template
                     <div class="model-card-title">Link</div>
                     <div class="model-card-dec">Create a link to anywhere on the web</div>
                 </div>
-                <div class="model-card">
+                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_divider">
                     <img class="" src="{{ asset('static/template_svg/divider.svg') }}" alt="">
                     <div class="model-card-title">Divider</div>
                     <div class="model-card-dec">Organize your content with dividers</div>
                 </div>
-                <div class="model-card">
+                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_media">
                     <img class="" src="{{ asset('static/template_svg/media.svg') }}" alt="">
                     <div class="model-card-title">Media</div>
                     <div class="model-card-dec">Embed YouTube, Spotify, and more...</div>
                 </div>
-                <div class="model-card">
+                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_text">
                     <img class="" src="{{ asset('static/template_svg/text.svg') }}" alt="">
                     <div class="model-card-title">Text</div>
                     <div class="model-card-dec">Tell your page's story with a text section</div>
                 </div>
-                <div class="model-card">
+                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_instagram_scraper">
                     <img class="" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
                     <div class="model-card-title">Instagram Scraper</div>
                     <div class="model-card-dec">Automatically import links from Instagram captions</div>
                 </div>
-                <div class="model-card">
+                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_mailing">
                     <img class="" src="{{ asset('static/template_svg/email.svg') }}" alt="">
                     <div class="model-card-title">Mailing List</div>
                     <div class="model-card-dec">Collect email addresses and send to Mailchimp</div>
@@ -688,13 +688,13 @@ Page Template
                         <label class="form-label">Draw Attention</label>
                         <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
                            <option value="NONE">None</option>
-                           <option value="HEAD_SHAKE">Shake</option>
-                           <option value="TADA">Tada</option>
-                           <option value="PULSE">Pulse</option>
-                           <option value="JUMP">Jump</option>
-                           <option value="SWING">Swing</option>
-                           <option value="JELLO">Jello</option>
-                           <option value="RUBBER_BAND">Rubber Band</option>
+                           <option value="animate__shakeX">Shake</option>
+                           <option value="animate__tada">Tada</option>
+                           <option value="animate__pulse">Pulse</option>
+                           <option value="animate__bounceInDown">Jump</option>
+                           <option value="animate__swing">Swing</option>
+                           <option value="animate__jello">Jello</option>
+                           <option value="animate__rubberBand">Rubber Band</option>
                         </select>
                     </div>
 
@@ -702,7 +702,178 @@ Page Template
                         <label class="form-label">Link Preview</label>
                         <div class="link_preview normal">
 
-                            {{-- normal layout --}}
+                            {{-- normal --}}
+                            <a href="#" class="live-preview normal-view animate__animated animate__shakeX">
+                                <div class="details">
+                                    <div class="title">
+                                        Ritesh pandey
+                                    </div>
+                                    <div class="dec">
+                                        Ritesh pandey
+                                    </div>
+                                </div>
+                            </a>
+                            {{-- normal --}}
+
+
+                            {{-- thumbnail-basic --}}
+
+                            <a href="#" class="live-preview thumbnail-view animate__animated animate__tada">
+                                <div class="thumbnail-img">
+                                    <img class="" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                </div>
+                                <div class="details">
+                                    <div class="title">
+                                        Ritesh pandey
+                                    </div>
+                                    <div class="dec">
+                                        Ritesh pandey
+                                    </div>
+                                </div>
+                            </a>
+
+                            {{-- thumbnail-basic --}}
+
+
+                            {{-- button-image-background --}}
+
+                            <a href="#" class="live-preview image-background-view animate__animated animate__pulse">
+                                <div class="details" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                    <div class="title">
+                                        Ritesh pandey
+                                    </div>
+                                    <div class="dec">
+                                        Ritesh pandey
+                                    </div>
+                                </div>
+                            </a>
+
+                            {{-- button-image-background --}}
+
+
+                            {{-- thumbnail-highlight --}}
+
+                            <a href="#" class="live-preview thumbnail-highlight-view animate__animated animate__bounceInDown">
+                                 <div class="thumbnail-highlight-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                </div>
+                                <div class="details">
+                                    <div class="title">
+                                        Ritesh pandey
+                                    </div>
+                                    <div class="dec">
+                                        Ritesh pandey
+                                    </div>
+                                </div>
+                            </a>
+
+                            {{-- thumbnail-highlight --}}
+
+
+                            {{-- thumbnail-grid --}}
+                            <div class="live-preview grid-2 thumbnail-grid-view">
+                                <a href="#" class="animate__animated animate__swing">
+                                    <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                </a>
+                                <a href="#" class="animate__animated animate__swing">
+                                    <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                </a>
+                            </div>
+
+                            {{-- thumbnail-grid --}}
+
+
+                            {{-- thumbnail-carousel --}}
+                            <div class="live-preview thumbnail-carousel-view animate__animated animate__jello">
+                                <a href="#" class="">
+                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="">
+                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="">
+                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            {{-- thumbnail-carousel --}}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit-button mt-4">
+                <button class="btn btn-primary w-100">Create</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- New Link model  --}}
+
+
+
+{{-- New Divider model  --}}
+
+<div class="modal modal-blur fade" id="new_divider" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered newDividerModel" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title">New Divider</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="new-divider-model row">
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Divider Title
+                        </label>
+                        <input type="text" class="form-control" placeholder="Divider Title">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Divider Preview</label>
+                        <div class="link_preview normal">
+
+                            {{-- normal --}}
                             <a href="#" class="live-preview normal-view">
                                 <div class="details">
                                     <div class="title">
@@ -713,10 +884,215 @@ Page Template
                                     </div>
                                 </div>
                             </a>
-                            {{-- normal layout --}}
+
+                            <div class="divider-text"> Divider Text</div>
+
+                            <a href="#" class="live-preview normal-view">
+                                <div class="details">
+                                    <div class="title">
+                                        Ritesh pandey
+                                    </div>
+                                    <div class="dec">
+                                        Ritesh pandey
+                                    </div>
+                                </div>
+                            </a>
+                            {{-- normal --}}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit-button mt-4">
+                <button class="btn btn-primary w-100">Create</button>
+            </div>
 
 
-                            {{-- thumbnail-basic layout --}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- New Divider model  --}}
+
+
+
+{{-- New Media model  --}}
+
+<div class="modal modal-blur fade" id="new_media" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered newMediaModel" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title">New Media</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="new-media-model row">
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                           Embed from YouTube, Vimeo, Apple Music, Soundcloud, Spotify, Twitch, and lots more!
+                        </label>
+                        <input type="text" class="form-control" placeholder="Paste your http:// URL">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Embed Preview</label>
+                        <div class="link_preview normal">
+
+                            {{-- default layout --}}
+
+                            <div class="default_embed_layout">
+                                <div class="embedUrl">
+                                    <div class="video_svg">
+                                        <img class="" src="{{ asset('static/template_svg/embeded_url.svg') }}" alt="">
+                                    </div>
+                                    <div class="embed_placeholder">Add a URL to embed media</div>
+                                </div>
+                            </div>
+
+                             {{-- default layout --}}
+
+
+
+                              {{-- dynamic layout --}}
+
+
+                            {{-- <div class="embded_url mb-2">
+                                <iframe style="border-radius: 10px;" width="100%" height="250" src="https://www.youtube.com/embed/2JyW4yAyTl0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                            </div> --}}
+
+                             {{-- dynamic layout --}}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit-button mt-4">
+                <button class="btn btn-primary w-100">Create</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- New Media model  --}}
+
+
+
+
+{{-- New Text model  --}}
+
+<div class="modal modal-blur fade" id="new_text" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered newTextModel" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title">New Text</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="new-text-model row">
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Add text here..."></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Text Preview</label>
+                        <div class="link_preview">
+
+                            <div class="textPreview">
+                                <div class="preview-text">
+                                    <h2>This is example text</h2>
+                                    <p>Start writing in the text box to add your own 🙌</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit-button mt-4">
+                <button class="btn btn-primary w-100">Create</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- New Text model  --}}
+
+
+
+{{-- New Instagram Scraper model  --}}
+
+<div class="modal modal-blur fade" id="new_instagram_scraper" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered newInstagramScraperModel" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title">New Instagram Scraper</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="instagram-subtitle">
+                  The Instagram Scraper block will automatically add links from your Instagram post captions to your Liinks page. Links in captions of new Instagram posts will automatically be added beneath this block using the selected layout.
+              </div>
+            <div class="new-instagram-Scraper-model row mt-3">
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Scraped Link Layout</label>
+                         <div class="select-card-layout">
+                            <div class="card-view-layout selected">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
+                            </div>
+                            <div class="card-view-layout">
+                                <img class="" src="{{ asset('static/template_svg/new-link/thumbnail-grid-3.svg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Scraped Link Preview</label>
+
+                        <div class="link_preview thumbnail-basic">
+
+
+                            {{-- thumbnail-basic --}}
 
                             <a href="#" class="live-preview thumbnail-view">
                                 <div class="thumbnail-img">
@@ -732,26 +1108,10 @@ Page Template
                                 </div>
                             </a>
 
-                            {{-- thumbnail-basic layout --}}
+                            {{-- thumbnail-basic --}}
 
 
-                            {{-- button-image-background layout --}}
-
-                            <a href="#" class="live-preview image-background-view">
-                                <div class="details" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-
-                            {{-- button-image-background layout --}}
-
-
-                            {{-- thumbnail-highlight layout --}}
+                            {{-- thumbnail-highlight --}}
 
                             <a href="#" class="live-preview thumbnail-highlight-view">
                                  <div class="thumbnail-highlight-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
@@ -766,10 +1126,10 @@ Page Template
                                 </div>
                             </a>
 
-                            {{-- thumbnail-highlight layout --}}
+                            {{-- thumbnail-highlight --}}
 
 
-                            {{-- thumbnail-grid layout --}}
+                            {{-- thumbnail-grid --}}
                             <div class="live-preview grid-2 thumbnail-grid-view">
                                 <a href="#" class="">
                                     <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
@@ -779,10 +1139,10 @@ Page Template
                                 </a>
                             </div>
 
-                            {{-- thumbnail-grid layout --}}
+                            {{-- thumbnail-grid --}}
 
 
-                            {{-- thumbnail-carousel layout --}}
+                            {{-- thumbnail-carousel --}}
                             <div class="live-preview thumbnail-carousel-view">
                                 <a href="#" class="">
                                     <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
@@ -822,9 +1182,10 @@ Page Template
                                 </a>
                             </div>
 
-                            {{-- thumbnail-carousel layout --}}
+                            {{-- thumbnail-carousel --}}
 
                         </div>
+
                     </div>
 
                 </div>
@@ -841,7 +1202,76 @@ Page Template
     </div>
 
 
-{{-- New Link model  --}}
+{{-- New Instagram Scraper model  --}}
 
+
+
+{{-- New Mailing List model  --}}
+
+<div class="modal modal-blur fade" id="new_mailing" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered newMailingModel" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title">New Mailing List</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="new-mailing-subtitle">
+                  The Mailing List block allows you to collect email addresses and automatically send them to Mailchimp.
+              </div>
+            <div class="new-mailing-model row mt-3">
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Call to action
+                        </label>
+                        <input type="text" class="form-control" placeholder="Subscribe" value="Subscribe:">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Preview</label>
+
+                        <div class="link_preview normal">
+
+
+                            <a href="#" class="live-preview normal-view">
+                                <div class="details">
+                                    <div class="title">
+                                        Subscribe
+                                    </div>
+                                    <div class="subscribe">
+                                       <div class="input-group mb-2">
+                                            <input type="text" class="form-control" placeholder="email@example.com" autocomplete="off">
+                                            <span class="input-group-text btn-dark">
+                                                <img class="" src="{{ asset('static/template_svg/right_arrow.svg') }}" alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit-button mt-4">
+                <button class="btn btn-primary w-100">Create</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{{-- New Mailing List model  --}}
 
 @endsection

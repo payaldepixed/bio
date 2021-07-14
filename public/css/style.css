@@ -58,6 +58,13 @@ img.question_mark {
   cursor: help;
 }
 
+.divider-text {
+  padding-top: 10px;
+  padding-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .template-layout {
   background-color: #fff;
 }
@@ -1038,6 +1045,58 @@ label.input-file .fileRow .fileImg {
   border: 1px solid #dfe0e1;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.default_embed_layout {
+  padding-top: 33px;
+  padding-bottom: 33px;
+  background: #f0f0f0;
+  margin-bottom: 22px;
+}
+
+.default_embed_layout .embedUrl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.default_embed_layout .embedUrl .video_svg {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 22px;
+  background: #dfe0e1;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.default_embed_layout .embedUrl .video_svg img {
+  width: 36px;
+  opacity: .5;
+}
+
+.default_embed_layout .embedUrl .embed_placeholder {
+  color: #8f8f8f;
+  font-size: 14px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1300px) {

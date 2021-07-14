@@ -63,6 +63,14 @@ img.question_mark {
     margin-right: 5px;
     cursor: help;
 }
+
+.divider-text {
+    padding-top: 10px;
+    padding-bottom: 18px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 // comman css
 
 
@@ -917,6 +925,44 @@ label.input-file {
             border: 1px solid #dfe0e1;
             background-repeat: no-repeat;
             background-position: center;
+        }
+    }
+}
+
+
+.default_embed_layout {
+    padding-top: 33px;
+    padding-bottom: 33px;
+    background: #f0f0f0;
+    margin-bottom: 22px;
+
+    .embedUrl {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .video_svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 22px;
+            background: #dfe0e1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 36px;
+                opacity: .5;
+            }
+        }
+
+        .embed_placeholder {
+            color: #8f8f8f;
+            font-size: 14px;
+            text-align: center;
         }
     }
 }
