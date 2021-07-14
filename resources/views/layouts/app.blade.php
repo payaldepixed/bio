@@ -57,6 +57,7 @@
     $(document).ready(function() {
         $('#summernote').summernote({
             placeholder: 'Add text here...',
+            height: 100,
              toolbar: [
                 // ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],
