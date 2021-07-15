@@ -722,6 +722,18 @@ img.question_mark {
   padding: 16.5px 13.75px;
 }
 
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .preview-card-body.card-style {
+  border-color: transparent;
+  border-style: solid;
+  margin-bottom: 15px;
+  border-width: 0px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
 .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .preview-card-body .main-title {
   font-size: 16px;
   font-weight: 600;

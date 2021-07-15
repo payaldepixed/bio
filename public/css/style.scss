@@ -3,6 +3,10 @@ $primary-color: #000;
 $primary-background: transparent;
 $preview-profile-border-color: transparent;
 $preview-profile-border-width: 0px;
+$preview-card-border-color: transparent;
+$preview-card-border-width: 0px;
+$preview-card-border-radius: 6px;
+$preview-card-margin-bottom: 15px;
 
 
 
@@ -611,6 +615,17 @@ img.question_mark {
                                         text-align: left;
                                         border-radius: 10px;
                                         padding: 16.5px 13.75px;
+                                        &.card-style {
+                                            border-color: $preview-card-border-color;
+                                            border-style: solid;
+                                            margin-bottom: $preview-card-margin-bottom;
+                                            border-width: $preview-card-border-width;
+                                            border-radius: $preview-card-border-radius;
+                                            -webkit-border-radius: $preview-card-border-radius;
+                                            -moz-border-radius: $preview-card-border-radius;
+                                            -ms-border-radius: $preview-card-border-radius;
+                                            -o-border-radius: $preview-card-border-radius;
+}
                                         .main-title {
                                             font-size: 16px;
                                             font-weight: 600;

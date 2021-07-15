@@ -596,6 +596,14 @@ Page Template
                                                 <input type="range" class="form-range" value="40" min="0" max="100" step="10">
                                             </div>
                                         </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Border Color</div>
+                                                <div id="card-border-color"></div>
+                                            </div>
+                                        </div>
+
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Shadow</div>
@@ -899,23 +907,23 @@ Page Template
 
 
 
-                                    <div class="preview-card-body no_tactile">
+                                    <div class="preview-card-body card-style no_tactile">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body tactile_one">
+                                    <div class="preview-card-body card-style tactile_one">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body tactile_two">
+                                    <div class="preview-card-body card-style tactile_two">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body tactile_three">
+                                    <div class="preview-card-body card-style tactile_three">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body tactile_four">
+                                    <div class="preview-card-body card-style tactile_four">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>

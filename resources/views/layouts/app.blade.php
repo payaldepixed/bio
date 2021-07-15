@@ -89,6 +89,7 @@ $(document).ready(function() {
         $('#button-color').jColorPicker();
         $('#card-color').jColorPicker();
         $('#text-color').jColorPicker();
+        $('#card-border-color').jColorPicker();
         $('#button-text-color').jColorPicker();
         $('#button-border-color').jColorPicker();
 
