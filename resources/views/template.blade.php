@@ -478,7 +478,7 @@ Page Template
                                             <div class="line"></div>
                                         </div>
 
-                                        <div class="mb-3">
+                                        <div class="mb-3 input_file_bg">
                                             <label for="inputFile" class="input-file">
                                                 <input type="file" id="inputFile">
                                                 <div class="fileRow">
@@ -487,6 +487,10 @@ Page Template
                                                     </div>
                                                 </div>
                                             </label>
+                                            <div class="file_action">
+                                                <label class="action-file" for="inputFile">Replace</label>
+                                                <label class="action-file" for="">Remove</label>
+                                            </div>
                                         </div>
 
                                         <div class="mb-3">
@@ -612,7 +616,7 @@ Page Template
 
                                     {{-- Buttons option --}}
 
-                                        <div class="title-row mb-3">
+                                        {{-- <div class="title-row mb-3">
                                             <div class="line"></div>
                                             <div class="design-title">Buttons</div>
                                             <div class="line"></div>
@@ -653,10 +657,105 @@ Page Template
                                                 <div class="color-label">Button Border Color</div>
                                                 <div id="button-border-color"></div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
 
                                     {{-- Buttons option --}}
+
+
+
+
+                                    {{-- Fonts option --}}
+
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Fonts</div>
+                                            <div class="line"></div>
+                                        </div>
+
+
+                                        <div class="accordion" id="accordion-fonts">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading-2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-fonts" aria-expanded="false">
+                                                    Text Font: Open Sans
+                                                </button>
+                                                </h2>
+                                                <div id="collapse-fonts" class="accordion-collapse collapse" data-bs-parent="#accordion-fonts">
+                                                    <div class="accordion-body p-2">
+                                                        <div class="font-list">
+                                                            <div class="font-item">Open Sans</div>
+                                                            <div class="font-item">Open Sans</div>
+                                                            <div class="font-item">Open Sans</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    {{-- Fonts option --}}
+
+
+                                    {{-- Social & Sharing option --}}
+
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Social & Sharing</div>
+                                            <div class="line"></div>
+                                        </div>
+
+
+                                         <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Enable vCard</div>
+                                                <label class="form-check form-check-single form-switch">
+                                                    <input class="form-check-input" type="checkbox" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                         <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Enable Share Button</div>
+                                                <label class="form-check form-check-single form-switch">
+                                                    <input class="form-check-input" type="checkbox" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                         {{-- <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Click For QR Code</div>
+                                                <label class="form-check form-check-single form-switch">
+                                                    <input class="form-check-input" type="checkbox" checked>
+                                                </label>
+                                            </div>
+                                        </div> --}}
+
+                                    {{-- Social & Sharing option --}}
+
+
+                                    {{-- Other option --}}
+
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Other</div>
+                                            <div class="line"></div>
+                                        </div>
+
+
+                                         <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Hide Liinks Branding</div>
+                                                <label class="form-check form-check-single form-switch">
+                                                    <input class="form-check-input" type="checkbox" >
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+                                    {{-- Other option --}}
+
 
                                 </div>
                             </div>
@@ -670,6 +769,14 @@ Page Template
                     <div class="preview-details">
                         <div class="card-layout">
                             <div class="preview-all">
+                                <div class="share_vcard_icons">
+                                    <div class="preview_share">
+                                        <img class="upper_icon" src="{{ asset('static/template_svg/share.svg') }}" alt="">
+                                    </div>
+                                    <div class="preview_vcard">
+                                        <img class="upper_icon" src="{{ asset('static/template_svg/v_card.svg') }}" alt="">
+                                    </div>
+                                </div>
                                 <div class="preview-img">
                                     <img src="{{ asset('static/default_user.png') }}" alt="">
                                 </div>
@@ -938,9 +1045,9 @@ Page Template
                         </label>
                         <input type="text" class="form-control" placeholder="Label">
                     </div>
-                    <div class="mb-3">
-                        <label for="inputFile" class="input-file">
-                            <input type="file" id="inputFile">
+                    <div class="mb-3 input_file_bg">
+                        <label for="uploadFile" class="input-file">
+                            <input type="file" id="uploadFile">
                             <div class="fileRow">
                                 <div class="fileLabel">Image</div>
                                 <div class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
@@ -948,6 +1055,10 @@ Page Template
                                 </div>
                             </div>
                         </label>
+                        <div class="file_action">
+                            <label class="action-file" for="uploadFile">Replace</label>
+                            <label class="action-file" for="">Remove</label>
+                        </div>
 
                     </div>
                 </div>

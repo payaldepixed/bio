@@ -154,6 +154,9 @@ img.question_mark {
     display: none;
 }
 
+.form-check-single {
+    cursor: pointer;
+}
 
 // comman css
 
@@ -540,6 +543,21 @@ img.question_mark {
                         background-color: $primary-background;
                         .preview-all {
                             color: $primary-color;
+                            position: relative;
+                            .share_vcard_icons {
+                                position: absolute;
+                                top: 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                width: 100%;
+                                .preview_share {
+                                    cursor: pointer;
+                                    .upper_icon {
+                                        stroke: #000;
+                                    }
+                                }
+                            }
                             .preview-img {
                                 width: 120px;
                                 height: 120px;
@@ -1032,44 +1050,76 @@ img.question_mark {
     }
 }
 
+.input_file_bg {
+        border-radius: 6px;
+        box-shadow: 0 2px 16px #00000014,
+        0 0.25px 2px #00000042;
+        background: #fff;
+    .input-file {
+        cursor: pointer;
 
-label.input-file {
-    cursor: pointer;
-    border-radius: 6px;
-    box-shadow: 0 2px 16px #00000014,
-    0 0.25px 2px #00000042;
-    background: #fff;
-    // padding: 0 11px;
-    height: 77px;
-    width: 100%;
-    position: relative;
-    height: 100%;
-    input {
-        display: none;
-    }
-    .fileRow {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 11px;
-        .fileLabel {
-            display: inline-flex;
-            color: #1a1a1a;
-            position: relative;
-            align-items: center;
-            margin-right: 22px;
-            font-weight: 600;
+        // padding: 0 11px;
+        // height: 77px;
+        width: 100%;
+        position: relative;
+        height: 100%;
+
+        input {
+            display: none;
         }
-        .fileImg {
-            border-radius: 5px;
-            width: 55px;
-            height: 55px;
-            border: 1px solid #dfe0e1;
-            background-repeat: no-repeat;
-            background-position: center;
+
+        .fileRow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px;
+
+            .fileLabel {
+                display: inline-flex;
+                color: #1a1a1a;
+                position: relative;
+                align-items: center;
+                margin-right: 22px;
+                font-weight: 600;
+            }
+
+            .fileImg {
+                border-radius: 5px;
+                width: 55px;
+                height: 55px;
+                border: 1px solid #dfe0e1;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+
+    .file_action {
+        display: flex;
+        border-top: 1px solid #dfe0e1;
+
+        .action-file {
+            flex: 1;
+            border-right: 1px solid #dfe0e1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 11px;
+            height: 44px;
+            text-align: center;
+            position: relative;
+            transition: opacity .3s ease;
+            color: #1a1a1a;
+            white-space: nowrap;
+            cursor: pointer;
+
+            &:nth-of-type(2) {
+                border-right: 0px solid #dfe0e1;
+            }
         }
     }
 }
+
 
 
 .default_embed_layout {
@@ -1182,6 +1232,18 @@ div#Design {
     }
 }
 
+.font-item {
+    padding: 5px;
+    border-bottom: 1px solid #e1e1e1;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.font-item {
+    &:hover {
+        font-weight: 800;
+    }
+}
 
 // design option css
 

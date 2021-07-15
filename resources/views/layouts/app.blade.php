@@ -58,7 +58,7 @@
     <script>
 
 $(document).ready(function() {
-    $('.preview-layout img[src$=".svg"], .tactile-item img[src$=".svg"]').each(function() {
+    $('.preview-layout img[src$=".svg"], .tactile-item img[src$=".svg"], .preview_share img[src$=".svg"]').each(function() {
         var $img = jQuery(this);
         var imgURL = $img.attr('src');
         var attributes = $img.prop("attributes");
