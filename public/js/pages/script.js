@@ -72,4 +72,35 @@ $(document).ready(function () {
     });
 
     // Tactile Cards js end
+
+    // Social & Sharing start
+
+    $("#enable_vcard").change(function () {
+        if (this.checked) {
+            $(".preview_vcard").show();
+        } else {
+            $(".preview_vcard").hide();
+        }
+    });
+
+    $("#enable_share").change(function () {
+        if (this.checked) {
+            $(".preview_share").show();
+        } else {
+            $(".preview_share").hide();
+        }
+    });
+
+    // Social & Sharing end
+
+    // other start
+
+    $("#links_branding").change(function () {
+        if (this.checked) {
+            $("#preview_footer").show();
+        } else {
+            $("#preview_footer").hide();
+        }
+    });
+    // other end
 });

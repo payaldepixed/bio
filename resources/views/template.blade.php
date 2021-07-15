@@ -721,7 +721,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Enable vCard</div>
                                                 <label class="form-check form-check-single form-switch">
-                                                    <input class="form-check-input" type="checkbox" checked>
+                                                    <input id="enable_vcard" class="form-check-input" type="checkbox" checked>
                                                 </label>
                                             </div>
                                         </div>
@@ -730,7 +730,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Enable Share Button</div>
                                                 <label class="form-check form-check-single form-switch">
-                                                    <input class="form-check-input" type="checkbox" checked>
+                                                    <input id="enable_share" class="form-check-input" type="checkbox" checked>
                                                 </label>
                                             </div>
                                         </div>
@@ -758,9 +758,9 @@ Page Template
 
                                          <div class="mb-3">
                                             <div class="color-row">
-                                                <div class="color-label">Hide Liinks Branding</div>
+                                                <div class="color-label">Hide Links Branding</div>
                                                 <label class="form-check form-check-single form-switch">
-                                                    <input class="form-check-input" type="checkbox" >
+                                                    <input id="links_branding" class="form-check-input" type="checkbox" checked>
                                                 </label>
                                             </div>
                                         </div>
@@ -943,7 +943,7 @@ Page Template
                                     </div>
                                 </div>
                             </div>
-                            <div class="footer-text">
+                            <div id="preview_footer" class="footer-text">
                                 <a href="javasctipt:void(0)">
                                     <div class="powered-by">Powered by</div>
                                     <div class="link-text">
