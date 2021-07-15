@@ -11,6 +11,8 @@ Page Template
 @endsection
 
 @section('js_after')
+{{-- <script src="{{ asset('js/jquery.min.js') }}"></script> --}}
+<script src="{{ asset('js/pages/script.js') }}"></script>
 @endsection
 
 @section('content')
@@ -551,20 +553,20 @@ Page Template
 
                                          <div class="mb-3">
                                                 <div class="form-label">Tactile Cards</div>
-                                                <div class="tactile-cards">
-                                                    <div class="tactile-item selected">
+                                                <div id="tactileCard" class="tactile-cards">
+                                                    <div class="tactile-item tactile_no selected">
                                                         <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/no_tactile.svg') }}" alt="">
                                                     </div>
-                                                    <div class="tactile-item">
+                                                    <div class="tactile-item tactile_1">
                                                         <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_one.svg') }}" alt="">
                                                     </div>
-                                                    <div class="tactile-item">
+                                                    <div class="tactile-item tactile_2">
                                                         <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_two.svg') }}" alt="">
                                                     </div>
-                                                    <div class="tactile-item">
+                                                    <div class="tactile-item tactile_3">
                                                         <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_three.svg') }}" alt="">
                                                     </div>
-                                                    <div class="tactile-item">
+                                                    <div class="tactile-item tactile_4">
                                                         <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_four.svg') }}" alt="">
                                                     </div>
                                                 </div>
@@ -919,23 +921,23 @@ Page Template
 
 
 
-                                    <div class="preview-card-body card-style no_tactile">
+                                    <div class="preview-card-body card-style">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body card-style tactile_one">
+                                    <div class="preview-card-body card-style">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body card-style tactile_two">
+                                    <div class="preview-card-body card-style">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body card-style tactile_three">
+                                    <div class="preview-card-body card-style">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body card-style tactile_four">
+                                    <div class="preview-card-body card-style">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
