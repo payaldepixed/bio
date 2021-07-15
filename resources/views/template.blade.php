@@ -527,7 +527,7 @@ Page Template
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Profile Picture Border</div>
-                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                                <input type="range" class="form-range" value="5" min="0" max="10" step="1">
                                             </div>
                                         </div>
 
@@ -587,13 +587,13 @@ Page Template
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Corner</div>
-                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                                <input type="range" class="form-range" value="15" min="0" max="30" step="2">
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Border</div>
-                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                                <input type="range" class="form-range" value="3" min="0" max="10" step="1">
                                             </div>
                                         </div>
 
