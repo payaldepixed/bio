@@ -1,3 +1,17 @@
+// variables colors
+$primary-color: #000;
+$primary-background: transparent;
+$preview-profile-border-color: transparent;
+$preview-profile-border-width: 0px;
+
+
+
+
+// variables colors
+
+
+
+
 // comman css
 
 
@@ -523,11 +537,28 @@ img.question_mark {
                         padding-left: 33px;
                         box-shadow: 0 7px 29px 0 #64646f33;
                         text-align: center;
+                        background-color: $primary-background;
                         .preview-all {
+                            color: $primary-color;
                             .preview-img {
-                                max-width: 120px;
+                                width: 120px;
+                                height: 120px;
                                 margin: auto;
                                 margin-bottom: 15px;
+                                border-radius: 50%;
+                                border-color: $preview-profile-border-color;
+                                border-style: solid;
+                                border-width: $preview-profile-border-width;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                    -webkit-border-radius: 50%;
+                                    -moz-border-radius: 50%;
+                                    -ms-border-radius: 50%;
+                                    -o-border-radius: 50%;
+
+}
                             }
                             .preview-title {
                                 font-weight: 700;
@@ -548,6 +579,9 @@ img.question_mark {
                                 .selected-icon {
                                     width: 24px;
                                     margin: 5px;
+                                    path {
+                                        fill: $primary-color;
+                                    }
                                 }
                             }
                             .preview-card {
@@ -574,6 +608,30 @@ img.question_mark {
                                             -webkit-box-orient: vertical;
                                             overflow: hidden;
                                         }
+                                        &.tactile_one {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                            #94cb96 6px 6px 13px;
+                                            background: linear-gradient(145deg, #aaeaac, #aeeeb0);
+                                        }
+                                        &.tactile_two {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                            #94cb96 6px 6px 13px;
+                                            background: linear-gradient(145deg, #9dd79e, #bbffbe);
+                                        }
+                                        &.tactile_three {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                            #94cb96 6px 6px 13px;
+                                            background: linear-gradient(145deg, #bbffbe, #a0dba2);
+                                        }
+                                        &.tactile_four {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #0000000a -6px -6px 13px inset,
+                                            #00000026 6px 6px 13px inset;
+                                            background: linear-gradient(145deg, #aaeaac00, #aeeeb000);
+                                        }
                                 }
                             }
                         }
@@ -588,28 +646,39 @@ img.question_mark {
                              align-items: center;
                              height: 100px;
                              z-index: 2;
+                             a {
+                                 text-decoration: none;
+                                .powered-by {
+                                    color: $primary-color;
+                                    text-transform: uppercase;
+                                    letter-spacing: .5px;
+                                    font-size: .8em;
+                                    font-weight: 500;
+                                    margin-bottom: 0;
+                                    opacity: .6;
+                                }
 
-                             .powered-by {
-                                 color: #000;
-                                 text-transform: uppercase;
-                                 letter-spacing: .5px;
-                                 font-size: .8em;
-                                 font-weight: 500;
-                                 margin-bottom: 0;
-                                 opacity: .6;
+                                .link-text {
+                                    font-size: 16px;
+                                    font-weight: 800;
+                                    color: $primary-color;
+                                    svg.link-img {
+                                        height: 16px;
+                                        margin-right: 2px;
+                                         path {
+                                             stroke: $primary-color;
+                                         }
+                                    }
+
+                                    img {
+                                        height: 16px;
+                                        margin-right: 4px;
+                                        margin-top: -2px;
+                                    }
+                                }
                              }
 
-                             .link-text {
-                                 font-size: 16px;
-                                 font-weight: 800;
-                                 color: #000;
 
-                                 img {
-                                     height: 16px;
-                                     margin-right: 4px;
-                                     margin-top: -2px;
-                                 }
-                             }
                          }
                     }
 
@@ -1081,6 +1150,37 @@ div#Design {
     }
 }
 
+.tactile-cards {
+    display: flex;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 2px 16px #00000014,
+    0 0.25px 2px #00000042;
+    background: #fff;
+    .tactile-item {
+        flex: 1;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid #dfe0e1;
+        padding: 0 11px;
+        cursor: pointer;
+        &.selected {
+            background: #f0f0f0;
+            box-shadow: inset 0 1px 8px #00000029,
+            inset 0 0.25px 2px #00000052;
+        }
+        &:not(:nth-of-type(1)) {
+            .tactile_img {
+                width: 30px;
+                stroke: #1a1a1a;
+                stroke-width: 7px;
+            }
+        }
+
+    }
+}
 
 
 // design option css

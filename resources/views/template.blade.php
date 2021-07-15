@@ -545,17 +545,63 @@ Page Template
                                             <div class="line"></div>
                                         </div>
 
+                                         <div class="mb-3">
+                                                <div class="form-label">Tactile Cards</div>
+                                                <div class="tactile-cards">
+                                                    <div class="tactile-item selected">
+                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/no_tactile.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="tactile-item">
+                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_one.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="tactile-item">
+                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_two.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="tactile-item">
+                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_three.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="tactile-item">
+                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_four.svg') }}" alt="">
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Color</div>
+                                                <div id="card-color"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Text Color</div>
+                                                <div id="text-color"></div>
+                                            </div>
+                                        </div>
 
                                         <div class="mb-3">
                                             <div class="range-row">
-                                                <div class="range-label">Card Shadow</div>
+                                                <div class="range-label">Corner</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Border</div>
+                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Shadow</div>
                                                 <input type="range" class="form-range" value="40" min="0" max="100" step="10">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="range-row">
-                                                <div class="range-label">Card Spacing</div>
+                                                <div class="range-label">Content Spacing</div>
                                                 <input type="range" class="form-range" value="40" min="0" max="100" step="10">
                                             </div>
                                         </div>
@@ -625,7 +671,7 @@ Page Template
                         <div class="card-layout">
                             <div class="preview-all">
                                 <div class="preview-img">
-                                    <img src="{{ asset('static/default.png') }}" alt="">
+                                    <img src="{{ asset('static/default_user.png') }}" alt="">
                                 </div>
                                 <div class="preview-title">
                                     @Ritesh
@@ -746,23 +792,23 @@ Page Template
 
 
 
-                                    <div class="preview-card-body">
+                                    <div class="preview-card-body no_tactile">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body">
+                                    <div class="preview-card-body tactile_one">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body">
+                                    <div class="preview-card-body tactile_two">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body">
+                                    <div class="preview-card-body tactile_three">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
-                                    <div class="preview-card-body">
+                                    <div class="preview-card-body tactile_four">
                                         <div class="main-title">ritesh pandey</div>
                                         <div class="subtitle-title">sub title</div>
                                     </div>
@@ -772,7 +818,7 @@ Page Template
                                 <a href="javasctipt:void(0)">
                                     <div class="powered-by">Powered by</div>
                                     <div class="link-text">
-                                        <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">Ritesh</div>
+                                        <img class="link-img" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">Ritesh</div>
                                 </a>
                             </div>
                         </div>
