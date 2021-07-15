@@ -775,8 +775,18 @@ Page Template
             </div>
 
             <div class="item_two">
+                <div class="change_preview_layout">
+                    <div class="change_layout">
+                        <div id="mobile_layout" class="change_item selected">
+                            <img class="show_preview" src="{{ asset('static/template_svg/mobile.svg') }}" alt="">
+                        </div>
+                        <div id="website_layout" class="change_item">
+                            <img class="show_preview" src="{{ asset('static/template_svg/website.svg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
                 <div class="preview-layout">
-                    <div class="preview-details">
+                    <div id="preview_size" class="preview-details mobile_size">
                         <div class="card-layout">
                             <div class="preview-all">
                                 <div class="share_vcard_icons">

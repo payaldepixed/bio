@@ -106,6 +106,22 @@ $(document).ready(function() {
                 // ['view', ['fullscreen', 'codeview', 'help']]
                 ]
         });
+
+
+        $('#mobile_layout').on('click', function(){
+            $('#website_layout').removeClass('selected');
+            $('#preview_size').addClass('mobile_size');
+            $(this).addClass('selected');
+        });
+
+        $('#website_layout').on('click', function(){
+            $('#mobile_layout').removeClass('selected');
+            $('#preview_size').removeClass('mobile_size');
+            $(this).addClass('selected');
+        });
+
+
+
     });
   </script>
     @yield('js_after')

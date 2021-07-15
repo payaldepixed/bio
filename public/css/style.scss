@@ -533,9 +533,13 @@ img.question_mark {
                         border: 15px solid #333;
                         border-radius: 5em;
                         overflow-y: auto;
-                        max-height: calc(100vh - 110px);
+                        max-height: calc(100vh - 170px);
                         &::-webkit-scrollbar {
                             width: 0px;
+                        }
+                        &.mobile_size {
+                            max-width: 400px;
+                            margin: auto;
                         }
 
                     .card-layout {
@@ -1283,6 +1287,32 @@ div#Design {
 // design option css
 
 
+
+// change preview layout 
+
+.change_preview_layout {
+    display: flex;
+    justify-content: center;
+    height: 66px;
+    align-items: center;
+    .change_layout {
+        display: flex;
+        background-color: #f5f5f5;
+        border-radius: 20px;
+        padding: 5px 6px;
+        border: 1px solid #dfe0e1;
+        .change_item {
+            cursor: pointer;
+            margin: 0 6px;
+            &:not(.selected) {
+                opacity: .6;
+            }
+        }
+    }
+}
+
+
+// change preview layout 
 
 
 @media screen and (max-width:1300px) {

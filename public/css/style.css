@@ -606,11 +606,16 @@ img.question_mark {
   border: 15px solid #333;
   border-radius: 5em;
   overflow-y: auto;
-  max-height: calc(100vh - 110px);
+  max-height: calc(100vh - 170px);
 }
 
 .template-layout .template .item_two .preview-layout .preview-details::-webkit-scrollbar {
   width: 0px;
+}
+
+.template-layout .template .item_two .preview-layout .preview-details.mobile_size {
+  max-width: 400px;
+  margin: auto;
 }
 
 .template-layout .template .item_two .preview-layout .preview-details .card-layout {
@@ -1442,6 +1447,38 @@ div#Design {
 
 .font-item.fuggles {
   font-family: "Fuggles", cursive;
+}
+
+.change_preview_layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 66px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.change_preview_layout .change_layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 5px 6px;
+  border: 1px solid #dfe0e1;
+}
+
+.change_preview_layout .change_layout .change_item {
+  cursor: pointer;
+  margin: 0 6px;
+}
+
+.change_preview_layout .change_layout .change_item:not(.selected) {
+  opacity: .6;
 }
 
 @media screen and (max-width: 1300px) {
