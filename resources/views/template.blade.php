@@ -692,9 +692,11 @@ Page Template
                                                 <div id="collapse-fonts" class="accordion-collapse collapse" data-bs-parent="#accordion-fonts">
                                                     <div class="accordion-body p-2">
                                                         <div class="font-list">
-                                                            <div class="font-item">Open Sans</div>
-                                                            <div class="font-item">Open Sans</div>
-                                                            <div class="font-item">Open Sans</div>
+                                                            <div class="font-item opan-sans">Open Sans</div>
+                                                            <div class="font-item roboto">Roboto</div>
+                                                            <div class="font-item lato">Lato</div>
+                                                            <div class="font-item dosis">Dosis</div>
+                                                            <div class="font-item fuggles">Fuggles</div>
                                                         </div>
                                                     </div>
                                                 </div>
