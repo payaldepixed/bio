@@ -47,6 +47,7 @@ $(document).ready(function () {
 
     $("#tactileCard .tactile-item").on("click", function () {
         $("#preview_size .card-layout").css("background-color", "");
+        $("#preview_size").css("background-color", "");
         $("#preview_size .preview-card-body ").removeClass("no_tactile");
         $("#preview_size .preview-card-body ").removeClass("tactile_one");
         $("#preview_size .preview-card-body ").removeClass("tactile_two");
@@ -60,18 +61,58 @@ $(document).ready(function () {
         if ($(this).hasClass("tactile_no")) {
             // console.log("tactile_1");
         } else if ($(this).hasClass("tactile_1")) {
+            var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_one");
             $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_2")) {
+            var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_two");
             $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_3")) {
+            var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_three");
             $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_4")) {
+            var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_four");
             $(".noTactileCard").css("display", "none");
