@@ -61,15 +61,15 @@
 
 
     $(document).ready(function() {
-        $('#primary-text-color').jColorPicker();
-        $('#primary-background').jColorPicker();
-        $('#profile-picture-border-color').jColorPicker();
-        $('#button-color').jColorPicker();
-        $('#card-color').jColorPicker();
-        $('#text-color').jColorPicker();
-        $('#card-border-color').jColorPicker();
-        $('#button-text-color').jColorPicker();
-        $('#button-border-color').jColorPicker();
+        // $('#primary-text-color').jColorPicker();
+        // $('#primary-background').jColorPicker();
+        // $('#profile-picture-border-color').jColorPicker();
+        // $('#button-color').jColorPicker();
+        // $('#card-color').jColorPicker();
+        // $('#text-color').jColorPicker();
+        // $('#card-border-color').jColorPicker();
+        // $('#button-text-color').jColorPicker();
+        // $('#button-border-color').jColorPicker();
 
         $('#summernote').summernote({
             placeholder: 'Add text here...',

@@ -103,4 +103,12 @@ $(document).ready(function () {
         }
     });
     // other end
+
+    $(document).on("input", "#profile_img_border", function () {
+        // $("#slider_value").html($(this).val());
+        // $("#previewImg").css("border-width", X + "px " + Y + "px");
+        $("#previewImg").css("border-width", $(this).val() + "px");
+        $("#previewImg").css("border-color", "#000000");
+        console.log("sdfas", $(".jcp-color-preview input").val());
+    });
 });

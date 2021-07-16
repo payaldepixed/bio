@@ -508,14 +508,18 @@ Page Template
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Primary Text Color</div>
-                                                <div id="primary-text-color"></div>
+                                                <div id="primary-text-color">
+                                                    <input type="color" value="#158ee1">
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Primary Background</div>
-                                                <div id="primary-background"></div>
+                                                <div id="primary-background">
+                                                    <input type="color" value="#158ee1">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -529,16 +533,20 @@ Page Template
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Profile Picture Border</div>
-                                                <input type="range" class="form-range" value="5" min="0" max="10" step="1">
+                                                <input id="profile_img_border" type="range" class="form-range" value="0" min="0" max="10" step="1">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Profile Picture Border Color</div>
-                                                <div id="profile-picture-border-color"></div>
+                                                <div id="profile-picture-border-color">
+                                                    <input type="color" value="#158ee1">
+                                                </div>
                                             </div>
                                         </div>
+
+
 
                                     {{-- General option --}}
 
@@ -575,14 +583,18 @@ Page Template
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Color</div>
-                                                <div id="card-color"></div>
+                                                <div id="card-color">
+                                                    <input type="color" value="#158ee1">
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Text Color</div>
-                                                <div id="text-color"></div>
+                                                <div id="text-color">
+                                                    <input type="color" value="#158ee1">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -602,7 +614,9 @@ Page Template
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Border Color</div>
-                                                <div id="card-border-color"></div>
+                                                <div id="card-border-color">
+                                                    <input type="color" value="#158ee1">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -799,7 +813,7 @@ Page Template
                                         <img class="upper_icon" src="{{ asset('static/template_svg/v_card.svg') }}" alt="">
                                     </div>
                                 </div>
-                                <div class="preview-img">
+                                <div id="previewImg" class="preview-img">
                                     <img src="{{ asset('static/default_user.png') }}" alt="">
                                 </div>
                                 <div class="preview-title">
