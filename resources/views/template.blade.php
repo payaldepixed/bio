@@ -580,7 +580,7 @@ Page Template
                                                 </div>
                                         </div>
 
-                                        <div class="mb-3">
+                                        <div class="mb-3 noTactileCard">
                                             <div class="color-row">
                                                 <div class="color-label">Color</div>
                                                 <div id="card-color">
@@ -601,17 +601,17 @@ Page Template
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Corner</div>
-                                                <input id="card_corner" type="range" class="form-range" value="0" min="0" max="30" step="1">
+                                                <input id="card_corner" type="range" class="form-range" value="6" min="6" max="30" step="1">
                                             </div>
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-3 noTactileCard">
                                             <div class="range-row">
                                                 <div class="range-label">Border</div>
-                                                <input id="card_border" type="range" class="form-range" value="6" min="6" max="10" step="1">
+                                                <input id="card_border" type="range" class="form-range" value="0" min="0" max="10" step="1">
                                             </div>
                                         </div>
 
-                                        <div class="mb-3">
+                                        <div class="mb-3 noTactileCard">
                                             <div class="color-row">
                                                 <div class="color-label">Border Color</div>
                                                 <div id="card-border-color">
@@ -621,14 +621,14 @@ Page Template
                                         </div>
 
 
-                                        <div class="mb-3">
+                                        <div class="mb-3 noTactileCard">
                                             <div class="range-row">
                                                 <div class="range-label">Shadow</div>
                                                 <input id="card_shadow" type="range" class="form-range" value="0" min="0" max="10" step="1">
                                             </div>
                                         </div>
 
-                                        <div class="mb-3">
+                                        <div class="mb-3 noTactileCard">
                                             <div class="range-row">
                                                 <div class="range-label">Content Spacing</div>
                                                 <input id="card_spacing" type="range" class="form-range" value="15" min="15" max="44" step="1">

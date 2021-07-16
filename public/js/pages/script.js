@@ -52,20 +52,29 @@ $(document).ready(function () {
         $("#preview_size .preview-card-body ").removeClass("tactile_two");
         $("#preview_size .preview-card-body ").removeClass("tactile_three");
         $("#preview_size .preview-card-body ").removeClass("tactile_four");
+        $(".noTactileCard").css("display", "block");
+        $(".preview-card-body").css("border-width", "0px");
+        $(".preview-card-body").css("margin-bottom", "15px");
+        $("#card_border").val(0);
+
         if ($(this).hasClass("tactile_no")) {
             // console.log("tactile_1");
         } else if ($(this).hasClass("tactile_1")) {
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_one");
+            $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_2")) {
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_two");
+            $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_3")) {
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_three");
+            $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_4")) {
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
             $("#preview_size .preview-card-body ").addClass("tactile_four");
+            $(".noTactileCard").css("display", "none");
         }
         $("#tactileCard .tactile-item.selected").removeClass("selected");
         $(this).addClass("selected");
