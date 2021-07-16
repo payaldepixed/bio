@@ -59,6 +59,11 @@ $(document).ready(function () {
         $("#card_border").val(0);
 
         if ($(this).hasClass("tactile_no")) {
+            // $("#card-color input").val();
+            $("#preview_size .preview-card-body").css(
+                "background-color",
+                $("#card-color input").val()
+            );
             // console.log("tactile_1");
         } else if ($(this).hasClass("tactile_1")) {
             var color = "#b1f3b3";
@@ -114,6 +119,7 @@ $(document).ready(function () {
                 ",0.9)";
             $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
+            $("#preview_size .preview-card-body").css("background-color", "");
             $("#preview_size .preview-card-body ").addClass("tactile_four");
             $(".noTactileCard").css("display", "none");
         }
