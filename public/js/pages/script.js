@@ -105,10 +105,87 @@ $(document).ready(function () {
     // other end
 
     $(document).on("input", "#profile_img_border", function () {
-        // $("#slider_value").html($(this).val());
-        // $("#previewImg").css("border-width", X + "px " + Y + "px");
         $("#previewImg").css("border-width", $(this).val() + "px");
         $("#previewImg").css("border-color", "#000000");
-        console.log("sdfas", $(".jcp-color-preview input").val());
     });
+    $(document).on("input", "#profile-picture-border-color input", function () {
+        $("#previewImg").css("border-color", $(this).val());
+    });
+
+    $(document).on("input", "#primary-background input", function () {
+        // $("#previewImg").css("border-width", $(this).val() + "px");
+        $(".card-layout").css("background-color", $(this).val());
+
+        var color = $(this).val();
+        var rgbaCol =
+            "rgba(" +
+            parseInt(color.slice(-6, -4), 16) +
+            "," +
+            parseInt(color.slice(-4, -2), 16) +
+            "," +
+            parseInt(color.slice(-2), 16) +
+            ",0.9)";
+        $("#preview_size").css("background-color", rgbaCol);
+    });
+
+    $(document).on("input", "#primary-text-color input", function () {
+        $(".preview-all, .powered-by, .link-text").css("color", $(this).val());
+        $(".preview-all .selected-social-icon .selected-icon path").css(
+            "fill",
+            $(this).val()
+        );
+        $(".link-img path, .share_vcard_icons svg").css(
+            "stroke",
+            $(this).val()
+        );
+        // console.log("sdfas", $(this).val());
+    });
+
+    // card js start
+
+    $(document).on("input", "#card-color input", function () {
+        $(".preview-card-body").css("background-color", $(this).val());
+    });
+
+    $(document).on("input", "#text-color input", function () {
+        $(
+            ".preview-card-body .main-title, .preview-card-body .subtitle-title"
+        ).css("color", $(this).val());
+    });
+
+    $(document).on("input", "#card_corner", function () {
+        $(".preview-card-body").css("border-radius", $(this).val() + "px");
+        // $("#previewImg").css("border-color", "#000000");
+    });
+
+    $(document).on("input", "#card_border", function () {
+        $(".preview-card-body").css("border-width", $(this).val() + "px");
+        $(".preview-card-body").css("border-color", "#000000");
+    });
+
+    $(document).on("input", "#card-border-color input", function () {
+        $(".preview-card-body").css("border-color", $(this).val());
+    });
+
+    $(document).on("input", "#card_shadow", function () {
+        // $(".preview-card-body").css(
+        //     "box-shadow",
+        //     "#0000004d 0px 10px 30px" + $(this).val() + "px"
+        // );
+        var one = $(this).val() + "px";
+        $(".preview-card-body").css(
+            "box-shadow",
+            "10px",
+            "10px",
+            "5px",
+            one,
+            "#0000004d"
+        );
+    });
+
+    $(document).on("input", "#card_spacing", function () {
+        $(".preview-card-body").css("margin-bottom", $(this).val() + "px");
+    });
+
+    // card js end
 });

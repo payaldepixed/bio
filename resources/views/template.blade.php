@@ -509,7 +509,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Primary Text Color</div>
                                                 <div id="primary-text-color">
-                                                    <input type="color" value="#158ee1">
+                                                    <input type="color" value="#000000">
                                                 </div>
                                             </div>
                                         </div>
@@ -518,7 +518,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Primary Background</div>
                                                 <div id="primary-background">
-                                                    <input type="color" value="#158ee1">
+                                                    <input type="color" value="#ffffff">
                                                 </div>
                                             </div>
                                         </div>
@@ -541,7 +541,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Profile Picture Border Color</div>
                                                 <div id="profile-picture-border-color">
-                                                    <input type="color" value="#158ee1">
+                                                    <input type="color" value="#000000">
                                                 </div>
                                             </div>
                                         </div>
@@ -584,7 +584,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Color</div>
                                                 <div id="card-color">
-                                                    <input type="color" value="#158ee1">
+                                                    <input type="color" value="#f1dfd5">
                                                 </div>
                                             </div>
                                         </div>
@@ -593,7 +593,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Text Color</div>
                                                 <div id="text-color">
-                                                    <input type="color" value="#158ee1">
+                                                    <input type="color" value="#000000">
                                                 </div>
                                             </div>
                                         </div>
@@ -601,13 +601,13 @@ Page Template
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Corner</div>
-                                                <input type="range" class="form-range" value="15" min="0" max="30" step="2">
+                                                <input id="card_corner" type="range" class="form-range" value="0" min="0" max="30" step="1">
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Border</div>
-                                                <input type="range" class="form-range" value="3" min="0" max="10" step="1">
+                                                <input id="card_border" type="range" class="form-range" value="6" min="6" max="10" step="1">
                                             </div>
                                         </div>
 
@@ -615,7 +615,7 @@ Page Template
                                             <div class="color-row">
                                                 <div class="color-label">Border Color</div>
                                                 <div id="card-border-color">
-                                                    <input type="color" value="#158ee1">
+                                                    <input type="color" value="#000000">
                                                 </div>
                                             </div>
                                         </div>
@@ -624,14 +624,14 @@ Page Template
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Shadow</div>
-                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                                <input id="card_shadow" type="range" class="form-range" value="0" min="0" max="10" step="1">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Content Spacing</div>
-                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                                <input id="card_spacing" type="range" class="form-range" value="15" min="15" max="44" step="1">
                                             </div>
                                         </div>
 
