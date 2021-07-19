@@ -40,23 +40,31 @@ Page Template
         <div class="template-header">
             <div class="tab-item">
                 <ul class="nav nav-tabs" data-bs-toggle="tabs">
-                <li class="nav-item">
-                    <a href="#Content" class="nav-link active" data-bs-toggle="tab">
-                        Content
-                        <svg xmlns="http://www.w3.org/2000/svg" class="tab_svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Design" class="nav-link" data-bs-toggle="tab">
-                        Design
-                        <svg xmlns="http://www.w3.org/2000/svg" class="tab_svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a href="#Content" class="nav-link active" data-bs-toggle="tab">
+                            Content
+                            <svg xmlns="http://www.w3.org/2000/svg" class="tab_svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Design" class="nav-link" data-bs-toggle="tab">
+                            Design
+                            <svg xmlns="http://www.w3.org/2000/svg" class="tab_svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="link-item">
                 <div class="my-link">
-                   <span class="my-page"> My Page:</span>  <a href="javascript:void(0)"  target="_blank">links.co/mox</a> <img class="" src="{{ asset('static/template_svg/mypage.svg') }}" alt="">
+                    <span class="my-page"> My Page:</span> <a href="javascript:void(0)" target="_blank">links.co/mox</a> <img class="" src="{{ asset('static/template_svg/mypage.svg') }}" alt="">
                 </div>
                 <div class="button-links">
                     <button href="#" class="btn btn-primary">
@@ -82,28 +90,28 @@ Page Template
                                     <div class="accordion" id="accordion-example">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="heading-2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false">
-                                                Social Links
-                                            </button>
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false">
+                                                    Social Links
+                                                </button>
                                             </h2>
                                             <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordion-example">
                                                 <div class="accordion-body p-2">
                                                     <div class="social_icons_lists mb-4">
                                                         <div class="checkbox-social">
                                                             <input type="checkbox" id="email" style="display: none;">
-                                                             <label for="email" class="social-icon">
-                                                                 <img class="social-img" src="{{ asset('static/template_svg/email.svg') }}" alt="email">
-                                                                 <span class="social-icon-name">Email</span>
+                                                            <label for="email" class="social-icon">
+                                                                <img class="social-img" src="{{ asset('static/template_svg/email.svg') }}" alt="email">
+                                                                <span class="social-icon-name">Email</span>
                                                             </label>
                                                         </div>
 
-                                                         <div class="checkbox-social">
+                                                        <div class="checkbox-social">
                                                             <input type="checkbox" id="newsletter" style="display: none;">
                                                             <label for="newsletter" class="social-icon">
                                                                 <img class="social-img" src="{{ asset('static/template_svg/newsletter.svg') }}" alt="newsletter"> <span class="social-icon-name">Newsletter</span>
                                                             </label>
-                                                         </div>
-                                                         <div class="checkbox-social">
+                                                        </div>
+                                                        <div class="checkbox-social">
                                                             <input type="checkbox" id="phone" style="display: none;">
                                                             <label for="phone" class="social-icon">
                                                                 <img class="social-img" src="{{ asset('static/template_svg/phone.svg') }}" alt="phone"> <span class="social-icon-name">Phone</span>
@@ -326,7 +334,7 @@ Page Template
                                                             </label>
                                                         </div>
                                                     </div>
-                                                     <div class="social-inputs">
+                                                    <div class="social-inputs">
 
                                                         <div class="social-details mb-2">
                                                             <div class="drag_drop">
@@ -474,77 +482,77 @@ Page Template
 
                                     {{-- General option --}}
 
-                                        <div class="title-row mb-3">
-                                            <div class="line"></div>
-                                            <div class="design-title">General</div>
-                                            <div class="line"></div>
-                                        </div>
+                                    <div class="title-row mb-3">
+                                        <div class="line"></div>
+                                        <div class="design-title">General</div>
+                                        <div class="line"></div>
+                                    </div>
 
-                                        <div class="mb-3 input_file_bg">
-                                            <label for="inputFile" class="input-file">
-                                                <input type="file" id="inputFile" >
-                                                <div class="fileRow">
-                                                    <div class="fileLabel">Profile Picture</div>
-                                                    <div id="designImg" class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
-                                                    </div>
-                                                </div>
-                                            </label>
-                                            <div id="designSIdeAciton" class="file_action d-none">
-                                                <label class="action-file" for="inputFile">Replace</label>
-                                                <label id="designImgRemove" class="action-file" for="">Remove</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label">Profile Bio</label>
-                                            <textarea id="profileBio" class="form-control" name="example-textarea-input" rows="4" placeholder="Profile Bio"></textarea>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label">Profile Name</label>
-                                            <input id="profileName" type="text" class="form-control" placeholder="Profile Name">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <div class="color-row">
-                                                <div class="color-label">Primary Text Color</div>
-                                                <div id="primary-text-color">
-                                                    <input type="color" value="#000000">
+                                    <div class="mb-3 input_file_bg">
+                                        <label for="inputFile" class="input-file">
+                                            <input type="file" id="inputFile">
+                                            <div class="fileRow">
+                                                <div class="fileLabel">Profile Picture</div>
+                                                <div id="designImg" class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
                                                 </div>
                                             </div>
+                                        </label>
+                                        <div id="designSIdeAciton" class="file_action d-none">
+                                            <label class="action-file" for="inputFile">Replace</label>
+                                            <label id="designImgRemove" class="action-file" for="">Remove</label>
                                         </div>
+                                    </div>
 
-                                        <div class="mb-3">
-                                            <div class="color-row">
-                                                <div class="color-label">Primary Background</div>
-                                                <div id="primary-background">
-                                                    <input type="color" value="#ffffff">
-                                                </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Profile Bio</label>
+                                        <textarea id="profileBio" class="form-control" name="example-textarea-input" rows="4" placeholder="Profile Bio"></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Profile Name</label>
+                                        <input id="profileName" type="text" class="form-control" placeholder="Profile Name">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="color-row">
+                                            <div class="color-label">Primary Text Color</div>
+                                            <div id="primary-text-color">
+                                                <input type="color" value="#000000">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="mb-3">
-                                            <div class="range-row">
-                                                <div class="range-label">Profile Picture Shadow</div>
-                                                <input id="profileShadow" type="range" class="form-range" value="0" min="0" max="10" step="1">
+                                    <div class="mb-3">
+                                        <div class="color-row">
+                                            <div class="color-label">Primary Background</div>
+                                            <div id="primary-background">
+                                                <input type="color" value="#ffffff">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="mb-3">
-                                            <div class="range-row">
-                                                <div class="range-label">Profile Picture Border</div>
-                                                <input id="profile_img_border" type="range" class="form-range" value="0" min="0" max="10" step="1">
+                                    <div class="mb-3">
+                                        <div class="range-row">
+                                            <div class="range-label">Profile Picture Shadow</div>
+                                            <input id="profileShadow" type="range" class="form-range" value="0" min="0" max="10" step="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="range-row">
+                                            <div class="range-label">Profile Picture Border</div>
+                                            <input id="profile_img_border" type="range" class="form-range" value="0" min="0" max="10" step="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="color-row">
+                                            <div class="color-label">Profile Picture Border Color</div>
+                                            <div id="profile-picture-border-color">
+                                                <input type="color" value="#000000">
                                             </div>
                                         </div>
-
-                                        <div class="mb-3">
-                                            <div class="color-row">
-                                                <div class="color-label">Profile Picture Border Color</div>
-                                                <div id="profile-picture-border-color">
-                                                    <input type="color" value="#000000">
-                                                </div>
-                                            </div>
-                                        </div>
+                                    </div>
 
 
 
@@ -553,87 +561,87 @@ Page Template
 
                                     {{-- Cards option --}}
 
-                                        <div class="title-row mb-3">
-                                            <div class="line"></div>
-                                            <div class="design-title">Cards</div>
-                                            <div class="line"></div>
-                                        </div>
+                                    <div class="title-row mb-3">
+                                        <div class="line"></div>
+                                        <div class="design-title">Cards</div>
+                                        <div class="line"></div>
+                                    </div>
 
-                                         <div class="mb-3">
-                                                <div class="form-label">Tactile Cards</div>
-                                                <div id="tactileCard" class="tactile-cards">
-                                                    <div class="tactile-item tactile_no selected">
-                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/no_tactile.svg') }}" alt="">
-                                                    </div>
-                                                    <div class="tactile-item tactile_1">
-                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_one.svg') }}" alt="">
-                                                    </div>
-                                                    <div class="tactile-item tactile_2">
-                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_two.svg') }}" alt="">
-                                                    </div>
-                                                    <div class="tactile-item tactile_3">
-                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_three.svg') }}" alt="">
-                                                    </div>
-                                                    <div class="tactile-item tactile_4">
-                                                        <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_four.svg') }}" alt="">
-                                                    </div>
-                                                </div>
-                                        </div>
-
-                                        <div class="mb-3 noTactileCard">
-                                            <div class="color-row">
-                                                <div class="color-label">Color</div>
-                                                <div id="card-color">
-                                                    <input type="color" value="#f1dfd5">
-                                                </div>
+                                    <div class="mb-3">
+                                        <div class="form-label">Tactile Cards</div>
+                                        <div id="tactileCard" class="tactile-cards">
+                                            <div class="tactile-item tactile_no selected">
+                                                <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/no_tactile.svg') }}" alt="">
+                                            </div>
+                                            <div class="tactile-item tactile_1">
+                                                <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_one.svg') }}" alt="">
+                                            </div>
+                                            <div class="tactile-item tactile_2">
+                                                <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_two.svg') }}" alt="">
+                                            </div>
+                                            <div class="tactile-item tactile_3">
+                                                <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_three.svg') }}" alt="">
+                                            </div>
+                                            <div class="tactile-item tactile_4">
+                                                <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_four.svg') }}" alt="">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="mb-3">
-                                            <div class="color-row">
-                                                <div class="color-label">Text Color</div>
-                                                <div id="text-color">
-                                                    <input type="color" value="#000000">
-                                                </div>
+                                    <div class="mb-3 noTactileCard">
+                                        <div class="color-row">
+                                            <div class="color-label">Color</div>
+                                            <div id="card-color">
+                                                <input type="color" value="#f1dfd5">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="mb-3">
-                                            <div class="range-row">
-                                                <div class="range-label">Corner</div>
-                                                <input id="card_corner" type="range" class="form-range" value="6" min="6" max="30" step="1">
+                                    <div class="mb-3">
+                                        <div class="color-row">
+                                            <div class="color-label">Text Color</div>
+                                            <div id="text-color">
+                                                <input type="color" value="#000000">
                                             </div>
                                         </div>
-                                        <div class="mb-3 noTactileCard">
-                                            <div class="range-row">
-                                                <div class="range-label">Border</div>
-                                                <input id="card_border" type="range" class="form-range" value="0" min="0" max="10" step="1">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="range-row">
+                                            <div class="range-label">Corner</div>
+                                            <input id="card_corner" type="range" class="form-range" value="6" min="6" max="30" step="1">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 noTactileCard">
+                                        <div class="range-row">
+                                            <div class="range-label">Border</div>
+                                            <input id="card_border" type="range" class="form-range" value="0" min="0" max="10" step="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 noTactileCard">
+                                        <div class="color-row">
+                                            <div class="color-label">Border Color</div>
+                                            <div id="card-border-color">
+                                                <input type="color" value="#000000">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="mb-3 noTactileCard">
-                                            <div class="color-row">
-                                                <div class="color-label">Border Color</div>
-                                                <div id="card-border-color">
-                                                    <input type="color" value="#000000">
-                                                </div>
-                                            </div>
+
+                                    <div class="mb-3 noTactileCard">
+                                        <div class="range-row">
+                                            <div class="range-label">Shadow</div>
+                                            <input id="card_shadow" type="range" class="form-range" value="0" min="0" max="10" step="1">
                                         </div>
+                                    </div>
 
-
-                                        <div class="mb-3 noTactileCard">
-                                            <div class="range-row">
-                                                <div class="range-label">Shadow</div>
-                                                <input id="card_shadow" type="range" class="form-range" value="0" min="0" max="10" step="1">
-                                            </div>
+                                    <div class="mb-3 noTactileCard">
+                                        <div class="range-row">
+                                            <div class="range-label">Content Spacing</div>
+                                            <input id="card_spacing" type="range" class="form-range" value="15" min="15" max="44" step="1">
                                         </div>
-
-                                        <div class="mb-3 noTactileCard">
-                                            <div class="range-row">
-                                                <div class="range-label">Content Spacing</div>
-                                                <input id="card_spacing" type="range" class="form-range" value="15" min="15" max="44" step="1">
-                                            </div>
-                                        </div>
+                                    </div>
 
                                     {{-- Cards option --}}
 
@@ -641,7 +649,7 @@ Page Template
 
                                     {{-- Buttons option --}}
 
-                                        {{-- <div class="title-row mb-3">
+                                    {{-- <div class="title-row mb-3">
                                             <div class="line"></div>
                                             <div class="design-title">Buttons</div>
                                             <div class="line"></div>
@@ -692,65 +700,65 @@ Page Template
 
                                     {{-- Fonts option --}}
 
-                                        <div class="title-row mb-3">
-                                            <div class="line"></div>
-                                            <div class="design-title">Fonts</div>
-                                            <div class="line"></div>
-                                        </div>
+                                    <div class="title-row mb-3">
+                                        <div class="line"></div>
+                                        <div class="design-title">Fonts</div>
+                                        <div class="line"></div>
+                                    </div>
 
 
-                                        <div class="accordion" id="accordion-fonts">
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header" id="heading-2">
+                                    <div class="accordion" id="accordion-fonts">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading-2">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-fonts" aria-expanded="false">
                                                     Text Font: Open Sans
                                                 </button>
-                                                </h2>
-                                                <div id="collapse-fonts" class="accordion-collapse collapse" data-bs-parent="#accordion-fonts">
-                                                    <div class="accordion-body p-2">
-                                                        <div id="fonts" class="font-list">
-                                                            <div class="font-item opan-sans">Open Sans</div>
-                                                            <div class="font-item roboto">Roboto</div>
-                                                            <div class="font-item lato">Lato</div>
-                                                            <div class="font-item dosis">Dosis</div>
-                                                            <div class="font-item fuggles">Fuggles</div>
-                                                        </div>
+                                            </h2>
+                                            <div id="collapse-fonts" class="accordion-collapse collapse" data-bs-parent="#accordion-fonts">
+                                                <div class="accordion-body p-2">
+                                                    <div id="fonts" class="font-list">
+                                                        <div class="font-item opan-sans">Open Sans</div>
+                                                        <div class="font-item roboto">Roboto</div>
+                                                        <div class="font-item lato">Lato</div>
+                                                        <div class="font-item dosis">Dosis</div>
+                                                        <div class="font-item fuggles">Fuggles</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
                                     {{-- Fonts option --}}
 
 
                                     {{-- Social & Sharing option --}}
 
-                                        <div class="title-row mb-3">
-                                            <div class="line"></div>
-                                            <div class="design-title">Social & Sharing</div>
-                                            <div class="line"></div>
+                                    <div class="title-row mb-3">
+                                        <div class="line"></div>
+                                        <div class="design-title">Social & Sharing</div>
+                                        <div class="line"></div>
+                                    </div>
+
+
+                                    <div class="mb-3">
+                                        <div class="color-row">
+                                            <div class="color-label">Enable vCard</div>
+                                            <label class="form-check form-check-single form-switch">
+                                                <input id="enable_vcard" class="form-check-input" type="checkbox" checked>
+                                            </label>
                                         </div>
+                                    </div>
 
-
-                                         <div class="mb-3">
-                                            <div class="color-row">
-                                                <div class="color-label">Enable vCard</div>
-                                                <label class="form-check form-check-single form-switch">
-                                                    <input id="enable_vcard" class="form-check-input" type="checkbox" checked>
-                                                </label>
-                                            </div>
+                                    <div class="mb-3">
+                                        <div class="color-row">
+                                            <div class="color-label">Enable Share Button</div>
+                                            <label class="form-check form-check-single form-switch">
+                                                <input id="enable_share" class="form-check-input" type="checkbox" checked>
+                                            </label>
                                         </div>
+                                    </div>
 
-                                         <div class="mb-3">
-                                            <div class="color-row">
-                                                <div class="color-label">Enable Share Button</div>
-                                                <label class="form-check form-check-single form-switch">
-                                                    <input id="enable_share" class="form-check-input" type="checkbox" checked>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                         {{-- <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Click For QR Code</div>
                                                 <label class="form-check form-check-single form-switch">
@@ -764,21 +772,21 @@ Page Template
 
                                     {{-- Other option --}}
 
-                                        <div class="title-row mb-3">
-                                            <div class="line"></div>
-                                            <div class="design-title">Other</div>
-                                            <div class="line"></div>
-                                        </div>
+                                    <div class="title-row mb-3">
+                                        <div class="line"></div>
+                                        <div class="design-title">Other</div>
+                                        <div class="line"></div>
+                                    </div>
 
 
-                                         <div class="mb-3">
-                                            <div class="color-row">
-                                                <div class="color-label">Hide Links Branding</div>
-                                                <label class="form-check form-check-single form-switch">
-                                                    <input id="links_branding" class="form-check-input" type="checkbox" checked>
-                                                </label>
-                                            </div>
+                                    <div class="mb-3">
+                                        <div class="color-row">
+                                            <div class="color-label">Hide Links Branding</div>
+                                            <label class="form-check form-check-single form-switch">
+                                                <input id="links_branding" class="form-check-input" type="checkbox" checked>
+                                            </label>
                                         </div>
+                                    </div>
 
 
                                     {{-- Other option --}}
@@ -835,20 +843,10 @@ Page Template
                                 </div>
                                 <div class="preview-card">
 
-                                    {{-- normal --}}
-                                        <div class="link_preview normal">
+                                    <!--<div class="link_preview thumbnail-basic">
 
-                                            <div class="preview-card-body card-style">
-                                                <div class="main-title">ritesh pandey</div>
-                                                <div class="subtitle-title">sub title</div>
-                                            </div>
 
-                                        </div>
-                                    {{-- normal --}}
-
-                                    {{-- thumbnail-basic --}}
-
-                                        <div class="link_preview thumbnail-basic">
+                                            {{-- thumbnail-basic --}}
 
                                             <a href="#" class="live-preview thumbnail-view">
                                                 <div class="thumbnail-img">
@@ -863,33 +861,14 @@ Page Template
                                                     </div>
                                                 </div>
                                             </a>
-                                        </div>
-                                    {{-- thumbnail-basic --}}
 
-                                    {{-- button-image-background --}}
-                                        <div class="link_preview button-image-background">
-
-                                            <a href="#" class="live-preview image-background-view animate__animated animate__pulse">
-                                                <div class="details" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
-                                                    <div class="title">
-                                                        Ritesh pandey
-                                                    </div>
-                                                    <div class="dec">
-                                                        Ritesh pandey
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                        </div>
-                                    {{-- button-image-background --}}
+                                            {{-- thumbnail-basic --}}
 
 
-                                    {{-- thumbnail-highlight --}}
-                                        <div class="link_preview thumbnail-highlight">
+                                            {{-- thumbnail-highlight --}}
 
                                             <a href="#" class="live-preview thumbnail-highlight-view">
-                                                <div class="thumbnail-highlight-img">
-                                                    <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                                <div class="thumbnail-highlight-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
                                                 </div>
                                                 <div class="details">
                                                     <div class="title">
@@ -901,37 +880,26 @@ Page Template
                                                 </div>
                                             </a>
 
-                                        </div>
-                                    {{-- thumbnail-highlight --}}
+                                            {{-- thumbnail-highlight --}}
 
 
-                                    {{-- thumbnail-grid --}}
-                                        <div class="link_preview thumbnail-grid">
-
+                                            {{-- thumbnail-grid --}}
                                             <div class="live-preview grid-2 thumbnail-grid-view">
                                                 <a href="#" class="">
-                                                    <div class="thumbnail-grid-img">
-                                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                                    </div>
+                                                    <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
                                                 </a>
                                                 <a href="#" class="">
-                                                    <div class="thumbnail-grid-img">
-                                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                                    </div>
+                                                    <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
                                                 </a>
                                             </div>
 
-                                        </div>
-                                    {{-- thumbnail-grid --}}
+                                            {{-- thumbnail-grid --}}
 
 
-                                    {{-- thumbnail-carousel --}}
-                                        <div class="link_preview thumbnail-carousel">
-
+                                            {{-- thumbnail-carousel --}}
                                             <div class="live-preview thumbnail-carousel-view">
                                                 <a href="#" class="">
-                                                    <div class="thumbnail-carousel-img">
-                                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
                                                     </div>
                                                     <div class="details">
                                                         <div class="title">
@@ -943,8 +911,7 @@ Page Template
                                                     </div>
                                                 </a>
                                                 <a href="#" class="">
-                                                    <div class="thumbnail-carousel-img">
-                                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
                                                     </div>
                                                     <div class="details">
                                                         <div class="title">
@@ -956,8 +923,7 @@ Page Template
                                                     </div>
                                                 </a>
                                                 <a href="#" class="">
-                                                    <div class="thumbnail-carousel-img">
-                                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                                    <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
                                                     </div>
                                                     <div class="details">
                                                         <div class="title">
@@ -970,16 +936,42 @@ Page Template
                                                 </a>
                                             </div>
 
-                                        </div>
-                                    {{-- thumbnail-carousel --}}
+                                            {{-- thumbnail-carousel --}}
 
+                                        </div>-->
+
+
+
+
+
+                                    <div class="preview-card-body card-style">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="preview-card-body card-style">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="preview-card-body card-style">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="preview-card-body card-style">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
+                                    <div class="preview-card-body card-style">
+                                        <div class="main-title">ritesh pandey</div>
+                                        <div class="subtitle-title">sub title</div>
+                                    </div>
                                 </div>
                             </div>
                             <div id="preview_footer" class="footer-text">
                                 <a href="javasctipt:void(0)">
                                     <div class="powered-by">Powered by</div>
                                     <div class="link-text">
-                                        <img class="link-img" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">Ritesh</div>
+                                        <img class="link-img" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">Ritesh
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -1001,50 +993,50 @@ Page Template
 {{-- New Block model  --}}
 
 
-  <div class="modal modal-blur fade" id="modal-large" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered newBlockModel" role="document">
+<div class="modal modal-blur fade" id="modal-large" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered newBlockModel" role="document">
         <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <h5 class="modal-title">New Block</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="model-row">
-                <div class="model-card" data-bs-toggle="modal" data-bs-target="#newLink">
-                    <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">
-                    <div class="model-card-title">Link</div>
-                    <div class="model-card-dec">Create a link to anywhere on the web</div>
-                </div>
-                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_divider">
-                    <img class="" src="{{ asset('static/template_svg/divider.svg') }}" alt="">
-                    <div class="model-card-title">Divider</div>
-                    <div class="model-card-dec">Organize your content with dividers</div>
-                </div>
-                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_media">
-                    <img class="" src="{{ asset('static/template_svg/media.svg') }}" alt="">
-                    <div class="model-card-title">Media</div>
-                    <div class="model-card-dec">Embed YouTube, Spotify, and more...</div>
-                </div>
-                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_text">
-                    <img class="" src="{{ asset('static/template_svg/text.svg') }}" alt="">
-                    <div class="model-card-title">Text</div>
-                    <div class="model-card-dec">Tell your page's story with a text section</div>
-                </div>
-                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_instagram_scraper">
-                    <img class="" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
-                    <div class="model-card-title">Instagram Scraper</div>
-                    <div class="model-card-dec">Automatically import links from Instagram captions</div>
-                </div>
-                <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_mailing">
-                    <img class="" src="{{ asset('static/template_svg/email.svg') }}" alt="">
-                    <div class="model-card-title">Mailing List</div>
-                    <div class="model-card-dec">Collect email addresses and send to Mailchimp</div>
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">New Block</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="model-row">
+                    <div class="model-card" data-bs-toggle="modal" data-bs-target="#newLink">
+                        <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">
+                        <div class="model-card-title">Link</div>
+                        <div class="model-card-dec">Create a link to anywhere on the web</div>
+                    </div>
+                    <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_divider">
+                        <img class="" src="{{ asset('static/template_svg/divider.svg') }}" alt="">
+                        <div class="model-card-title">Divider</div>
+                        <div class="model-card-dec">Organize your content with dividers</div>
+                    </div>
+                    <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_media">
+                        <img class="" src="{{ asset('static/template_svg/media.svg') }}" alt="">
+                        <div class="model-card-title">Media</div>
+                        <div class="model-card-dec">Embed YouTube, Spotify, and more...</div>
+                    </div>
+                    <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_text">
+                        <img class="" src="{{ asset('static/template_svg/text.svg') }}" alt="">
+                        <div class="model-card-title">Text</div>
+                        <div class="model-card-dec">Tell your page's story with a text section</div>
+                    </div>
+                    <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_instagram_scraper">
+                        <img class="" src="{{ asset('static/template_svg/instagram.svg') }}" alt="">
+                        <div class="model-card-title">Instagram Scraper</div>
+                        <div class="model-card-dec">Automatically import links from Instagram captions</div>
+                    </div>
+                    <div class="model-card" data-bs-toggle="modal" data-bs-target="#new_mailing">
+                        <img class="" src="{{ asset('static/template_svg/email.svg') }}" alt="">
+                        <div class="model-card-title">Mailing List</div>
+                        <div class="model-card-dec">Collect email addresses and send to Mailchimp</div>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- New Block model  --}}
@@ -1054,261 +1046,248 @@ Page Template
 {{-- New Link model  --}}
 
 <div class="modal modal-blur fade" id="newLink" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered newLinkModel" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered newLinkModel" role="document">
         <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <h5 class="modal-title">New Link</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="new-link-model row">
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label class="form-label">URL or Email</label>
-                        <div class="input-group mb-2">
-                            <input type="text" class="form-control" placeholder="http://example.com" autocomplete="off">
-                            <span class="input-group-text tooltip-layout">
-                                <img class="" src="{{ asset('static/template_svg/download.svg') }}" alt="">
-                            <span class="tooltiptext tooltip-top">Click to extract title, description and thumbnail from URL</span>
-                            </span>
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">New Link</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="new-link-model row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">URL or Email</label>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" placeholder="http://example.com" autocomplete="off">
+                                <span class="input-group-text tooltip-layout">
+                                    <img class="" src="{{ asset('static/template_svg/download.svg') }}" alt="">
+                                    <span class="tooltiptext tooltip-top">Click to extract title, description and thumbnail from URL</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <textarea class="form-control" name="example-textarea-input" rows="2" placeholder="Title"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Description"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Grid Size</label>
+                            <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <span class="tooltip-layout">
+                                    <img class="question_mark" src="{{ asset('static/template_svg/question_icon.svg') }}" alt="">
+                                    <span class="tooltiptext tooltip-top">Use a label to display a snippet of information like a price or category. After adding a label, you can configure it's colors in the Design tab.</span>
+                                </span>Label
+                            </label>
+                            <input type="text" class="form-control" placeholder="Label">
+                        </div>
+                        <div class="mb-3 input_file_bg">
+                            <label for="uploadFile" class="input-file">
+                                <input type="file" id="uploadFile">
+                                <div class="fileRow">
+                                    <div class="fileLabel">Image</div>
+                                    <div class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
+                                        {{-- <img class="" src="{{ asset('static/template_svg/image_icon.svg') }}" alt=""> --}}
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="file_action">
+                                <label class="action-file" for="uploadFile">Replace</label>
+                                <label class="action-file" for="">Remove</label>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Title</label>
-                        <textarea class="form-control" name="example-textarea-input" rows="2" placeholder="Title"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Description"></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Grid Size</label>
-                        <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">
-                            <span class="tooltip-layout">
-                                <img class="question_mark" src="{{ asset('static/template_svg/question_icon.svg') }}" alt="">
-                                <span class="tooltiptext tooltip-top">Use a label to display a snippet of information like a price or category. After adding a label, you can configure it's colors in the Design tab.</span>
-                            </span>Label
-                        </label>
-                        <input type="text" class="form-control" placeholder="Label">
-                    </div>
-                    <div class="mb-3 input_file_bg">
-                        <label for="uploadFile" class="input-file">
-                            <input type="file" id="uploadFile">
-                            <div class="fileRow">
-                                <div class="fileLabel">Image</div>
-                                <div class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
-                                    {{-- <img class="" src="{{ asset('static/template_svg/image_icon.svg') }}" alt=""> --}}
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Link Layout</label>
+                            <div id="selectCardLayout" class="select-card-layout">
+                                <div class="card-view-layout normal selected">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout thumbnail-basic">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout button-image-background">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button-image-background.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout thumbnail-highlight">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout thumbnail-grid ">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout thumbnail-carousel">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-carousel.svg') }}" alt="">
                                 </div>
                             </div>
-                        </label>
-                        <div class="file_action">
-                            <label class="action-file" for="uploadFile">Replace</label>
-                            <label class="action-file" for="">Remove</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Draw Attention</label>
+                            <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
+                                <option value="NONE">None</option>
+                                <option value="animate__shakeX">Shake</option>
+                                <option value="animate__tada">Tada</option>
+                                <option value="animate__pulse">Pulse</option>
+                                <option value="animate__bounceInDown">Jump</option>
+                                <option value="animate__swing">Swing</option>
+                                <option value="animate__jello">Jello</option>
+                                <option value="animate__rubberBand">Rubber Band</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Link Preview</label>
+                            <div id="linkPreview" class="link_preview normal">
+
+                                {{-- normal --}}
+                                <a href="#" class="live-preview normal-view animate__animated animate__shakeX">
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+                                {{-- normal --}}
+
+
+                                {{-- thumbnail-basic --}}
+
+                                <a href="#" class="live-preview thumbnail-view animate__animated animate__tada">
+                                    <div class="thumbnail-img">
+                                        <img class="" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+
+                                {{-- thumbnail-basic --}}
+
+
+                                {{-- button-image-background --}}
+
+                                <a href="#" class="live-preview image-background-view animate__animated animate__pulse">
+                                    <div class="details" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+
+                                {{-- button-image-background --}}
+
+
+                                {{-- thumbnail-highlight --}}
+
+                                <a href="#" class="live-preview thumbnail-highlight-view animate__animated animate__bounceInDown">
+                                    <div class="thumbnail-highlight-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+
+                                {{-- thumbnail-highlight --}}
+
+
+                                {{-- thumbnail-grid --}}
+                                <div class="live-preview grid-2 thumbnail-grid-view">
+                                    <a href="#" class="animate__animated animate__swing">
+                                        <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                    </a>
+                                    <a href="#" class="animate__animated animate__swing">
+                                        <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                    </a>
+                                </div>
+
+                                {{-- thumbnail-grid --}}
+
+
+                                {{-- thumbnail-carousel --}}
+                                <div class="live-preview thumbnail-carousel-view animate__animated animate__jello">
+                                    <a href="#" class="">
+                                        <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                        </div>
+                                        <div class="details">
+                                            <div class="title">
+                                                Ritesh pandey
+                                            </div>
+                                            <div class="dec">
+                                                Ritesh pandey
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="">
+                                        <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                        </div>
+                                        <div class="details">
+                                            <div class="title">
+                                                Ritesh pandey
+                                            </div>
+                                            <div class="dec">
+                                                Ritesh pandey
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="">
+                                        <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                        </div>
+                                        <div class="details">
+                                            <div class="title">
+                                                Ritesh pandey
+                                            </div>
+                                            <div class="dec">
+                                                Ritesh pandey
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                {{-- thumbnail-carousel --}}
+
+                            </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label class="form-label">Link Layout</label>
-                        <div id="selectCardLayout" class="select-card-layout">
-                            <div class="card-view-layout normal selected">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout thumbnail-basic">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout button-image-background">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button-image-background.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout thumbnail-highlight">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout thumbnail-grid ">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout thumbnail-carousel">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-carousel.svg') }}" alt="">
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Draw Attention</label>
-                        <select type="text" class="form-select" placeholder="Select Attention" id="select-tags" value="">
-                           <option value="NONE">None</option>
-                           <option value="animate__shakeX">Shake</option>
-                           <option value="animate__tada">Tada</option>
-                           <option value="animate__pulse">Pulse</option>
-                           <option value="animate__bounceInDown">Jump</option>
-                           <option value="animate__swing">Swing</option>
-                           <option value="animate__jello">Jello</option>
-                           <option value="animate__rubberBand">Rubber Band</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Link Preview</label>
-                        <div id="linkPreview" class="link_preview normal">
-
-                            {{-- normal --}}
-                            <a href="#" class="live-preview normal-view animate__animated animate__shakeX">
-                                <div class="details">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-                            {{-- normal --}}
-
-
-                            {{-- thumbnail-basic --}}
-
-                            <a href="#" class="live-preview thumbnail-view animate__animated animate__tada">
-                                <div class="thumbnail-img">
-                                    <img class="" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-
-                            {{-- thumbnail-basic --}}
-
-
-                            {{-- button-image-background --}}
-
-                            <a href="#" class="live-preview image-background-view animate__animated animate__pulse">
-                                <div class="details" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-
-                            {{-- button-image-background --}}
-
-
-                            {{-- thumbnail-highlight --}}
-
-                            <a href="#" class="live-preview thumbnail-highlight-view animate__animated animate__bounceInDown">
-                                 <div class="thumbnail-highlight-img">
-                                    <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-
-                            {{-- thumbnail-highlight --}}
-
-
-                            {{-- thumbnail-grid --}}
-                            <div class="live-preview grid-2 thumbnail-grid-view">
-                                <a href="#" class="animate__animated animate__swing">
-                                    <div class="thumbnail-grid-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                </a>
-                                <a href="#" class="animate__animated animate__swing">
-                                    <div class="thumbnail-grid-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                </a>
-                                <a href="#" class="animate__animated animate__swing">
-                                    <div class="thumbnail-grid-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                </a>
-                            </div>
-
-                            {{-- thumbnail-grid --}}
-
-
-                            {{-- thumbnail-carousel --}}
-                            <div class="live-preview thumbnail-carousel-view animate__animated animate__jello">
-                                <a href="#" class="">
-                                    <div class="thumbnail-carousel-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            Ritesh pandey
-                                        </div>
-                                        <div class="dec">
-                                            Ritesh pandey
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="">
-                                    <div class="thumbnail-carousel-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            Ritesh pandey
-                                        </div>
-                                        <div class="dec">
-                                            Ritesh pandey
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="">
-                                    <div class="thumbnail-carousel-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            Ritesh pandey
-                                        </div>
-                                        <div class="dec">
-                                            Ritesh pandey
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            {{-- thumbnail-carousel --}}
-
-                        </div>
-                    </div>
-
+                <div class="submit-button mt-4">
+                    <button class="btn btn-primary w-100">Create</button>
                 </div>
+
+
             </div>
-
-            <div class="submit-button mt-4">
-                <button class="btn btn-primary w-100">Create</button>
-            </div>
-
-
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- New Link model  --}}
@@ -1318,72 +1297,72 @@ Page Template
 {{-- New Divider model  --}}
 
 <div class="modal modal-blur fade" id="new_divider" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered newDividerModel" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered newDividerModel" role="document">
         <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <h5 class="modal-title">New Divider</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="new-divider-model row">
-                <div class="col-md-6">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">New Divider</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="new-divider-model row">
+                    <div class="col-md-6">
 
 
-                    <div class="mb-3">
-                        <label class="form-label">
-                            Divider Title
-                        </label>
-                        <input type="text" class="form-control" placeholder="Divider Title">
-                    </div>
-                </div>
-                <div class="col-md-6">
-
-
-                    <div class="mb-3">
-                        <label class="form-label">Divider Preview</label>
-                        <div class="link_preview normal">
-
-                            {{-- normal --}}
-                            <a href="#" class="live-preview normal-view">
-                                <div class="details">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-
-                            <div class="divider-text"> Divider Text</div>
-
-                            <a href="#" class="live-preview normal-view">
-                                <div class="details">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-                            {{-- normal --}}
-
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Divider Title
+                            </label>
+                            <input type="text" class="form-control" placeholder="Divider Title">
                         </div>
                     </div>
+                    <div class="col-md-6">
 
+
+                        <div class="mb-3">
+                            <label class="form-label">Divider Preview</label>
+                            <div class="link_preview normal">
+
+                                {{-- normal --}}
+                                <a href="#" class="live-preview normal-view">
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="divider-text"> Divider Text</div>
+
+                                <a href="#" class="live-preview normal-view">
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
+                                    </div>
+                                </a>
+                                {{-- normal --}}
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <div class="submit-button mt-4">
+                    <button class="btn btn-primary w-100">Create</button>
+                </div>
+
+
             </div>
-
-            <div class="submit-button mt-4">
-                <button class="btn btn-primary w-100">Create</button>
-            </div>
-
-
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- New Divider model  --}}
@@ -1393,70 +1372,70 @@ Page Template
 {{-- New Media model  --}}
 
 <div class="modal modal-blur fade" id="new_media" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered newMediaModel" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered newMediaModel" role="document">
         <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <h5 class="modal-title">New Media</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="new-media-model row">
-                <div class="col-md-6">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">New Media</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="new-media-model row">
+                    <div class="col-md-6">
 
 
-                    <div class="mb-3">
-                        <label class="form-label">
-                           Embed from YouTube, Vimeo, Apple Music, Soundcloud, Spotify, Twitch, and lots more!
-                        </label>
-                        <input type="text" class="form-control" placeholder="Paste your http:// URL">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Embed from YouTube, Vimeo, Apple Music, Soundcloud, Spotify, Twitch, and lots more!
+                            </label>
+                            <input type="text" class="form-control" placeholder="Paste your http:// URL">
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
+                    <div class="col-md-6">
 
 
-                    <div class="mb-3">
-                        <label class="form-label">Embed Preview</label>
-                        <div class="link_preview normal">
+                        <div class="mb-3">
+                            <label class="form-label">Embed Preview</label>
+                            <div class="link_preview normal">
 
-                            {{-- default layout --}}
+                                {{-- default layout --}}
 
-                            <div class="default_embed_layout">
-                                <div class="embedUrl">
-                                    <div class="video_svg">
-                                        <img class="" src="{{ asset('static/template_svg/embeded_url.svg') }}" alt="">
+                                <div class="default_embed_layout">
+                                    <div class="embedUrl">
+                                        <div class="video_svg">
+                                            <img class="" src="{{ asset('static/template_svg/embeded_url.svg') }}" alt="">
+                                        </div>
+                                        <div class="embed_placeholder">Add a URL to embed media</div>
                                     </div>
-                                    <div class="embed_placeholder">Add a URL to embed media</div>
                                 </div>
-                            </div>
 
-                             {{-- default layout --}}
-
+                                {{-- default layout --}}
 
 
-                              {{-- dynamic layout --}}
+
+                                {{-- dynamic layout --}}
 
 
-                            {{-- <div class="embded_url mb-2">
+                                {{-- <div class="embded_url mb-2">
                                 <iframe style="border-radius: 10px;" width="100%" height="250" src="https://www.youtube.com/embed/2JyW4yAyTl0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
                             </div> --}}
 
-                             {{-- dynamic layout --}}
+                                {{-- dynamic layout --}}
 
+                            </div>
                         </div>
+
                     </div>
-
                 </div>
+
+                <div class="submit-button mt-4">
+                    <button class="btn btn-primary w-100">Create</button>
+                </div>
+
+
             </div>
-
-            <div class="submit-button mt-4">
-                <button class="btn btn-primary w-100">Create</button>
-            </div>
-
-
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- New Media model  --}}
@@ -1467,50 +1446,50 @@ Page Template
 {{-- New Text model  --}}
 
 <div class="modal modal-blur fade" id="new_text" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered newTextModel" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered newTextModel" role="document">
         <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <h5 class="modal-title">New Text</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="new-text-model row">
-                <div class="col-md-6">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">New Text</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="new-text-model row">
+                    <div class="col-md-6">
 
 
-                    <div class="mb-3">
-                        <div id="summernote"></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-
-
-                    <div class="mb-3">
-                        <label class="form-label">Text Preview</label>
-                        <div class="link_preview">
-
-                            <div class="textPreview">
-                                <div class="preview-text">
-                                    <h2>This is example text</h2>
-                                    <p>Start writing in the text box to add your own 🙌</p>
-                                </div>
-                            </div>
-
+                        <div class="mb-3">
+                            <div id="summernote"></div>
                         </div>
                     </div>
+                    <div class="col-md-6">
 
+
+                        <div class="mb-3">
+                            <label class="form-label">Text Preview</label>
+                            <div class="link_preview">
+
+                                <div class="textPreview">
+                                    <div class="preview-text">
+                                        <h2>This is example text</h2>
+                                        <p>Start writing in the text box to add your own 🙌</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <div class="submit-button mt-4">
+                    <button class="btn btn-primary w-100">Create</button>
+                </div>
+
+
             </div>
-
-            <div class="submit-button mt-4">
-                <button class="btn btn-primary w-100">Create</button>
-            </div>
-
-
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- New Text model  --}}
@@ -1520,163 +1499,155 @@ Page Template
 {{-- New Instagram Scraper model  --}}
 
 <div class="modal modal-blur fade" id="new_instagram_scraper" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered newInstagramScraperModel" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered newInstagramScraperModel" role="document">
         <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <h5 class="modal-title">New Instagram Scraper</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <div class="instagram-subtitle text-center">
-                  The Instagram Scraper block will automatically add links from your Instagram post captions to your Liinks page. Links in captions of new Instagram posts will automatically be added beneath this block using the selected layout.
-              </div>
-            <div class="new-instagram-Scraper-model row mt-3">
-                <div class="col-md-6">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">New Instagram Scraper</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="instagram-subtitle text-center">
+                    The Instagram Scraper block will automatically add links from your Instagram post captions to your Liinks page. Links in captions of new Instagram posts will automatically be added beneath this block using the selected layout.
+                </div>
+                <div class="new-instagram-Scraper-model row mt-3">
+                    <div class="col-md-6">
 
 
-                    <div class="mb-3">
-                        <label class="form-label">Scraped Link Layout</label>
-                         <div id="scrapedCardLayout" class="select-card-layout">
-                            <div class="card-view-layout thumbnail-basic selected">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout thumbnail-highlight">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout thumbnail-grid">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
-                            </div>
-                            <div class="card-view-layout thumbnail-carousel">
-                                <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-3.svg') }}" alt="">
+                        <div class="mb-3">
+                            <label class="form-label">Scraped Link Layout</label>
+                            <div id="scrapedCardLayout" class="select-card-layout">
+                                <div class="card-view-layout thumbnail-basic selected">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout thumbnail-highlight">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout thumbnail-grid">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
+                                </div>
+                                <div class="card-view-layout thumbnail-carousel">
+                                    <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-3.svg') }}" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
+                    <div class="col-md-6">
 
 
-                    <div class="mb-3">
-                        <label class="form-label">Scraped Link Preview</label>
+                        <div class="mb-3">
+                            <label class="form-label">Scraped Link Preview</label>
 
-                        <div id="scrapedLinkPreview" class="link_preview thumbnail-basic">
+                            <div id="scrapedLinkPreview" class="link_preview thumbnail-basic">
 
 
-                            {{-- thumbnail-basic --}}
+                                {{-- thumbnail-basic --}}
 
-                            <a href="#" class="live-preview thumbnail-view">
-                                <div class="thumbnail-img">
-                                    <img class="" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="title">
-                                        Ritesh pandey
+                                <a href="#" class="live-preview thumbnail-view">
+                                    <div class="thumbnail-img">
+                                        <img class="" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
                                     </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-
-                            {{-- thumbnail-basic --}}
-
-
-                            {{-- thumbnail-highlight --}}
-
-                            <a href="#" class="live-preview thumbnail-highlight-view">
-                                 <div class="thumbnail-highlight-img">
-                                    <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                </div>
-                                <div class="details">
-                                    <div class="title">
-                                        Ritesh pandey
-                                    </div>
-                                    <div class="dec">
-                                        Ritesh pandey
-                                    </div>
-                                </div>
-                            </a>
-
-                            {{-- thumbnail-highlight --}}
-
-
-                            {{-- thumbnail-grid --}}
-                            <div class="live-preview grid-2 thumbnail-grid-view">
-                                <a href="#" class="">
-                                    <div class="thumbnail-grid-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
                                     </div>
                                 </a>
-                                <a href="#" class="">
-                                    <div class="thumbnail-grid-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+
+                                {{-- thumbnail-basic --}}
+
+
+                                {{-- thumbnail-highlight --}}
+
+                                <a href="#" class="live-preview thumbnail-highlight-view">
+                                    <div class="thumbnail-highlight-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            Ritesh pandey
+                                        </div>
+                                        <div class="dec">
+                                            Ritesh pandey
+                                        </div>
                                     </div>
                                 </a>
+
+                                {{-- thumbnail-highlight --}}
+
+
+                                {{-- thumbnail-grid --}}
+                                <div class="live-preview grid-2 thumbnail-grid-view">
+                                    <a href="#" class="">
+                                        <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                    </a>
+                                    <a href="#" class="">
+                                        <div class="thumbnail-grid-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')"></div>
+                                    </a>
+                                </div>
+
+                                {{-- thumbnail-grid --}}
+
+
+                                {{-- thumbnail-carousel --}}
+                                <div class="live-preview thumbnail-carousel-view">
+                                    <a href="#" class="">
+                                        <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                        </div>
+                                        <div class="details">
+                                            <div class="title">
+                                                Ritesh pandey
+                                            </div>
+                                            <div class="dec">
+                                                Ritesh pandey
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="">
+                                        <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                        </div>
+                                        <div class="details">
+                                            <div class="title">
+                                                Ritesh pandey
+                                            </div>
+                                            <div class="dec">
+                                                Ritesh pandey
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="">
+                                        <div class="thumbnail-carousel-img" style="background-image: url('{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                                        </div>
+                                        <div class="details">
+                                            <div class="title">
+                                                Ritesh pandey
+                                            </div>
+                                            <div class="dec">
+                                                Ritesh pandey
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                {{-- thumbnail-carousel --}}
+
                             </div>
-
-                            {{-- thumbnail-grid --}}
-
-
-                            {{-- thumbnail-carousel --}}
-                            <div class="live-preview thumbnail-carousel-view">
-                                <a href="#" class="">
-                                    <div class="thumbnail-carousel-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            Ritesh pandey
-                                        </div>
-                                        <div class="dec">
-                                            Ritesh pandey
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="">
-                                    <div class="thumbnail-carousel-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            Ritesh pandey
-                                        </div>
-                                        <div class="dec">
-                                            Ritesh pandey
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="">
-                                    <div class="thumbnail-carousel-img">
-                                        <img src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            Ritesh pandey
-                                        </div>
-                                        <div class="dec">
-                                            Ritesh pandey
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            {{-- thumbnail-carousel --}}
 
                         </div>
 
                     </div>
-
                 </div>
+
+                <div class="submit-button mt-4">
+                    <button class="btn btn-primary w-100">Create</button>
+                </div>
+
+
             </div>
-
-            <div class="submit-button mt-4">
-                <button class="btn btn-primary w-100">Create</button>
-            </div>
-
-
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- New Instagram Scraper model  --}}
@@ -1686,67 +1657,67 @@ Page Template
 {{-- New Mailing List model  --}}
 
 <div class="modal modal-blur fade" id="new_mailing" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered newMailingModel" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered newMailingModel" role="document">
         <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <h5 class="modal-title">New Mailing List</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <div class="new-mailing-subtitle text-center">
-                  The Mailing List block allows you to collect email addresses and automatically send them to Mailchimp.
-              </div>
-            <div class="new-mailing-model row mt-3">
-                <div class="col-md-6">
-
-
-                    <div class="mb-3">
-                        <label class="form-label">
-                            Call to action
-                        </label>
-                        <input type="text" class="form-control" placeholder="Subscribe" value="Subscribe:">
-                    </div>
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">New Mailing List</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="new-mailing-subtitle text-center">
+                    The Mailing List block allows you to collect email addresses and automatically send them to Mailchimp.
                 </div>
-                <div class="col-md-6">
+                <div class="new-mailing-model row mt-3">
+                    <div class="col-md-6">
 
 
-                    <div class="mb-3">
-                        <label class="form-label">Preview</label>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Call to action
+                            </label>
+                            <input type="text" class="form-control" placeholder="Subscribe" value="Subscribe:">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
 
-                        <div class="link_preview normal">
+
+                        <div class="mb-3">
+                            <label class="form-label">Preview</label>
+
+                            <div class="link_preview normal">
 
 
-                            <a href="#" class="live-preview normal-view">
-                                <div class="details">
-                                    <div class="title">
-                                        Subscribe
-                                    </div>
-                                    <div class="subscribe">
-                                       <div class="input-group mb-2">
-                                            <input type="text" class="form-control" placeholder="email@example.com" autocomplete="off">
-                                            <span class="input-group-text btn-dark">
-                                                <img class="" src="{{ asset('static/template_svg/right_arrow.svg') }}" alt="">
-                                            </span>
+                                <a href="#" class="live-preview normal-view">
+                                    <div class="details">
+                                        <div class="title">
+                                            Subscribe
+                                        </div>
+                                        <div class="subscribe">
+                                            <div class="input-group mb-2">
+                                                <input type="text" class="form-control" placeholder="email@example.com" autocomplete="off">
+                                                <span class="input-group-text btn-dark">
+                                                    <img class="" src="{{ asset('static/template_svg/right_arrow.svg') }}" alt="">
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
+
+                <div class="submit-button mt-4">
+                    <button class="btn btn-primary w-100">Create</button>
+                </div>
+
+
             </div>
-
-            <div class="submit-button mt-4">
-                <button class="btn btn-primary w-100">Create</button>
-            </div>
-
-
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- New Mailing List model  --}}
@@ -1758,31 +1729,35 @@ Page Template
 
 {{-- delete block model --}}
 
-    <div class="modal modal-blur fade" id="modal-danger" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+<div class="modal modal-blur fade" id="modal-danger" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
         <div class="modal-content">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="modal-status bg-danger"></div>
-          <div class="modal-body text-center py-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v2m0 4v.01" /><path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" /></svg>
-            <h3>Are you sure?</h3>
-            <div class="text-muted">Do you really want to remove this block? What you've done cannot be undone.</div>
-          </div>
-          <div class="modal-footer">
-            <div class="w-100">
-              <div class="row">
-                <div class="col"><a href="#" class="btn btn-white w-100" data-bs-dismiss="modal">
-                    Cancel
-                  </a></div>
-                <div class="col"><a href="#" class="btn btn-danger w-100" data-bs-dismiss="modal">
-                    Delete
-                  </a></div>
-              </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-status bg-danger"></div>
+            <div class="modal-body text-center py-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 9v2m0 4v.01" />
+                    <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                </svg>
+                <h3>Are you sure?</h3>
+                <div class="text-muted">Do you really want to remove this block? What you've done cannot be undone.</div>
             </div>
-          </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col"><a href="#" class="btn btn-white w-100" data-bs-dismiss="modal">
+                                Cancel
+                            </a></div>
+                        <div class="col"><a href="#" class="btn btn-danger w-100" data-bs-dismiss="modal">
+                                Delete
+                            </a></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {{-- delete block model --}}

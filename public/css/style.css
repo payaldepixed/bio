@@ -1067,12 +1067,6 @@ img.question_mark {
   display: block;
 }
 
-.link_preview.thumbnail-highlight .live-preview .thumbnail-highlight-img {
-  padding-bottom: 66.6667%;
-  background-size: cover;
-  background-position: 50%;
-}
-
 .link_preview.thumbnail-highlight .live-preview .details {
   color: #333333;
   background: #f1dfd5;
@@ -1098,11 +1092,11 @@ img.question_mark {
 }
 
 .link_preview.thumbnail-grid .live-preview.grid-2 a {
-  width: calc(50% - 11px);
+  width: calc(50% - 20px);
 }
 
 .link_preview.thumbnail-grid .live-preview.grid-3 a {
-  width: calc(33.3333% - 14.6667px);
+  width: calc(33.3333% - 20px);
 }
 
 .link_preview.thumbnail-grid .live-preview.thumbnail-grid-view {
@@ -1123,10 +1117,7 @@ img.question_mark {
   border-radius: 15px;
 }
 
-.link_preview.thumbnail-grid .live-preview .thumbnail-grid-img {
-  padding-bottom: 100%;
-  background-size: cover;
-  background-position: 50%;
+.link_preview.thumbnail-grid .live-preview .thumbnail-grid-img img {
   border-radius: 15px;
 }
 
@@ -1155,12 +1146,6 @@ img.question_mark {
   text-decoration: none;
   display: block;
   width: 272px;
-}
-
-.link_preview.thumbnail-carousel .live-preview .thumbnail-carousel-img {
-  padding-bottom: 66.6667%;
-  background-size: cover;
-  background-position: 50%;
 }
 
 .link_preview.thumbnail-carousel .live-preview .details {

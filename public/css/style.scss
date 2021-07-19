@@ -939,11 +939,11 @@ img.question_mark {
             &.thumbnail-highlight-view {
                 display: block;
             }
-            .thumbnail-highlight-img {
-                padding-bottom: 66.6667%;
-                background-size: cover;
-                background-position: 50%;
-            }
+            // .thumbnail-highlight-img {
+            //     padding-bottom: 66.6667%;
+            //     background-size: cover;
+            //     background-position: 50%;
+            // }
 
             .details {
                 color: rgb(51, 51, 51);
@@ -974,15 +974,16 @@ img.question_mark {
 
     &.thumbnail-grid {
         .live-preview {
+            // flex-wrap: wrap;
              &.grid-2 {
                  a {
-                     width: calc(50% - 11px);
+                     width: calc(50% - 20px);
                  }
              }
 
              &.grid-3 {
                  a {
-                     width: calc(33.3333% - 14.6667px);
+                     width: calc(33.3333% - 20px);
                  }
              }
             &.thumbnail-grid-view {
@@ -1001,10 +1002,13 @@ img.question_mark {
                 border-radius: 15px;
             }
             .thumbnail-grid-img {
-                padding-bottom: 100%;
-                background-size: cover;
-                background-position: 50%;
-                border-radius: 15px;
+                // padding-bottom: 100%;
+                // background-size: cover;
+                // background-position: 50%;
+                // border-radius: 15px;
+                img {
+                    border-radius: 15px;
+                }
             }
         }
 
@@ -1033,9 +1037,9 @@ img.question_mark {
                 }
 
                 .thumbnail-carousel-img {
-                    padding-bottom: 66.6667%;
-                    background-size: cover;
-                    background-position: 50%;
+                    // padding-bottom: 66.6667%;
+                    // background-size: cover;
+                    // background-position: 50%;
                 }
 
                 .details {
