@@ -594,7 +594,7 @@ img.question_mark {
 
 .template-layout .template .item_two {
   position: relative;
-  padding: 44px 22px 0;
+  padding: 44px 0px 0 22px;
   background: #f7f7f7;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
