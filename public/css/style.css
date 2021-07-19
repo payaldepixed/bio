@@ -964,6 +964,7 @@ img.question_mark {
   margin-bottom: 22px;
   margin-right: 0px;
   text-decoration: none;
+  border-radius: 6px;
 }
 
 .link_preview.thumbnail-basic .live-preview.thumbnail-view {
@@ -976,11 +977,18 @@ img.question_mark {
   width: 32%;
 }
 
+.link_preview.thumbnail-basic .live-preview .thumbnail-img img {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
 .link_preview.thumbnail-basic .live-preview .details {
   color: #333333;
   background: #f1dfd5;
   padding: 16.5px 13.75px;
   width: 68%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .link_preview.thumbnail-basic .live-preview .details .title {
@@ -1032,6 +1040,7 @@ img.question_mark {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-radius: 6px;
 }
 
 .link_preview.button-image-background .live-preview .details .title {
@@ -1067,10 +1076,17 @@ img.question_mark {
   display: block;
 }
 
+.link_preview.thumbnail-highlight .live-preview .thumbnail-highlight-img img {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
 .link_preview.thumbnail-highlight .live-preview .details {
   color: #333333;
   background: #f1dfd5;
   padding: 16.5px 13.75px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .link_preview.thumbnail-highlight .live-preview .details .title {
@@ -1089,6 +1105,11 @@ img.question_mark {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+.link_preview.thumbnail-grid .live-preview {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .link_preview.thumbnail-grid .live-preview.grid-2 a {
@@ -1118,7 +1139,11 @@ img.question_mark {
 }
 
 .link_preview.thumbnail-grid .live-preview .thumbnail-grid-img img {
-  border-radius: 15px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
 
 .link_preview.thumbnail-carousel {
@@ -1148,10 +1173,17 @@ img.question_mark {
   width: 272px;
 }
 
+.link_preview.thumbnail-carousel .live-preview .thumbnail-carousel-img img {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
 .link_preview.thumbnail-carousel .live-preview .details {
   color: #333333;
   background: #f1dfd5;
   padding: 16.5px 13.75px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .link_preview.thumbnail-carousel .live-preview .details .title {
