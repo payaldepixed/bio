@@ -482,27 +482,27 @@ Page Template
 
                                         <div class="mb-3 input_file_bg">
                                             <label for="inputFile" class="input-file">
-                                                <input type="file" id="inputFile">
+                                                <input type="file" id="inputFile" >
                                                 <div class="fileRow">
                                                     <div class="fileLabel">Profile Picture</div>
-                                                    <div class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}">
+                                                    <div id="designImg" class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
                                                     </div>
                                                 </div>
                                             </label>
-                                            <div class="file_action">
+                                            <div id="designSIdeAciton" class="file_action d-none">
                                                 <label class="action-file" for="inputFile">Replace</label>
-                                                <label class="action-file" for="">Remove</label>
+                                                <label id="designImgRemove" class="action-file" for="">Remove</label>
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label">Profile Bio</label>
-                                            <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Profile Bio"></textarea>
+                                            <textarea id="profileBio" class="form-control" name="example-textarea-input" rows="4" placeholder="Profile Bio"></textarea>
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label">Profile Name</label>
-                                            <input type="text" class="form-control" placeholder="Profile Name">
+                                            <input id="profileName" type="text" class="form-control" placeholder="Profile Name">
                                         </div>
 
                                         <div class="mb-3">
@@ -526,7 +526,7 @@ Page Template
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Profile Picture Shadow</div>
-                                                <input type="range" class="form-range" value="40" min="0" max="100" step="10">
+                                                <input id="profileShadow" type="range" class="form-range" value="0" min="0" max="10" step="1">
                                             </div>
                                         </div>
 
@@ -708,7 +708,7 @@ Page Template
                                                 </h2>
                                                 <div id="collapse-fonts" class="accordion-collapse collapse" data-bs-parent="#accordion-fonts">
                                                     <div class="accordion-body p-2">
-                                                        <div class="font-list">
+                                                        <div id="fonts" class="font-list">
                                                             <div class="font-item opan-sans">Open Sans</div>
                                                             <div class="font-item roboto">Roboto</div>
                                                             <div class="font-item lato">Lato</div>
@@ -818,9 +818,9 @@ Page Template
                                     <img src="{{ asset('static/default_user.png') }}" alt="">
                                 </div>
                                 <div class="preview-title">
-                                    @Ritesh
+                                    @<span id="PreviewName">Ritesh</span>
                                 </div>
-                                <div class="preview-description">
+                                <div id="previewBio" class="preview-description">
                                     Saving humanity from cold & lifeless robots 😉
                                 </div>
                                 <div class="selected-social-icon">

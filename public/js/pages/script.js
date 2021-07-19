@@ -27,6 +27,18 @@ $(document).ready(function () {
         );
     });
 
+    // layout change profile deatils start
+
+    $(document).on("input", "#profileName", function () {
+        $("#PreviewName").html($(this).val());
+    });
+
+    $(document).on("input", "#profileBio", function () {
+        $("#previewBio").html($(this).val());
+    });
+
+    // layout change profile deatils end
+
     // layout change mobile & website start
 
     $("#mobile_layout").on("click", function () {
@@ -159,6 +171,26 @@ $(document).ready(function () {
         }
     });
     // other end
+    // upload profile image start
+    $(document).on("input", "#inputFile", function (event) {
+        var imageUrl = URL.createObjectURL(event.target.files[0]);
+        $("#previewImg img").attr("src", imageUrl);
+        $("#designImg").css("background-image", "url(" + imageUrl + ")");
+        $("#designSIdeAciton").removeClass("d-none");
+    });
+
+    // upload profile image end
+
+    // remove profile image start
+
+    $(document).on("click", "#designImgRemove", function () {
+        var imageRemoveUrl = "/static/template_svg/image_icon.svg";
+        $("#previewImg img").attr("src", "/static/default_user.png");
+        $("#designImg").css("background-image", "url(" + imageRemoveUrl + ")");
+        $("#designSIdeAciton").addClass("d-none");
+    });
+
+    // remove profile image start
 
     $(document).on("input", "#profile_img_border", function () {
         $("#previewImg").css("border-width", $(this).val() + "px");
@@ -166,6 +198,17 @@ $(document).ready(function () {
     });
     $(document).on("input", "#profile-picture-border-color input", function () {
         $("#previewImg").css("border-color", $(this).val());
+    });
+
+    $(document).on("input", "#profileShadow", function () {
+        // console.log("shadow", $(this).val());
+        if ($(this).val() > 0) {
+            var profileShadow =
+                "#0000004d 0px 10px 30px " + $(this).val() + "px";
+            $("#previewImg").css("box-shadow", profileShadow);
+        } else {
+            $("#previewImg").css("box-shadow", "");
+        }
     });
 
     $(document).on("input", "#primary-background input", function () {
@@ -224,19 +267,9 @@ $(document).ready(function () {
     });
 
     $(document).on("input", "#card_shadow", function () {
-        // $(".preview-card-body").css(
-        //     "box-shadow",
-        //     "#0000004d 0px 10px 30px" + $(this).val() + "px"
-        // );
-        var one = $(this).val() + "px";
-        $(".preview-card-body").css(
-            "box-shadow",
-            "10px",
-            "10px",
-            "5px",
-            one,
-            "#0000004d"
-        );
+        // console.log("shadow", $(this).val());
+        var one = "#0000004d 0px 10px 30px " + $(this).val() + "px";
+        $(".preview-card-body").css("box-shadow", one);
     });
 
     $(document).on("input", "#card_spacing", function () {
@@ -244,4 +277,26 @@ $(document).ready(function () {
     });
 
     // card js end
+
+    // change fonts start
+    $("#fonts .font-item").on("click", function () {
+        if ($(this).hasClass("opan-sans")) {
+            var font = '"Open Sans", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("roboto")) {
+            var font = '"Roboto", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("lato")) {
+            var font = '"Lato", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("dosis")) {
+            var font = '"Dosis", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("fuggles")) {
+            var font = '"Fuggles", sans-serif';
+            $("#preview_size").css("font-family", font);
+        }
+    });
+
+    // change fonts end
 });
