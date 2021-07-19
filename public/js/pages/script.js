@@ -299,4 +299,60 @@ $(document).ready(function () {
     });
 
     // change fonts end
+
+    // New Link model start
+
+    $("#selectCardLayout .card-view-layout").on("click", function () {
+        $("#selectCardLayout .card-view-layout.selected").removeClass(
+            "selected"
+        );
+        $(this).addClass("selected");
+        $("#linkPreview").removeClass("normal");
+        $("#linkPreview").removeClass("thumbnail-basic");
+        $("#linkPreview").removeClass("button-image-background");
+        $("#linkPreview").removeClass("thumbnail-highlight");
+        $("#linkPreview").removeClass("thumbnail-grid");
+        $("#linkPreview").removeClass("thumbnail-carousel");
+
+        if ($(this).hasClass("normal")) {
+            $("#linkPreview").addClass("normal");
+        } else if ($(this).hasClass("thumbnail-basic")) {
+            $("#linkPreview").addClass("thumbnail-basic");
+        } else if ($(this).hasClass("button-image-background")) {
+            $("#linkPreview").addClass("button-image-background");
+        } else if ($(this).hasClass("thumbnail-highlight")) {
+            $("#linkPreview").addClass("thumbnail-highlight");
+        } else if ($(this).hasClass("thumbnail-grid")) {
+            $("#linkPreview").addClass("thumbnail-grid");
+        } else if ($(this).hasClass("thumbnail-carousel")) {
+            $("#linkPreview").addClass("thumbnail-carousel");
+        }
+    });
+
+    // New Link model end
+
+    // New Instagram Scraper model start
+
+    $("#scrapedCardLayout .card-view-layout").on("click", function () {
+        $("#scrapedCardLayout .card-view-layout.selected").removeClass(
+            "selected"
+        );
+        $(this).addClass("selected");
+        $("#scrapedLinkPreview").removeClass("thumbnail-basic");
+        $("#scrapedLinkPreview").removeClass("thumbnail-highlight");
+        $("#scrapedLinkPreview").removeClass("thumbnail-grid");
+        $("#scrapedLinkPreview").removeClass("thumbnail-carousel");
+
+        if ($(this).hasClass("thumbnail-basic")) {
+            $("#scrapedLinkPreview").addClass("thumbnail-basic");
+        } else if ($(this).hasClass("thumbnail-highlight")) {
+            $("#scrapedLinkPreview").addClass("thumbnail-highlight");
+        } else if ($(this).hasClass("thumbnail-grid")) {
+            $("#scrapedLinkPreview").addClass("thumbnail-grid");
+        } else if ($(this).hasClass("thumbnail-carousel")) {
+            $("#scrapedLinkPreview").addClass("thumbnail-carousel");
+        }
+    });
+
+    // New Instagram Scraper model end
 });

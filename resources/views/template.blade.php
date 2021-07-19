@@ -1102,23 +1102,23 @@ Page Template
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Link Layout</label>
-                        <div class="select-card-layout">
-                            <div class="card-view-layout ">
+                        <div id="selectCardLayout" class="select-card-layout">
+                            <div class="card-view-layout normal selected">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout selected">
+                            <div class="card-view-layout thumbnail-basic">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout">
+                            <div class="card-view-layout button-image-background">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/button-image-background.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout">
+                            <div class="card-view-layout thumbnail-highlight">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout">
+                            <div class="card-view-layout thumbnail-grid ">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout">
+                            <div class="card-view-layout thumbnail-carousel">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-carousel.svg') }}" alt="">
                             </div>
                         </div>
@@ -1140,7 +1140,7 @@ Page Template
 
                     <div class="mb-3">
                         <label class="form-label">Link Preview</label>
-                        <div class="link_preview thumbnail-grid">
+                        <div id="linkPreview" class="link_preview normal">
 
                             {{-- normal --}}
                             <a href="#" class="live-preview normal-view animate__animated animate__shakeX">
@@ -1506,17 +1506,17 @@ Page Template
 
                     <div class="mb-3">
                         <label class="form-label">Scraped Link Layout</label>
-                         <div class="select-card-layout">
-                            <div class="card-view-layout selected">
+                         <div id="scrapedCardLayout" class="select-card-layout">
+                            <div class="card-view-layout thumbnail-basic selected">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-basic.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout">
+                            <div class="card-view-layout thumbnail-highlight">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-highlight.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout">
+                            <div class="card-view-layout thumbnail-grid">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-2.svg') }}" alt="">
                             </div>
-                            <div class="card-view-layout">
+                            <div class="card-view-layout thumbnail-carousel">
                                 <img class="card-view-img" src="{{ asset('static/template_svg/new-link/thumbnail-grid-3.svg') }}" alt="">
                             </div>
                         </div>
@@ -1528,7 +1528,7 @@ Page Template
                     <div class="mb-3">
                         <label class="form-label">Scraped Link Preview</label>
 
-                        <div class="link_preview thumbnail-basic">
+                        <div id="scrapedLinkPreview" class="link_preview thumbnail-basic">
 
 
                             {{-- thumbnail-basic --}}
