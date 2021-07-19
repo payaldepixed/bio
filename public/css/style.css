@@ -1163,11 +1163,11 @@ img.question_mark {
 .link_preview.thumbnail-carousel .live-preview a {
   border-color: #333333;
   border-width: 0px;
-  border-radius: 5.6px;
+  border-radius: 6px;
   -webkit-box-shadow: #0000004d 0px 10px 30px 0px;
           box-shadow: #0000004d 0px 10px 30px 0px;
+  margin: 10px;
   margin-bottom: 22px;
-  margin-right: 22px;
   text-decoration: none;
   display: block;
   width: 272px;
