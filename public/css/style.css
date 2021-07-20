@@ -956,6 +956,34 @@ img.question_mark {
   overflow: hidden;
 }
 
+.link_preview.normal .live-preview .details.tactile_one {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #aaeaac, #aeeeb0);
+}
+
+.link_preview.normal .live-preview .details.tactile_two {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #9dd79e, #bbffbe);
+}
+
+.link_preview.normal .live-preview .details.tactile_three {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #bbffbe, #a0dba2);
+}
+
+.link_preview.normal .live-preview .details.tactile_four {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+          box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+  background: linear-gradient(145deg, #aaeaac00, #aeeeb000);
+}
+
 .link_preview.thumbnail-basic .live-preview {
   border-color: #333333;
   border-width: 0px;
@@ -1008,6 +1036,34 @@ img.question_mark {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+.link_preview.thumbnail-basic .live-preview .details.tactile_one {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #aaeaac, #aeeeb0);
+}
+
+.link_preview.thumbnail-basic .live-preview .details.tactile_two {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #9dd79e, #bbffbe);
+}
+
+.link_preview.thumbnail-basic .live-preview .details.tactile_three {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #bbffbe, #a0dba2);
+}
+
+.link_preview.thumbnail-basic .live-preview .details.tactile_four {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+          box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+  background: linear-gradient(145deg, #aaeaac00, #aeeeb000);
 }
 
 .link_preview.button-image-background .live-preview {
@@ -1108,6 +1164,34 @@ img.question_mark {
   overflow: hidden;
 }
 
+.link_preview.thumbnail-highlight .live-preview .details.tactile_one {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #aaeaac, #aeeeb0);
+}
+
+.link_preview.thumbnail-highlight .live-preview .details.tactile_two {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #9dd79e, #bbffbe);
+}
+
+.link_preview.thumbnail-highlight .live-preview .details.tactile_three {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #bbffbe, #a0dba2);
+}
+
+.link_preview.thumbnail-highlight .live-preview .details.tactile_four {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+          box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+  background: linear-gradient(145deg, #aaeaac00, #aeeeb000);
+}
+
 .link_preview.thumbnail-grid .live-preview {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -1203,6 +1287,34 @@ img.question_mark {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+.link_preview.thumbnail-carousel .live-preview .details.tactile_one {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #aaeaac, #aeeeb0);
+}
+
+.link_preview.thumbnail-carousel .live-preview .details.tactile_two {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #9dd79e, #bbffbe);
+}
+
+.link_preview.thumbnail-carousel .live-preview .details.tactile_three {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+          box-shadow: #baffbc -6px -6px 13px, #94cb96 6px 6px 13px;
+  background: linear-gradient(145deg, #bbffbe, #a0dba2);
+}
+
+.link_preview.thumbnail-carousel .live-preview .details.tactile_four {
+  border-color: #b1f3b3;
+  -webkit-box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+          box-shadow: #0000000a -6px -6px 13px inset, #00000026 6px 6px 13px inset;
+  background: linear-gradient(145deg, #aaeaac00, #aeeeb000);
 }
 
 .link_preview .live-preview {

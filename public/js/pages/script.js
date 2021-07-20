@@ -60,11 +60,21 @@ $(document).ready(function () {
     $("#tactileCard .tactile-item").on("click", function () {
         $("#preview_size .card-layout").css("background-color", "");
         $("#preview_size").css("background-color", "");
-        $("#preview_size .preview-card-body ").removeClass("no_tactile");
-        $("#preview_size .preview-card-body ").removeClass("tactile_one");
-        $("#preview_size .preview-card-body ").removeClass("tactile_two");
-        $("#preview_size .preview-card-body ").removeClass("tactile_three");
-        $("#preview_size .preview-card-body ").removeClass("tactile_four");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("no_tactile");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_one");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_two");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_three");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_four");
         $(".noTactileCard").css("display", "block");
         $(".preview-card-body").css("border-width", "0px");
         $(".preview-card-body").css("margin-bottom", "15px");
@@ -89,7 +99,9 @@ $(document).ready(function () {
                 ",0.9)";
             $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
-            $("#preview_size .preview-card-body ").addClass("tactile_one");
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_one");
             $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_2")) {
             var color = "#b1f3b3";
@@ -103,7 +115,9 @@ $(document).ready(function () {
                 ",0.9)";
             $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
-            $("#preview_size .preview-card-body ").addClass("tactile_two");
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_two");
             $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_3")) {
             var color = "#b1f3b3";
@@ -117,7 +131,9 @@ $(document).ready(function () {
                 ",0.9)";
             $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
-            $("#preview_size .preview-card-body ").addClass("tactile_three");
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_three");
             $(".noTactileCard").css("display", "none");
         } else if ($(this).hasClass("tactile_4")) {
             var color = "#b1f3b3";
@@ -131,8 +147,13 @@ $(document).ready(function () {
                 ",0.9)";
             $("#preview_size").css("background-color", rgbaCol);
             $("#preview_size .card-layout").css("background-color", "#b1f3b3");
-            $("#preview_size .preview-card-body").css("background-color", "");
-            $("#preview_size .preview-card-body ").addClass("tactile_four");
+            $("#preview_size .preview-card-body, #preview_size .details").css(
+                "background-color",
+                ""
+            );
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_four");
             $(".noTactileCard").css("display", "none");
         }
         $("#tactileCard .tactile-item.selected").removeClass("selected");
@@ -243,12 +264,15 @@ $(document).ready(function () {
     // card js start
 
     $(document).on("input", "#card-color input", function () {
-        $(".preview-card-body").css("background-color", $(this).val());
+        $(".preview-card-body, #preview_size .details").css(
+            "background-color",
+            $(this).val()
+        );
     });
 
     $(document).on("input", "#text-color input", function () {
         $(
-            ".preview-card-body .main-title, .preview-card-body .subtitle-title"
+            ".preview-card-body .main-title, .preview-card-body .subtitle-title, #preview_size .details .title, #preview_size .details .dec"
         ).css("color", $(this).val());
     });
 
