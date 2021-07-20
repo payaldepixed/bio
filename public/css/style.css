@@ -607,6 +607,7 @@ img.question_mark {
   border-radius: 5em;
   overflow-y: auto;
   max-height: calc(100vh - 170px);
+  scrollbar-width: none;
 }
 
 .template-layout .template .item_two .preview-layout .preview-details::-webkit-scrollbar {
