@@ -661,6 +661,10 @@ img.question_mark {
   stroke: #000;
 }
 
+.template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .share_vcard_icons .preview_vcard {
+  cursor: pointer;
+}
+
 .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-img {
   width: 120px;
   height: 120px;
