@@ -1612,6 +1612,63 @@ div#Design {
 // change preview layout
 
 
+// viewLayout preview layout
+
+.viewLayout {
+    .template-layout {
+        .template {
+            .item_two {
+                .preview-layout{
+                    .preview-details {
+                            border: 0px;
+                            max-height: 100vh;
+                            background: linear-gradient(45deg, #fdecf2 50%, 50%, #ffffff 100%);
+                            border-radius: 0;
+                        .card-layout{
+                            min-height: calc(100vh - 5px);
+                            margin-bottom: 5px;
+                            padding-right: 15px;
+                            padding-left: 15px;
+                            .preview-all {
+                                .preview-card {
+                                    .link_preview {
+                                        .preview-card-body {
+                                            &.card-style {
+                                                margin-bottom: 20px;
+                                            }
+                                        }
+                                        &.thumbnail-carousel {
+                                            margin-bottom: 15px;
+                                        }
+                                        .live-preview {
+                                            // background-color: #fff;
+                                            &.thumbnail-carousel-view {
+                                                margin-bottom: 0px;
+                                            }
+                                            a {
+                                                .thumbnail-grid-img {
+                                                    background-color: #fff;
+                                                }
+                                                .thumbnail-img {
+                                                    background-color: #fff;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// viewLayout preview layout
+
+
 @media screen and (max-width:1300px) {
     .template-layout {
         .template-header {

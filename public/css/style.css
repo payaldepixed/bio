@@ -1615,6 +1615,40 @@ div#Design {
   opacity: .6;
 }
 
+.viewLayout .template-layout .template .item_two .preview-layout .preview-details {
+  border: 0px;
+  max-height: 100vh;
+  background: linear-gradient(45deg, #fdecf2 50%, 50%, #ffffff 100%);
+  border-radius: 0;
+}
+
+.viewLayout .template-layout .template .item_two .preview-layout .preview-details .card-layout {
+  min-height: calc(100vh - 5px);
+  margin-bottom: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.viewLayout .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .link_preview .preview-card-body.card-style {
+  margin-bottom: 20px;
+}
+
+.viewLayout .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .link_preview.thumbnail-carousel {
+  margin-bottom: 15px;
+}
+
+.viewLayout .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .link_preview .live-preview.thumbnail-carousel-view {
+  margin-bottom: 0px;
+}
+
+.viewLayout .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .link_preview .live-preview a .thumbnail-grid-img {
+  background-color: #fff;
+}
+
+.viewLayout .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .link_preview .live-preview a .thumbnail-img {
+  background-color: #fff;
+}
+
 @media screen and (max-width: 1300px) {
   .template-layout .template-header .link-item .my-link .my-page {
     display: none;

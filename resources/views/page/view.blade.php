@@ -15,24 +15,24 @@
     <!-- CSS -->
     <link href="{{ asset('css/tabler.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-    <link href="https://fontawesome.com/v4.7/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    {{-- <link href="https://fontawesome.com/v4.7/assets/font-awesome/css/font-awesome.css" rel="stylesheet" /> --}}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     @yield('css_after')
 </head>
 
-<body class="antialiased">
+<body class="antialiased viewLayout">
     <div class="wrapper">
         <div class="page-wrapper">
-            <div class="page-body template-layout">
-                <div class="container-fluid">
+            <div class="template-layout">
+                <div class="container-fluid p-0">
                     <div class="template">
-                        <div class="item_two">
+                        <div class="item_two p-0">
                             <div class="preview-layout">
-                                <div class="preview-details" style="border:0ch">
+                                <div class="preview-details">
                                     <div class="card-layout">
                                         <div class="preview-all">
                                             <div class="preview-img">
-                                                <img src="{{@$user->profile_picture ? Storage::disk(Config::get('constants.DISK'))->url($user->profile_picture) : asset('static/default.png')}}" alt="">
+                                                <img src="{{@$user->profile_picture ? Storage::disk(Config::get('constants.DISK'))->url($user->profile_picture) : asset('/static/default_user.png')}}" alt="">
                                             </div>
                                             <div class="preview-title">
                                                 {{'@'.@$user->username}}
