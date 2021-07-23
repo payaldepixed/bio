@@ -39,9 +39,9 @@ class Commonhelper
             $width = 500;
             $height = 500;
             break;
-        case "else":
-            $width = 100;
-            $height = 100;
+        case "media":
+            $width = 500;
+            $height = 500;
             break;
         default:
             $height=null;

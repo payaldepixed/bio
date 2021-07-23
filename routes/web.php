@@ -51,6 +51,13 @@ Route::group(['middleware' => ['auth']], function () {
         });
 
         Route::get('page', 'PageController@index')->name('page');
+        Route::get('getblocks', 'PageController@getBlocks')->name('block');
+        Route::post('getblock', 'PageController@getBlock');
+        Route::get('previewblocks', 'PageController@previewBlocks')->name('block.preview');
+        Route::post('block/store', 'PageController@storeBlock')->name('block.store');
+        Route::post('block/remove', 'PageController@deleteBlock')->name('block.remove');
+        Route::post('block/copy', 'PageController@copyBlock')->name('block.copy');
+        Route::post('block/media/remove', 'PageController@deleteBlockMedia')->name('block.media.remove');
 
         Route::get('page/general', function () {
             return view('page.general');

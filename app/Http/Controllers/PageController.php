@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\UserPageSocial;
 use App\Models\UserPageDesign;
 use App\Models\UserPageBlock;
+use App\Models\UserPageBlockMedia;
 use Validator;
 use Commonhelper;
 use Auth;
@@ -17,6 +18,18 @@ class PageController extends Controller
     {
         $user = Auth::user();
         return view('page.index', compact('user'));
+    }
+
+    public function getBlocks(Request $request)
+    {
+        $blocks = UserPageBlock::where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+        return view('page.block', compact('blocks'));
+    }
+
+    public function previewBlocks(Request $request)
+    {
+        $blocks = UserPageBlock::with('medias')->where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+        return view('page.previewblock', compact('blocks'));
     }
 
     public function view()
@@ -81,7 +94,7 @@ class PageController extends Controller
         return 1;
     }
 
-    public function blockStore(Request $request)
+    public function storeBlock(Request $request)
     {
         $rules = [
             'type'  => 'required'
@@ -90,14 +103,26 @@ class PageController extends Controller
         if (@$validator->fails()) {
             return redirect()->back()->withErrors($validator->errors()->first());
         }
-        $data = $request->only('title','url','type','description','layout','animation');
+        $data = $request->only('title','url','type','description','layout','animation','grid_size','label');
         if($request->id){
             UserPageBlock::where('id',$request->id)->update($data);
+            $block_id = $request->id;
         }else{
             $data['user_id'] = Auth::user()->id;
-            UserPageBlock::create($data);
+            $block = UserPageBlock::create($data);
+            $block_id = $block->id;
         }
-        return redirect()->back()->with('success', 'Block added successfully!');;
+        if($request->has('medias'))
+        {
+            // foreach($request->file('medias') as $file)
+            // {
+                $file = $request->medias;
+                $mediaData = ['block_id'=>$block_id];
+                $mediaData['media_file'] = Commonhelper::resizeImage("medias/",$file,'media');
+                UserPageBlockMedia::create($mediaData);
+            //}
+        }
+        return 1;
     }
 
     public function copyBlock(Request $request)
@@ -105,6 +130,27 @@ class PageController extends Controller
         $block = UserPageBlock::where('id',$request->id)->first();
         $newBlock = $block->replicate();
         $newBlock->save();
+        $medias = UserPageBlockMedia::where('block_id',$request->id)->get();
+        if($medias){
+            foreach($medias as $media){
+                $mediaData = ['block_id'=>$newBlock->id];
+                $mediaData['media_file'] = $media->media_file;
+                UserPageBlockMedia::create($mediaData);
+            }
+        }
+        return 1;
+    }
+
+    public function deleteBlock(Request $request)
+    {
+        UserPageBlock::where('id',$request->id)->delete();
+        $medias = UserPageBlockMedia::where('block_id',$request->id)->get();
+        if($medias){
+            foreach($medias as $media){
+                Commonhelper::deleteFile($media->media_file);
+                $media->delete();
+            }
+        }
         return 1;
     }
 
@@ -116,9 +162,18 @@ class PageController extends Controller
         return 1;
     }
 
-    public function deleteBlock(Request $request)
+    public function getBlock(Request $request)
     {
-        UserPageBlock::where('id',$request->id)->delete();
+        return UserPageBlock::with('medias')->where('id',$request->id)->first();
+    }
+
+    public function deleteBlockMedia(Request $request)
+    {
+        $media = UserPageBlockMedia::where('id',$request->id)->first();
+        if($media){
+            Commonhelper::deleteFile($media->media_file);
+            $media->delete();
+        }
         return 1;
     }
 
