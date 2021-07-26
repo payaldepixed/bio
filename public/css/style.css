@@ -724,7 +724,7 @@ img.question_mark {
 
 .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .preview-card-body {
   color: #333333;
-  background: #f1dfd5;
+  background: #ffffff;
   -webkit-box-shadow: #0000004d 0px 10px 30px 0px;
           box-shadow: #0000004d 0px 10px 30px 0px;
   margin-bottom: 15px;
@@ -938,7 +938,7 @@ img.question_mark {
 
 .link_preview.normal .live-preview .details {
   color: #333333;
-  background: #f1dfd5;
+  background: #ffffff;
   padding: 16.5px 13.75px;
 }
 
@@ -1017,7 +1017,7 @@ img.question_mark {
 
 .link_preview.thumbnail-basic .live-preview .details {
   color: #333333;
-  background: #f1dfd5;
+  background: #ffffff;
   padding: 16.5px 13.75px;
   width: 68.5%;
   border-top-right-radius: 6px;
@@ -1144,7 +1144,7 @@ img.question_mark {
 
 .link_preview.thumbnail-highlight .live-preview .details {
   color: #333333;
-  background: #f1dfd5;
+  background: #ffffff;
   padding: 16.5px 13.75px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -1269,7 +1269,7 @@ img.question_mark {
 
 .link_preview.thumbnail-carousel .live-preview .details {
   color: #333333;
-  background: #f1dfd5;
+  background: #ffffff;
   padding: 16.5px 13.75px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
