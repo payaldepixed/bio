@@ -1,6 +1,7 @@
 $( document ).ready(function() {
+
+    //block script
     fetchBlocks();
-    //form page
     if($('#generalForm').length){
 
         $('#profile_picture').on('change', function() {
@@ -114,8 +115,79 @@ $( document ).ready(function() {
             success:function(data)
             {
                 $('#preview-blocks').html(data);
+                setDesign();
             }
         });
+    }
+
+    function setDesign(){
+        var color = $("input[name='primary_text_color']").val();
+        $(".preview-all, .powered-by, .link-text").css("color",color);
+        $(".preview-all .selected-social-icon .selected-icon path").css(
+            "fill",
+            color
+        );
+        $(".link-img path, .share_vcard_icons svg").css(
+            "stroke",
+            color
+        );
+
+        var color = $("input[name='primary_background']").val();
+        $(".card-layout").css("background-color", color);
+        color = color;
+        var rgbaCol =
+            "rgba(" +
+            parseInt(color.slice(-6, -4), 16) +
+            "," +
+            parseInt(color.slice(-4, -2), 16) +
+            "," +
+            parseInt(color.slice(-2), 16) +
+            ",0.9)";
+        $("#preview_size").css("background-color", rgbaCol);
+
+        var value = $("input[name='profile_picture_shadow']").val();
+        var profileShadow = "#0000004d 0px 10px 30px " + value + "px";
+        $("#previewImg").css("box-shadow", profileShadow);
+
+        var value = $("input[name='profile_picture_border']").val();
+        $("#previewImg").css("border-width", value + "px");
+        $("#previewImg").css("border-color", "#000000");
+
+        var value = $("input[name='profile_picture_border_color']").val();
+        $("#previewImg").css("border-color", value);
+
+        var value = $("input[name='card_shadow']").val();
+        var one = "#0000004d 0px 10px 30px " + value + "px";
+        $(".preview-card-body").css("box-shadow", one);
+
+        var value = $("input[name='card_spacing']").val();
+        $(".preview-card-body").css("margin-bottom", value + "px");
+
+        var value = $("input[name='text_font']").val();
+        var font = '"'+value+'", sans-serif';
+        $("#preview_size").css("font-family", font);
+
+        var value = $("input[name='button_color']").val();
+        $(".preview-card-body, #preview_size .details").css(
+            "background-color",
+            value
+        );
+
+        var value = $("input[name='button_text_color']").val();
+        $(
+            ".preview-card-body .main-title, .preview-card-body .subtitle-title, #preview_size .details .title, #preview_size .details .dec"
+        ).css("color", value);
+
+        var value = $("input[name='button_corner']").val();
+        $(".preview-card-body").css("border-radius", value + "px");
+
+        var value = $("input[name='button_border']").val();
+        $(".preview-card-body").css("border-width", value + "px");
+        $(".preview-card-body").css("border-color", "#000000");
+
+        var value = $("input[name='button_border_color']").val();
+        $(".preview-card-body").css("border-color", value);
+
     }
 
     $(".addText,.addMedia,.addDivider,.addLink").on('click',function(e)
@@ -242,16 +314,6 @@ $( document ).ready(function() {
     $('#summernote').on("summernote.change", function (e) {
         $("#text_preview").html($('#summernote').summernote('code'));
     });
-
-    // $('#summernote').summernote({
-    //     callbacks: {
-    //       onKeyup: function() {
-    //         setTimeout(function(){
-    //             $("#text_preview").html($('#summernote').summernote('code'));
-    //         },200);
-    //       }
-    //     }
-    //   });
 
     $(document).on("click", ".editBlock", function () {
         var type = $(this).data('type');
@@ -394,5 +456,307 @@ $( document ).ready(function() {
         if(type == 5){$("#linkPreview").addClass('thumbnail-grid');}
         if(type == 6){$("#linkPreview").addClass('thumbnail-carousel');}
     }
+
+
+    //design script
+    $(
+        '.preview-layout img[src$=".svg"], .tactile-item img[src$=".svg"], .preview_share img[src$=".svg"]'
+    ).each(function () {
+        var $img = jQuery(this);
+        var imgURL = $img.attr("src");
+        var attributes = $img.prop("attributes");
+
+        $.get(
+            imgURL,
+            function (data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find("svg");
+
+                // Remove any invalid XML tags
+                $svg = $svg.removeAttr("xmlns:a");
+
+                // Loop through IMG attributes and apply on SVG
+                $.each(attributes, function () {
+                    $svg.attr(this.name, this.value);
+                });
+
+                // Replace IMG with SVG
+                $img.replaceWith($svg);
+            },
+            "xml"
+        );
+    });
+
+    var color = "#b1f3b3";
+
+    // layout change profile deatils start
+    $(document).on("input", "#profileName", function () {
+        $("#PreviewName").html($(this).val());
+    });
+
+    $(document).on("input", "#profileBio", function () {
+        $("#previewBio").html($(this).val());
+    });
+
+    $(document).on("input", "#primary-background input", function () {
+        // $("#previewImg").css("border-width", $(this).val() + "px");
+        $(".card-layout").css("background-color", $(this).val());
+
+        color = $(this).val();
+        var rgbaCol =
+            "rgba(" +
+            parseInt(color.slice(-6, -4), 16) +
+            "," +
+            parseInt(color.slice(-4, -2), 16) +
+            "," +
+            parseInt(color.slice(-2), 16) +
+            ",0.9)";
+        $("#preview_size").css("background-color", rgbaCol);
+    });
+
+    $(document).on("input", "#primary-text-color input", function () {
+        $(".preview-all, .powered-by, .link-text").css("color", $(this).val());
+        $(".preview-all .selected-social-icon .selected-icon path").css(
+            "fill",
+            $(this).val()
+        );
+        $(".link-img path, .share_vcard_icons svg").css(
+            "stroke",
+            $(this).val()
+        );
+        // console.log("sdfas", $(this).val());
+    });
+
+    $("#mobile_layout").on("click", function () {
+        $("#website_layout").removeClass("selected");
+        $("#preview_size").addClass("mobile_size");
+        $(this).addClass("selected");
+    });
+
+    $("#website_layout").on("click", function () {
+        $("#mobile_layout").removeClass("selected");
+        $("#preview_size").removeClass("mobile_size");
+        $(this).addClass("selected");
+    });
+
+    $("#tactileCard .tactile-item").on("click", function () {
+        $("#preview_size .card-layout").css("background-color", "");
+        $("#preview_size").css("background-color", "");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("no_tactile");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_one");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_two");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_three");
+        $(
+            "#preview_size .preview-card-body, #preview_size .details "
+        ).removeClass("tactile_four");
+        $(".noTactileCard").css("display", "block");
+        $(".preview-card-body").css("border-width", "0px");
+        $(".preview-card-body").css("margin-bottom", "15px");
+        $("#card_border").val(0);
+
+        if ($(this).hasClass("tactile_no")) {
+            // $("#card-color input").val();
+            $("#preview_size .preview-card-body").css(
+                "background-color",
+                $("#card-color input").val()
+            );
+            // console.log("tactile_1");
+        } else if ($(this).hasClass("tactile_1")) {
+            // var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
+            $("#preview_size .card-layout").css("background-color", color);
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_one");
+            $(".noTactileCard").css("display", "none");
+        } else if ($(this).hasClass("tactile_2")) {
+            // var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
+            $("#preview_size .card-layout").css("background-color", color);
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_two");
+            $(".noTactileCard").css("display", "none");
+        } else if ($(this).hasClass("tactile_3")) {
+            // var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
+            $("#preview_size .card-layout").css("background-color", color);
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_three");
+            $(".noTactileCard").css("display", "none");
+        } else if ($(this).hasClass("tactile_4")) {
+            // var color = "#b1f3b3";
+            var rgbaCol =
+                "rgba(" +
+                parseInt(color.slice(-6, -4), 16) +
+                "," +
+                parseInt(color.slice(-4, -2), 16) +
+                "," +
+                parseInt(color.slice(-2), 16) +
+                ",0.9)";
+            $("#preview_size").css("background-color", rgbaCol);
+            $("#preview_size .card-layout").css("background-color", color);
+            $("#preview_size .preview-card-body, #preview_size .details").css(
+                "background-color",
+                ""
+            );
+            $(
+                "#preview_size .preview-card-body, #preview_size .details "
+            ).addClass("tactile_four");
+            $(".noTactileCard").css("display", "none");
+        }
+        $("#tactileCard .tactile-item.selected").removeClass("selected");
+        $(this).addClass("selected");
+        $('#tactile_card').val($(this).data('id'));
+    });
+
+    $("#enable_vcard").change(function () {
+        if (this.checked) {
+            $(".preview_vcard").show();
+        } else {
+            $(".preview_vcard").hide();
+        }
+    });
+
+    $("#enable_share").change(function () {
+        if (this.checked) {
+            $(".preview_share").show();
+        } else {
+            $(".preview_share").hide();
+        }
+    });
+
+    $("#links_branding").change(function () {
+        if (this.checked) {
+            $("#preview_footer").hide();
+        } else {
+            $("#preview_footer").show();
+        }
+    });
+
+    $(document).on("input", "#inputFile", function (event) {
+        var imageUrl = URL.createObjectURL(event.target.files[0]);
+        $("#previewImg img").attr("src", imageUrl);
+        $("#designImg").css("background-image", "url(" + imageUrl + ")");
+        $("#designSIdeAciton").removeClass("d-none");
+    });
+
+    $(document).on("click", "#designImgRemove", function () {
+        var imageRemoveUrl = "/static/template_svg/image_icon.svg";
+        $("#previewImg img").attr("src", "/static/default_user.png");
+        $("#designImg").css("background-image", "url(" + imageRemoveUrl + ")");
+        $("#designSIdeAciton").addClass("d-none");
+    });
+
+    $(document).on("input", "#profile_img_border", function () {
+        $("#previewImg").css("border-width", $(this).val() + "px");
+        $("#previewImg").css("border-color", "#000000");
+    });
+    $(document).on("input", "#profile-picture-border-color input", function () {
+        $("#previewImg").css("border-color", $(this).val());
+    });
+
+    $(document).on("input", "#profileShadow", function () {
+        // console.log("shadow", $(this).val());
+        if ($(this).val() > 0) {
+            var profileShadow =
+                "#0000004d 0px 10px 30px " + $(this).val() + "px";
+            $("#previewImg").css("box-shadow", profileShadow);
+        } else {
+            $("#previewImg").css("box-shadow", "");
+        }
+    });
+
+    $(document).on("input", "#card-color input", function () {
+        $(".preview-card-body, #preview_size .details").css(
+            "background-color",
+            $(this).val()
+        );
+    });
+
+    $(document).on("input", "#text-color input", function () {
+        $(
+            ".preview-card-body .main-title, .preview-card-body .subtitle-title, #preview_size .details .title, #preview_size .details .dec"
+        ).css("color", $(this).val());
+    });
+
+    $(document).on("input", "#card_corner", function () {
+        $(".preview-card-body").css("border-radius", $(this).val() + "px");
+        // $("#previewImg").css("border-color", "#000000");
+    });
+
+    $(document).on("input", "#card_border", function () {
+        $(".preview-card-body").css("border-width", $(this).val() + "px");
+        $(".preview-card-body").css("border-color", "#000000");
+    });
+
+    $(document).on("input", "#card-border-color input", function () {
+        $(".preview-card-body").css("border-color", $(this).val());
+    });
+
+    $(document).on("input", "#card_shadow", function () {
+        // console.log("shadow", $(this).val());
+        var one = "#0000004d 0px 10px 30px " + $(this).val() + "px";
+        $(".preview-card-body").css("box-shadow", one);
+    });
+
+    $(document).on("input", "#card_spacing", function () {
+        $(".preview-card-body").css("margin-bottom", $(this).val() + "px");
+    });
+
+    $("#fonts .font-item").on("click", function () {
+        if ($(this).hasClass("opan-sans")) {
+            var font = '"Open Sans", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("roboto")) {
+            var font = '"Roboto", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("lato")) {
+            var font = '"Lato", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("dosis")) {
+            var font = '"Dosis", sans-serif';
+            $("#preview_size").css("font-family", font);
+        } else if ($(this).hasClass("fuggles")) {
+            var font = '"Fuggles", sans-serif';
+            $("#preview_size").css("font-family", font);
+        }
+        $('#text_font').val($(this).data('id'));
+    });
+
+
 
 });

@@ -121,7 +121,219 @@ Page
                                 </div>
                             </div>
                             <div class="tab-pane" id="Design">
-                            <div>Fringilla egestas nunc quis tellus diam rhoncus ultricies tristique enim at diam, sem nunc amet, pellentesque id egestas velit sed</div>
+                                <form id="designForm" action="{{route('design.store')}}" method="post" enctype='multipart/form-data'>
+                                    @csrf
+                                    <div class="general-option">
+                                        {{-- General option --}}
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">General</div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="mb-3 input_file_bg">
+                                            <label for="inputFile" class="input-file">
+                                                <input name="profile_picture" type="file" id="inputFile" >
+                                                <div class="fileRow">
+                                                    <div class="fileLabel">Profile Picture</div>
+                                                    <div id="designImg" class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            {{-- <div id="designSIdeAciton" class="file_action d-none">
+                                                <label class="action-file" for="inputFile">Replace</label>
+                                                <label id="designImgRemove" class="action-file" for="">Remove</label>
+                                            </div> --}}
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Profile Bio</label>
+                                            <textarea id="profileBio" class="form-control" name="bio" rows="4" placeholder="Profile Bio">{{@$user->bio}}</textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Profile Name</label>
+                                            <input id="profileName" name="name" value="{{@$user->name}}" type="text" class="form-control" placeholder="Profile Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Primary Text Color</div>
+                                                <div id="primary-text-color">
+                                                    <input name="primary_text_color" type="color" value="{{@$design->primary_text_color ? $design->primary_text_color : '#000000'}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Primary Background</div>
+                                                <div id="primary-background">
+                                                    <input name="primary_background" type="color" value="{{@$design->primary_background ? $design->primary_background : '#ffffff'}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Profile Picture Shadow</div>
+                                                <input name="profile_picture_shadow" id="profileShadow" type="range" class="form-range" value="{{@$design->profile_picture_shadow ? $design->profile_picture_shadow : '0'}}" min="0" max="10" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Profile Picture Border</div>
+                                                <input name="profile_picture_border" id="profile_img_border" type="range" class="form-range" value="{{@$design->profile_picture_border ? $design->profile_picture_border : '0'}}" min="0" max="10" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Profile Picture Border Color</div>
+                                                <div id="profile-picture-border-color">
+                                                    <input name="profile_picture_border_color" type="color" value="{{@$design->profile_picture_border_color ? $design->profile_picture_border_color : '#000000'}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- General option --}}
+                                        {{-- Cards option --}}
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Cards</div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-label">Tactile Cards</div>
+                                            <input type="hidden" name="tactile_card" value="{{@$design->tactile_card}}" id="tactile_card">
+                                            <div id="tactileCard" class="tactile-cards">
+                                                <div class="tactile-item tactile_no @if(!@$design->tactile_card) selected @endif">
+                                                    <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/no_tactile.svg') }}" alt="">
+                                                </div>
+                                                <div class="tactile-item tactile_1" @if(@$design->tactile_card == 1) selected @endif data-id="1">
+                                                    <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_one.svg') }}" alt="">
+                                                </div>
+                                                <div class="tactile-item tactile_2" @if(@$design->tactile_card == 2) selected @endif data-id="2">
+                                                    <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_two.svg') }}" alt="">
+                                                </div>
+                                                <div class="tactile-item tactile_3" @if(@$design->tactile_card == 3) selected @endif data-id="3">
+                                                    <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_three.svg') }}" alt="">
+                                                </div>
+                                                <div class="tactile-item tactile_4" @if(@$design->tactile_card == 4) selected @endif data-id="4">
+                                                    <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_four.svg') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 noTactileCard">
+                                            <div class="color-row">
+                                                <div class="color-label">Color</div>
+                                                <div id="card-color">
+                                                    <input name="button_color" type="color" value="{{@$design->button_color ? $design->button_color : '#f1dfd5'}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Text Color</div>
+                                                <div id="text-color">
+                                                    <input name="button_text_color" type="color" value="{{@$design->button_text_color ? $design->button_text_color : '#000000'}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="range-row">
+                                                <div class="range-label">Corner</div>
+                                                <input name="button_corner" id="card_corner" type="range" class="form-range" value="{{@$design->card_corner ? $design->card_corner : '1'}}" min="6" max="30" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 noTactileCard">
+                                            <div class="range-row">
+                                                <div class="range-label">Border</div>
+                                                <input name="button_border" id="card_border" type="range" class="form-range" value="{{@$design->button_border ? $design->button_border : '0'}}" min="0" max="10" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 noTactileCard">
+                                            <div class="color-row">
+                                                <div class="color-label">Border Color</div>
+                                                <div id="card-border-color">
+                                                    <input name="button_border_color" type="color" value="{{@$design->button_border_color ? $design->button_border_color : '#000000'}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 noTactileCard">
+                                            <div class="range-row">
+                                                <div class="range-label">Shadow</div>
+                                                <input name="card_shadow" id="card_shadow" type="range" class="form-range" value="{{@$design->card_shadow ? $design->card_shadow : '0'}}" min="0" max="10" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 noTactileCard">
+                                            <div class="range-row">
+                                                <div class="range-label">Content Spacing</div>
+                                                <input name="card_spacing" id="card_spacing" type="range" class="form-range" value="{{@$design->card_spacing ? $design->card_spacing : '15'}}" min="15" max="44" step="1">
+                                            </div>
+                                        </div>
+                                        {{-- Cards option --}}
+                                        {{-- Fonts option --}}
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Fonts</div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="accordion" id="accordion-fonts">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading-2">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-fonts" aria-expanded="false">
+                                                        Text Font: {{@$design->text_font ? ucwords($design->text_font) : 'Open Sans' }}
+                                                    </button>
+                                                </h2>
+                                                <input type="hidden" name="text_font" id="text_font" value="{{@$design->text_font}}">
+                                                <div id="collapse-fonts" class="accordion-collapse collapse" data-bs-parent="#accordion-fonts">
+                                                    <div class="accordion-body p-2">
+                                                        <div id="fonts" class="font-list">
+                                                            <div data-id="opan-sans" class="font-item opan-sans">Open Sans</div>
+                                                            <div data-id="roboto" class="font-item roboto">Roboto</div>
+                                                            <div data-id="lato" class="font-item lato">Lato</div>
+                                                            <div data-id="dosis" class="font-item dosis">Dosis</div>
+                                                            <div data-id="fuggles" class="font-item fuggles">Fuggles</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Fonts option --}}
+                                        {{-- Social & Sharing option --}}
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Social & Sharing</div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Enable vCard</div>
+                                                <label class="form-check form-check-single form-switch">
+                                                    <input name="enable_vcard" id="enable_vcard" class="form-check-input" type="checkbox" @if(@$design->enable_vcard == 0) @else checked @endif>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Enable Share Button</div>
+                                                <label class="form-check form-check-single form-switch">
+                                                    <input name="enable_share_button" id="enable_share" class="form-check-input" type="checkbox" @if(@$design->enable_share_button == 0) @else checked @endif>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        {{-- Social & Sharing option --}}
+                                        {{-- Other option --}}
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Other</div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="color-row">
+                                                <div class="color-label">Hide Links Branding</div>
+                                                <label class="form-check form-check-single form-switch">
+                                                    <input name="hide_link_binding" id="links_branding" class="form-check-input" type="checkbox" @if(@$design->hide_link_binding == 0) @else checked @endif>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        {{-- Other option --}}
+                                    </div>
+                                    <button type="submit">Save</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -143,20 +355,20 @@ Page
                         <div class="card-layout">
                             <div class="preview-all">
                                 <div class="share_vcard_icons">
-                                    <div class="preview_share">
+                                    <div class="preview_share" @if(@$design->enable_share_button == 1) @else style="display:none;" @endif>
                                         <img class="upper_icon" src="{{ asset('static/template_svg/share.svg') }}" alt="">
                                     </div>
-                                    <div class="preview_vcard">
+                                    <div class="preview_vcard" @if(@$design->enable_vcard == 1) @else style="display:none;" @endif>
                                         <img class="upper_icon" src="{{ asset('static/template_svg/v_card.svg') }}" alt="">
                                     </div>
                                 </div>
                                 <div id="previewImg" class="preview-img">
                                     <img src="{{@$user->profile_picture ? Storage::disk(Config::get('constants.DISK'))->url($user->profile_picture) : asset('static/default.png')}}" alt="">
                                 </div>
-                                <div class="preview-title">
+                                <div id="PreviewName" class="preview-title">
                                     {{'@'.@$user->username}}
                                 </div>
-                                <div class="preview-description">
+                                <div id="previewBio" class="preview-description">
                                     {!! $user->bio !!}
                                 </div>
                                 <div class="selected-social-icon" id="socialData">
@@ -167,7 +379,7 @@ Page
                                 <div class="preview-card" id="preview-blocks">
                                 </div>
                             </div>
-                            <div class="footer-text">
+                            <div @if(@$design->hide_link_binding == 1) style="display:none;" @endif id="preview_footer" class="footer-text">
                                 <a href="javasctipt:void(0)">
                                     <div class="powered-by">Powered by</div>
                                     <div class="link-text">
@@ -487,7 +699,7 @@ Page
                                     <a href="#" class="live-preview normal-view">
                                         <div class="details">
                                             <div class="title">
-                                                {{@Auth::user()->name}}
+                                                {{@$user->name}}
                                             </div>
                                             <div id="divider_title1" class="dec">
                                                 Title
@@ -498,7 +710,7 @@ Page
                                     <a href="#" class="live-preview normal-view">
                                         <div class="details">
                                             <div class="title">
-                                                {{@Auth::user()->name}}
+                                                {{@$user->name}}
                                             </div>
                                             <div id="divider_title2" class="dec">
                                                 Title
@@ -643,5 +855,4 @@ Page
     </div>
 </div>
 {{-- delete block model --}}
-
 @endsection

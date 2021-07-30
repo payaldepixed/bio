@@ -66,6 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('page/general/store', 'PageController@general')->name('general.store');
         Route::get('page/social', 'PageController@social')->name('social');
         Route::post('page/social/store', 'PageController@socialStore')->name('social.store');
+        Route::post('page/design/store', 'PageController@storeDesign')->name('design.store');
 
         Route::get('logout', function ()
         {

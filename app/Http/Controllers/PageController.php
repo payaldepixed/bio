@@ -17,7 +17,8 @@ class PageController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('page.index', compact('user'));
+        $design = UserPageDesign::where('user_id',$user->id)->first();
+        return view('page.index', compact('user','design'));
     }
 
     public function getBlocks(Request $request)
@@ -35,37 +36,14 @@ class PageController extends Controller
     public function view()
     {
         $user = Auth::user();
-        return view('page.view', compact('user'));
+        $design = UserPageDesign::where('user_id',$user->id)->first();
+        return view('page.view', compact('user','design'));
     }
 
     public function social()
     {
         $socials = ['facebook','twitter','instagram','email','linkedin','youtube'];
         return view('page.social', compact('socials'));
-    }
-
-    public function general(Request $request)
-    {
-        $rules = [
-            'name'  => 'required'
-        ];
-        $validator = Validator::make($request->all(),$rules);
-        if (@$validator->fails()) {
-            return redirect()->back()->withErrors($validator->errors()->first());
-        }
-        $data = $request->only('name','bio');
-        $id = Auth::user()->id;
-        if($request->has('profile_picture'))
-        {
-            if(!in_array(strtolower($request->profile_picture->getClientOriginalExtension()),['jpg','jpeg','png','webp'])) {
-                return redirect()->back()->withErrors('Sorry, Only jpg/jpeg/png/webp files allowed.');
-            }
-            if($request->id)Commonhelper::deleteFile(User::where('id',$id)->value('profile_picture'));
-            $data['profile_picture'] = Commonhelper::resizeImage("avatars/",$request->profile_picture,'avatar');
-        }
-        //insert user data
-        User::where('id',$id)->update($data);
-        return redirect()->back()->with('success', 'Data added successfully!');;
     }
 
     public function socialStore(Request $request)
@@ -175,6 +153,38 @@ class PageController extends Controller
             $media->delete();
         }
         return 1;
+    }
+
+    public function storeDesign(Request $request)
+    {
+        $userdata = $request->only('name','bio');
+        $user_id = Auth::user()->id;
+        if($request->hasFile('profile_picture'))
+        {
+            if(!in_array(strtolower($request->profile_picture->getClientOriginalExtension()),['jpg','jpeg','png','webp'])) {
+                return redirect()->back()->withErrors('Sorry, Only jpg/jpeg/png/webp files allowed.');
+            }
+            Commonhelper::deleteFile(User::where('id',$user_id)->value('profile_picture'));
+            $userdata['profile_picture'] = Commonhelper::resizeImage("avatars/",$request->profile_picture,'avatar');
+        }
+        //insert user data
+        User::where('id',$user_id)->update($userdata);
+        //insert design data
+        $design = UserPageDesign::where('user_id',$user_id)->first();
+        $data = $request->only('primary_text_color','primary_background','profile_picture_shadow',
+        'profile_picture_border','profile_picture_border_color','card_shadow','card_spacing','text_font',
+        'button_color','tactile_card','button_text_color','button_corner','button_border','button_border_color','');
+        $data['enable_vcard'] = @$request->enable_vcard ? 1 : 0;
+        $data['enable_share_button'] = @$request->enable_share_button ? 1 : 0;
+        $data['hide_link_binding'] = @$request->hide_link_binding ? 1 : 0;
+        if($design){
+            $design->fill($data);
+            $design->save();
+        }else{
+            $data['user_id'] = Auth::user()->id;
+            UserPageDesign::create($data);
+        }
+        return redirect()->back();
     }
 
 }
