@@ -155,7 +155,12 @@ img.question_mark {
 }
 
 .template-layout {
-  background-color: #fff;
+  background-color: #f7f7f7;
+}
+
+.template-layout .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .template-layout .template-header {
