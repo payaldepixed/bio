@@ -332,7 +332,9 @@ Page
                                         </div>
                                         {{-- Other option --}}
                                     </div>
-                                    <button type="submit">Save</button>
+                                    <div class="text-center pb-4">
+                                        <button type="submit" class="btn btn-success w-100">Save</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
