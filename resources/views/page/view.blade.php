@@ -28,7 +28,7 @@
                     <div class="template">
                         <div class="item_two p-0">
                             <div class="preview-layout">
-                                <div class="preview-details">
+                                <div id="preview_size" class="preview-details">
                                     <div class="card-layout">
                                         <input type="hidden" name="primary_text_color" value="{{@$design->primary_text_color}}">
                                         <input type="hidden" name="primary_background" value="{{@$design->primary_background}}">
