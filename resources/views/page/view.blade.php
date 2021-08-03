@@ -74,7 +74,7 @@
                                             <a href="javasctipt:void(0)">
                                                 <div class="powered-by">Powered by</div>
                                                 <div class="link-text">
-                                                    <img class="" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">{{config('app.name')}}</div>
+                                                    <img class="link-img" src="{{ asset('static/template_svg/link_black.svg') }}" alt="">{{config('app.name')}}</div>
                                             </a>
                                         </div>
                                     </div>
