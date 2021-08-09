@@ -139,10 +139,11 @@ Page
                                                     </div>
                                                 </div>
                                             </label>
-                                            {{-- <div id="designSIdeAciton" class="file_action d-none">
-                                                <label class="action-file" for="inputFile">Replace</label>
-                                                <label id="designImgRemove" class="action-file" for="">Remove</label>
-                                            </div> --}}
+                                            @if(@$user->profile_picture)
+                                                <div id="designSIdeAciton" class="file_action">
+                                                    <label id="designImgRemove" class="action-file" for="">Remove</label>
+                                                </div>
+                                            @endif
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Profile Bio</label>
@@ -202,16 +203,16 @@ Page
                                                 <div class="tactile-item tactile_no @if(!@$design->tactile_card) selected @endif">
                                                     <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/no_tactile.svg') }}" alt="">
                                                 </div>
-                                                <div class="tactile-item tactile_1" @if(@$design->tactile_card == 1) selected @endif data-id="1">
+                                                <div class="tactile-item tactile_1 @if(@$design->tactile_card == 1) selected @endif" data-id="1">
                                                     <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_one.svg') }}" alt="">
                                                 </div>
-                                                <div class="tactile-item tactile_2" @if(@$design->tactile_card == 2) selected @endif data-id="2">
+                                                <div class="tactile-item tactile_2 @if(@$design->tactile_card == 2) selected @endif" data-id="2">
                                                     <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_two.svg') }}" alt="">
                                                 </div>
-                                                <div class="tactile-item tactile_3" @if(@$design->tactile_card == 3) selected @endif data-id="3">
+                                                <div class="tactile-item tactile_3 @if(@$design->tactile_card == 3) selected @endif" data-id="3">
                                                     <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_three.svg') }}" alt="">
                                                 </div>
-                                                <div class="tactile-item tactile_4" @if(@$design->tactile_card == 4) selected @endif data-id="4">
+                                                <div class="tactile-item tactile_4 @if(@$design->tactile_card == 4) selected @endif" data-id="4">
                                                     <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/tactile_four.svg') }}" alt="">
                                                 </div>
                                             </div>
@@ -235,13 +236,13 @@ Page
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Corner</div>
-                                                <input name="button_corner" id="card_corner" type="range" class="form-range" value="{{@$design->card_corner ? $design->card_corner : '1'}}" min="6" max="30" step="1">
+                                                <input name="button_corner" id="button_corner" type="range" class="form-range" value="{{@$design->button_corner ? $design->button_corner : '1'}}" min="6" max="30" step="1">
                                             </div>
                                         </div>
                                         <div class="mb-3 noTactileCard">
                                             <div class="range-row">
                                                 <div class="range-label">Border</div>
-                                                <input name="button_border" id="card_border" type="range" class="form-range" value="{{@$design->button_border ? $design->button_border : '0'}}" min="0" max="10" step="1">
+                                                <input name="button_border" id="button_border" type="range" class="form-range" value="{{@$design->button_border ? $design->button_border : '0'}}" min="0" max="10" step="1">
                                             </div>
                                         </div>
                                         <div class="mb-3 noTactileCard">

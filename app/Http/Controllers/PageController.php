@@ -16,7 +16,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $design = UserPageDesign::where('user_id',$user->id)->first();
         return view('page.index', compact('user','design'));
     }
@@ -184,6 +184,13 @@ class PageController extends Controller
             $data['user_id'] = Auth::user()->id;
             UserPageDesign::create($data);
         }
+        return redirect()->back();
+    }
+
+    public function deleteMedia()
+    {
+        Commonhelper::deleteFile(Auth::user()->profile_picture);
+        User::where('id',Auth::user()->id)->update(['profile_picture' => '']);
         return redirect()->back();
     }
 

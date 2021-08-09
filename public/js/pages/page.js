@@ -188,6 +188,11 @@ $( document ).ready(function() {
         var value = $("input[name='button_border_color']").val();
         $(".preview-card-body").css("border-color", value);
 
+        var card = $("input[name='tactile_card']").val();
+        if(card != 0){
+            $(".tactile_"+card).trigger( "click" );
+        }
+
     }
 
     $(".addText,.addMedia,.addDivider,.addLink").on('click',function(e)
@@ -679,6 +684,11 @@ $( document ).ready(function() {
         $("#previewImg img").attr("src", "/static/default_user.png");
         $("#designImg").css("background-image", "url(" + imageRemoveUrl + ")");
         $("#designSIdeAciton").addClass("d-none");
+        $.ajax({
+            type: "GET",
+            url: '/admin/delete/media',
+            success: function(){}
+        });
     });
 
     $(document).on("input", "#profile_img_border", function () {

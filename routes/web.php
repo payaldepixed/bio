@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('block/remove', 'PageController@deleteBlock')->name('block.remove');
         Route::post('block/copy', 'PageController@copyBlock')->name('block.copy');
         Route::post('block/media/remove', 'PageController@deleteBlockMedia')->name('block.media.remove');
+        Route::get('delete/media', 'PageController@deleteMedia')->name('user.delete.media');
 
         Route::get('page/general', function () {
             return view('page.general');
