@@ -279,8 +279,24 @@ $(document).ready(function () {
     });
 
     $(document).on("input", "#card_corner", function () {
-        $(".preview-card-body").css("border-radius", $(this).val() + "px");
+        // $(".preview-card-body").css("border-radius", $(this).val() + "px");
         // $("#previewImg").css("border-color", "#000000");
+
+        $(
+            ".live-preview, .live-preview a, .preview-card-body, iframe, .live-preview .thumbnail-grid-img img, .link_preview.button-image-background .live-preview .details "
+        ).css("border-radius", $(this).val() + "px");
+        $(
+            ".live-preview .thumbnail-carousel-img img, .live-preview .thumbnail-highlight-img img, .link_preview.thumbnail-basic .live-preview .thumbnail-img img "
+        ).css("border-top-left-radius", $(this).val() + "px");
+        $(
+            ".live-preview .thumbnail-carousel-img img, .live-preview .thumbnail-highlight-img img, .link_preview.thumbnail-basic .live-preview .details "
+        ).css("border-top-right-radius", $(this).val() + "px");
+        $(
+            ".link_preview.thumbnail-carousel .live-preview .details, .link_preview.thumbnail-highlight .live-preview .details, .link_preview.thumbnail-basic .live-preview .thumbnail-img img "
+        ).css("border-bottom-left-radius", $(this).val() + "px");
+        $(
+            ".link_preview.thumbnail-carousel .live-preview .details, .link_preview.thumbnail-highlight .live-preview .details, .link_preview.thumbnail-basic .live-preview .details "
+        ).css("border-bottom-right-radius", $(this).val() + "px");
     });
 
     $(document).on("input", "#card_border", function () {
