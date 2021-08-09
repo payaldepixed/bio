@@ -135,7 +135,6 @@ $(document).ready(function () {
 
         var color = $("input[name='primary_background']").val();
         $(".card-layout").css("background-color", color);
-        color = color;
         var rgbaCol =
             "rgba(" +
             parseInt(color.slice(-6, -4), 16) +
@@ -566,8 +565,8 @@ $(document).ready(function () {
     });
 
     $("#tactileCard .tactile-item").on("click", function () {
-        $("#preview_size .card-layout").css("background-color", "");
-        $("#preview_size").css("background-color", "");
+        // $("#preview_size .card-layout").css("background-color", "");
+        // $("#preview_size").css("background-color", "");
         $(
             "#preview_size .preview-card-body, #preview_size .details "
         ).removeClass("no_tactile");
@@ -605,8 +604,8 @@ $(document).ready(function () {
                 "," +
                 parseInt(color.slice(-2), 16) +
                 ",0.9)";
-            $("#preview_size").css("background-color", rgbaCol);
-            $("#preview_size .card-layout").css("background-color", color);
+            // $("#preview_size").css("background-color", rgbaCol);
+            // $("#preview_size .card-layout").css("background-color", color);
             $(
                 "#preview_size .preview-card-body, #preview_size .details "
             ).addClass("tactile_one");
@@ -621,8 +620,8 @@ $(document).ready(function () {
                 "," +
                 parseInt(color.slice(-2), 16) +
                 ",0.9)";
-            $("#preview_size").css("background-color", rgbaCol);
-            $("#preview_size .card-layout").css("background-color", color);
+            // $("#preview_size").css("background-color", rgbaCol);
+            // $("#preview_size .card-layout").css("background-color", color);
             $(
                 "#preview_size .preview-card-body, #preview_size .details "
             ).addClass("tactile_two");
@@ -637,8 +636,8 @@ $(document).ready(function () {
                 "," +
                 parseInt(color.slice(-2), 16) +
                 ",0.9)";
-            $("#preview_size").css("background-color", rgbaCol);
-            $("#preview_size .card-layout").css("background-color", color);
+            // $("#preview_size").css("background-color", rgbaCol);
+            // $("#preview_size .card-layout").css("background-color", color);
             $(
                 "#preview_size .preview-card-body, #preview_size .details "
             ).addClass("tactile_three");
@@ -653,8 +652,8 @@ $(document).ready(function () {
                 "," +
                 parseInt(color.slice(-2), 16) +
                 ",0.9)";
-            $("#preview_size").css("background-color", rgbaCol);
-            $("#preview_size .card-layout").css("background-color", color);
+            // $("#preview_size").css("background-color", rgbaCol);
+            // $("#preview_size .card-layout").css("background-color", color);
             $("#preview_size .preview-card-body, #preview_size .details").css(
                 "background-color",
                 ""

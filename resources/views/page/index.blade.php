@@ -548,9 +548,9 @@ Page
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Link Preview</label>
-                                <div id="linkPreview" class="link_preview normal" style="display: block;">
+                                <div id="linkPreview" class="link_preview normal">
                                     {{-- normal --}}
-                                    <a href="#" style="display: block;" id="layout_preview_1" class="live-preview normal-view animate__animated animate__shakeX links_preview">
+                                    <a href="#" id="layout_preview_1" class="live-preview normal-view animate__animated animate__shakeX links_preview">
                                         <div class="details">
                                             <div id="layout_title_1" class="title">
                                                 My Example Link
@@ -603,7 +603,7 @@ Page
                                     </a>
                                     {{-- thumbnail-highlight --}}
                                     {{-- thumbnail-grid --}}
-                                    <div id="layout_preview_5" style="display: none;" class="live-preview grid-2 thumbnail-grid-view links_preview">
+                                    <div id="layout_preview_5" class="live-preview grid-2 thumbnail-grid-view links_preview">
                                         <a href="#" class="animate__animated animate__swing">
                                             <div class="thumbnail-grid-img">
                                                 <img id="layout_img_5" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
