@@ -189,10 +189,9 @@ $(document).ready(function () {
         $(".preview-card-body").css("border-color", value);
 
         var card = $("input[name='tactile_card']").val();
-        if(card != 0){
-            $(".tactile_"+card).trigger( "click" );
+        if (card != 0) {
+            $(".tactile_" + card).trigger("click");
         }
-
     }
 
     $(".addText,.addMedia,.addDivider,.addLink").on("click", function (e) {
@@ -374,24 +373,6 @@ $(document).ready(function () {
                         $("#labelDiv").hide();
                     }
                     $("#new_link").modal("show");
-                    if (layout == 2 && data.medias[0].media_file) {
-                        $("#layout_img_2").attr("src", data.medias[0].media_file);
-                    }
-                    if (layout == 4 && data.medias[0].media_file) {
-                        $("#layout_img_4").attr("src", data.medias[0].media_file);
-                    }
-                    if (layout == 5 && data.medias[0].media_file) {
-                        $("#layout_img_5").attr("src", data.medias[0].media_file);
-                    }
-                    if (layout == 6 && data.medias[0].media_file) {
-                        $("#layout_img_6").attr("src", data.medias[0].media_file);
-                    }
-                    if (layout == 3 && data.medias[0].media_file) {
-                        $("#layout_img_3").css(
-                            "background-image",
-                            "url(" + data.medias[0].media_file + ")"
-                        );
-                    }
                 }
                 if (type == "divider") {
                     $("#divider_title").val(title);
@@ -724,8 +705,8 @@ $(document).ready(function () {
         $("#designSIdeAciton").addClass("d-none");
         $.ajax({
             type: "GET",
-            url: '/admin/delete/media',
-            success: function(){}
+            url: "/admin/delete/media",
+            success: function () {},
         });
     });
 
@@ -804,4 +785,22 @@ $(document).ready(function () {
         }
         $("#text_font").val($(this).data("id"));
     });
+
+    // drag and drop js
+
+    $(".block-body").sortable({
+        connectWith: ".block-body",
+        update: function (event, ui) {
+            var changedList = this.id;
+            var order = $(this).sortable("toArray");
+            var positions = order.join(";");
+
+            console.log({
+                id: changedList,
+                positions: positions,
+            });
+        },
+    });
+
+    // drag and drop js
 });

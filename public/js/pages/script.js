@@ -397,4 +397,22 @@ $(document).ready(function () {
     });
 
     // New Instagram Scraper model end
+
+    // drag and drop js
+
+    $(".block-body").sortable({
+        connectWith: ".block-body",
+        update: function (event, ui) {
+            var changedList = this.id;
+            var order = $(this).sortable("toArray");
+            var positions = order.join(";");
+
+            console.log({
+                id: changedList,
+                positions: positions,
+            });
+        },
+    });
+
+    // drag and drop js
 });

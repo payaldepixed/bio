@@ -11,7 +11,7 @@ Page Template
 @endsection
 
 @section('js_after')
-{{-- <script src="{{ asset('js/jquery.min.js') }}"></script> --}}
+<script src="{{ asset('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('js/pages/script.js') }}"></script>
 @endsection
 
@@ -412,6 +412,104 @@ Page Template
                                         My Blocks
                                     </div>
                                     <div class="block-body">
+                                        <div class="block-details">
+                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
+                                                <div class="plus">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+                                            <div class="block-card">
+                                                <div class="card-details">
+                                                    <div class="card-drag">
+                                                        <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="">
+                                                        <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="" style="margin-left: -12px;">
+                                                    </div>
+                                                    <div class="block-card-details">
+                                                        <div class="block-title">
+                                                            <img class="" src="{{ asset('static/template_svg/link.svg') }}" alt=""> Block name
+                                                        </div>
+                                                        <div class="views">
+                                                            Views: <span>0</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-card-action">
+                                                        <div class="action-icon">
+                                                            <img class="" src="{{ asset('static/template_svg/edit.svg') }}" alt="">
+                                                        </div>
+                                                        <div class="action-icon">
+                                                            <img class="" src="{{ asset('static/template_svg/copy.svg') }}" alt="">
+                                                        </div>
+                                                        <div class="action-icon" data-bs-toggle="modal" data-bs-target="#modal-danger">
+                                                            <img class="" src="{{ asset('static/template_svg/delete_red.svg') }}" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
+                                                <div class="plus">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="block-details">
+                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
+                                                <div class="plus">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+                                            <div class="block-card">
+                                                <div class="card-details">
+                                                    <div class="card-drag">
+                                                        <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="">
+                                                        <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="" style="margin-left: -12px;">
+                                                    </div>
+                                                    <div class="block-card-details">
+                                                        <div class="block-title">
+                                                            <img class="" src="{{ asset('static/template_svg/link.svg') }}" alt=""> Block name
+                                                        </div>
+                                                        <div class="views">
+                                                            Views: <span>0</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-card-action">
+                                                        <div class="action-icon">
+                                                            <img class="" src="{{ asset('static/template_svg/edit.svg') }}" alt="">
+                                                        </div>
+                                                        <div class="action-icon">
+                                                            <img class="" src="{{ asset('static/template_svg/copy.svg') }}" alt="">
+                                                        </div>
+                                                        <div class="action-icon" data-bs-toggle="modal" data-bs-target="#modal-danger">
+                                                            <img class="" src="{{ asset('static/template_svg/delete_red.svg') }}" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
+                                                <div class="plus">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
                                         <div class="block-details">
                                             <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
                                                 <div class="plus">
