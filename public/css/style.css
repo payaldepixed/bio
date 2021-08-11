@@ -1632,6 +1632,7 @@ div#Design {
   margin-bottom: 5px;
   padding-right: 15px;
   padding-left: 15px;
+  background-color: transparent !important;
 }
 
 .viewLayout .template-layout .template .item_two .preview-layout .preview-details .card-layout .preview-all .preview-card .link_preview .preview-card-body.card-style {
