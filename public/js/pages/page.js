@@ -789,11 +789,11 @@ $(document).ready(function () {
     // drag and drop js
 
     $("#blocks").sortable({
-        connectWith: "#blocks",
+        // connectWith: "#preview-blocks",
         update: function (event, ui) {
             var changedList = this.id;
             var order = $(this).sortable("toArray");
-            var positions = order.join(";");
+            var positions = order.join(" ");
 
             console.log({
                 id: changedList,
