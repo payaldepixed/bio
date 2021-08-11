@@ -788,8 +788,8 @@ $(document).ready(function () {
 
     // drag and drop js
 
-    $(".block-body").sortable({
-        connectWith: ".block-body",
+    $("#blocks").sortable({
+        connectWith: "#blocks",
         update: function (event, ui) {
             var changedList = this.id;
             var order = $(this).sortable("toArray");

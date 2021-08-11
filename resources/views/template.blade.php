@@ -11,7 +11,7 @@ Page Template
 @endsection
 
 @section('js_after')
-<script src="{{ asset('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('js/pages/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('js/pages/script.js') }}"></script>
 @endsection
 
