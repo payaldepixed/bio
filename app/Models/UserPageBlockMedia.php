@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Storage;
+use Config;
 
 class UserPageBlockMedia extends Model
 {
@@ -11,4 +13,7 @@ class UserPageBlockMedia extends Model
     protected $fillable = [
         'block_id','media_file'
     ];
+    public function getMediaFileAttribute($value) {
+		return $value ? Storage::disk(Config::get('constants.DISK'))->url($value) : '';
+	}
 }

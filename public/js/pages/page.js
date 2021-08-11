@@ -374,6 +374,24 @@ $(document).ready(function () {
                         $("#labelDiv").hide();
                     }
                     $("#new_link").modal("show");
+                    if (layout == 2 && data.medias[0].media_file) {
+                        $("#layout_img_2").attr("src", data.medias[0].media_file);
+                    }
+                    if (layout == 4 && data.medias[0].media_file) {
+                        $("#layout_img_4").attr("src", data.medias[0].media_file);
+                    }
+                    if (layout == 5 && data.medias[0].media_file) {
+                        $("#layout_img_5").attr("src", data.medias[0].media_file);
+                    }
+                    if (layout == 6 && data.medias[0].media_file) {
+                        $("#layout_img_6").attr("src", data.medias[0].media_file);
+                    }
+                    if (layout == 3 && data.medias[0].media_file) {
+                        $("#layout_img_3").css(
+                            "background-image",
+                            "url(" + data.medias[0].media_file + ")"
+                        );
+                    }
                 }
                 if (type == "divider") {
                     $("#divider_title").val(title);

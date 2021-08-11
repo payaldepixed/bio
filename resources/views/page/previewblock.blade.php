@@ -13,7 +13,7 @@
                 <div class="link_preview thumbnail-basic">
                     <a href="#" class="live-preview thumbnail-view">
                         <div class="thumbnail-img">
-                            <img class="" src="{{@$block->medias[0]->media_file ? Storage::disk(Config::get('constants.DISK'))->url($block->medias[0]->media_file) : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                            <img class="" src="{{@$block->medias[0]->media_file ? $block->medias[0]->media_file : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
                         </div>
                         <div class="details">
                             <div class="title">
@@ -29,7 +29,7 @@
             @if($block->layout == 3)
                 <div class="link_preview button-image-background">
                     <a href="#" class="live-preview image-background-view animate__animated animate__pulse">
-                        <div class="details" style="background-image: url('{{@$block->medias[0]->media_file ? Storage::disk(Config::get('constants.DISK'))->url($block->medias[0]->media_file) : asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
+                        <div class="details" style="background-image: url('{{@$block->medias[0]->media_file ? $block->medias[0]->media_file : asset('static/template_svg/new-link/img/empty-state.jpg') }}')">
                             <div class="title">
                                 {{@$block->title ? $block->title : @Auth::user()->name}}
                             </div>
@@ -44,7 +44,7 @@
                 <div class="link_preview thumbnail-highlight">
                     <a href="#" class="live-preview thumbnail-highlight-view">
                         <div class="thumbnail-highlight-img">
-                            <img class="" src="{{@$block->medias[0]->media_file ? Storage::disk(Config::get('constants.DISK'))->url($block->medias[0]->media_file) : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                            <img class="" src="{{@$block->medias[0]->media_file ? $block->medias[0]->media_file : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
                         </div>
                         <div class="details">
                             <div class="title">
@@ -63,7 +63,7 @@
                         @for ($i = 1; $i <= $block->grid_size ; $i++)
                             <a href="#" class="">
                                 <div class="thumbnail-grid-img">
-                                    <img src="{{@$block->medias[$i-1]->media_file ? Storage::disk(Config::get('constants.DISK'))->url($block->medias[$i-1]->media_file) : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                    <img src="{{@$block->medias[$i-1]->media_file ? $block->medias[$i-1]->media_file : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
                                 </div>
                             </a>
                         @endfor
@@ -76,7 +76,7 @@
                         @for ($i = 1; $i <= 3 ; $i++)
                             <a href="#" class="">
                                 <div class="thumbnail-carousel-img">
-                                    <img src="{{@$block->medias[$i-1]->media_file ? Storage::disk(Config::get('constants.DISK'))->url($block->medias[$i-1]->media_file) : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
+                                    <img src="{{@$block->medias[$i-1]->media_file ? $block->medias[$i-1]->media_file : asset('static/template_svg/new-link/img/empty-state.jpg') }}" alt="">
                                 </div>
                                 <div class="details">
                                     <div class="title">
