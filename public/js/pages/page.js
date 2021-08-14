@@ -710,6 +710,16 @@ $(document).ready(function () {
         });
     });
 
+    $(document).on("click", ".link_preview_click", function () {
+        var id = $(this).data("id");
+        $.ajax({
+            type: "GET",
+            url: "/block/view/"+id,
+            success: function () {
+            },
+        });
+    });
+
     $(document).on("input", "#profile_img_border", function () {
         $("#previewImg").css("border-width", $(this).val() + "px");
         $("#previewImg").css("border-color", "#000000");
@@ -787,20 +797,25 @@ $(document).ready(function () {
     });
 
     // drag and drop js
-
-    $("#blocks").sortable({
-        // connectWith: "#preview-blocks",
-        update: function (event, ui) {
-            var changedList = this.id;
-            var order = $(this).sortable("toArray");
-            var positions = order.join(" ");
-
-            console.log({
-                id: changedList,
-                positions: positions,
-            });
-        },
-    });
-
+    if($('#blocks').length){
+        $("#blocks").sortable({
+            update: function () {
+                var order = $(this).sortable("toArray");
+                var positions = order.join(",");
+                $.ajax({
+                    headers: {
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                    },
+                    type: "POST",
+                    url: "/admin/block/sorting",
+                    data: { positions: positions },
+                    success: function () {
+                        fetchBlocks();
+                    }
+                });
+            },
+        });
+    }
     // drag and drop js
+
 });

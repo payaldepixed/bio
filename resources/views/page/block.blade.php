@@ -1,6 +1,6 @@
 @if(@count(@$blocks) > 0)
     @foreach($blocks as $block)
-        <div class="block-details">
+        <div class="block-details" id="{{$block->id}}">
             <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
                 <div class="plus">
                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -21,7 +21,7 @@
                             {{@$block->title ? $block->title : ucfirst($block->type)}}
                         </div>
                         <div class="views">
-                            Views: <span>0</span>
+                            Views: <span>{{$block->views}}</span>
                         </div>
                     </div>
                     <div class="block-card-action">

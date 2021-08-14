@@ -6,6 +6,7 @@ use Mail;
 use Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\UserPageSocial;
+use App\Models\UserPageBlock;
 use Auth;
 
 class Commonhelper
@@ -66,6 +67,13 @@ class Commonhelper
         ,'kofi','last_fm','linkedin','medium','meetup','only_fans','patreon','pinterest','reddit'
         ,'signal','slack','snapchat','soundcloud','spotify','telegram','tidal','tiktok','tumblr'
         ,'twitch','twitter','unsplash','vimeo','wechat','whatsapp','youtube'];
+    }
+
+    public static function setBlockView($id) {
+        $block = UserPageBlock::find($id);
+        $block->views = $block->views + 1;
+        $block->save();
+        return 1;
     }
 
 }

@@ -58,7 +58,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('block/remove', 'PageController@deleteBlock')->name('block.remove');
         Route::post('block/copy', 'PageController@copyBlock')->name('block.copy');
         Route::post('block/media/remove', 'PageController@deleteBlockMedia')->name('block.media.remove');
-        Route::get('delete/media', 'PageController@deleteMedia')->name('user.delete.media');
+        Route::get('delete/media', 'PageController@deleteMedia')->name('block.delete.media');
+        Route::post('block/sorting', 'PageController@sortingBlock')->name('block.sort');
 
         Route::get('page/general', function () {
             return view('page.general');
@@ -83,5 +84,6 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::get('/link/{username}', 'PageController@view')->name('mypage');
+    Route::get('/block/view/{id}', 'PageController@addBlockView')->name('block.add.view');
 
  });

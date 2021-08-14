@@ -23,13 +23,13 @@ class PageController extends Controller
 
     public function getBlocks(Request $request)
     {
-        $blocks = UserPageBlock::where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+        $blocks = UserPageBlock::where('user_id',Auth::user()->id)->orderBy('order_by','asc')->get();
         return view('page.block', compact('blocks'));
     }
 
     public function previewBlocks(Request $request)
     {
-        $blocks = UserPageBlock::with('medias')->where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+        $blocks = UserPageBlock::with('medias')->where('user_id',Auth::user()->id)->orderBy('order_by','asc')->get();
         return view('page.previewblock', compact('blocks'));
     }
 
@@ -87,6 +87,7 @@ class PageController extends Controller
             $block_id = $request->id;
         }else{
             $data['user_id'] = Auth::user()->id;
+            UserPageBlock::where('user_id',Auth::user()->id)->increment('order_by');
             $block = UserPageBlock::create($data);
             $block_id = $block->id;
         }
@@ -192,6 +193,21 @@ class PageController extends Controller
         Commonhelper::deleteFile(Auth::user()->profile_picture);
         User::where('id',Auth::user()->id)->update(['profile_picture' => '']);
         return redirect()->back();
+    }
+
+    public function addBlockView($id)
+    {
+        return Commonhelper::setBlockView($id);
+    }
+
+    public function sortingBlock(Request $request)
+    {
+        $blocks = explode(',',$request->positions);
+        foreach($blocks as $i=>$block){
+            $sort = $i + 1;
+            UserPageBlock::where('id',$block)->update(['order_by'=>$sort]);
+        }
+        return 1;
     }
 
 }
