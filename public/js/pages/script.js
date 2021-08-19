@@ -415,4 +415,103 @@ $(document).ready(function () {
     });
 
     // drag and drop js
+
+    // custom background js
+    $("#selectColor .select-color").on("click", function () {
+        $("#selectColor .select-color.selected").removeClass("selected");
+        $(this).addClass("selected");
+
+        $("#background_type_preset").addClass("d-none");
+        $("#background_type_gradient").addClass("d-none");
+        $("#background_type_color").addClass("d-none");
+        $("#background_type_image").addClass("d-none");
+        $("#background_type_video").addClass("d-none");
+        $("#bgVideo").addClass("d-none");
+
+        if ($(this).hasClass("preset")) {
+            $("#mainTitleBackground").html("Preset");
+            $("#background_type_preset").removeClass("d-none");
+        } else if ($(this).hasClass("custom-gradient")) {
+            $("#mainTitleBackground").html("Custom Gradient");
+            $("#background_type_gradient").removeClass("d-none");
+        } else if ($(this).hasClass("custom-color")) {
+            $("#mainTitleBackground").html("Custom Color");
+            $("#background_type_color").removeClass("d-none");
+        } else if ($(this).hasClass("custom-image")) {
+            $("#mainTitleBackground").html("Custom Image");
+            $("#background_type_image").removeClass("d-none");
+        } else if ($(this).hasClass("custom-video")) {
+            $("#mainTitleBackground").html("Custom Video");
+            $("#background_type_video").removeClass("d-none");
+            $("#background_type_video_input").val("");
+        }
+
+        // console.log("selecttype", $(this).text());
+    });
+
+    $("#background_type_preset input").on("click", function () {
+        // console.log("sdfas", $(this).val());
+        $("#preview_size .card-layout").css("background-image", $(this).val());
+    });
+
+    $(document).on(
+        "input",
+        "#settings_background_type_gradient_color_one",
+        function () {
+            $("#preview_size .card-layout").css(
+                "background-image",
+                "linear-gradient(135deg, " +
+                    $(this).val() +
+                    " 10%, " +
+                    $("#settings_background_type_gradient_color_two").val() +
+                    " 100%)"
+            );
+        }
+    );
+    $(document).on(
+        "input",
+        "#settings_background_type_gradient_color_two",
+        function () {
+            $("#preview_size .card-layout").css(
+                "background-image",
+                "linear-gradient(135deg, " +
+                    $("#settings_background_type_gradient_color_one").val() +
+                    " 10%, " +
+                    $(this).val() +
+                    " 100%)"
+            );
+        }
+    );
+
+    $(document).on("input", "#settings_background_type_color", function () {
+        $("#preview_size .card-layout").css("background-image", "");
+        $("#preview_size .card-layout").css("background-color", $(this).val());
+    });
+
+    $(document).on("input", "#background_type_image_input", function (event) {
+        var imageUrl = URL.createObjectURL(event.target.files[0]);
+        $("#background_type_image_preview").attr("src", imageUrl);
+        $("#preview_size .card-layout").css(
+            "background-image",
+            "url(" + imageUrl + ")"
+        );
+        $("#preview_size .card-layout").css("background-color", "");
+        $("#preview_size .card-layout").css("background-repeat", "no-repeat");
+        $("#preview_size .card-layout").css("background-size", "cover");
+        $("#preview_size .card-layout").css(
+            "background-position",
+            "center center"
+        );
+        $("#preview_size .card-layout").css("min-height", "100%");
+    });
+
+    $(document).on("change", "#background_type_video_input", function (evt) {
+        var $source = $("#video_here");
+        $source[0].src = URL.createObjectURL(this.files[0]);
+        $source.parent()[0].load();
+        $("#bgVideo").removeClass("d-none");
+        $("#preview_size .card-layout").removeAttr("style");
+    });
+
+    // custom background js
 });

@@ -612,6 +612,103 @@ Page Template
                                             </div>
                                         </div>
 
+
+                                        {{-- primary color new design --}}
+
+                                        <div class="social-links mb-3">
+                                            <div class="accordion" id="accordion-example">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading-2">
+                                                    <button id="mainTitleBackground" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-colors" aria-expanded="false">
+                                                        Primary Background
+                                                    </button>
+                                                    </h2>
+                                                    <div id="collapse-colors" class="accordion-collapse collapse" data-bs-parent="#accordion-example">
+                                                        <div class="accordion-body p-2">
+                                                          <div id="selectColor" class="primary-colors">
+                                                            <div class="select-color preset selected">Preset</div>
+                                                            <div class="select-color custom-gradient">Custom Gradient</div>
+                                                            <div class="select-color custom-color">Custom Color</div>
+                                                            <div class="select-color custom-image">Custom Image</div>
+                                                            <div class="select-color custom-video">Custom Video</div>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div id="background_type_preset" class="row">
+                                            <label for="settings_background_type_preset_one" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(111.7deg, #a529b9 19.9%, #50b1e1 95%)" id="settings_background_type_preset_one" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-one"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_two" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(109.6deg, #ffb418 11.2%, #f73131 91.1%)" id="settings_background_type_preset_two" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-two"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_three" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(135deg, #79f1a4 10%, #0e5cad 100%)" id="settings_background_type_preset_three" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-three"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_four" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(to bottom, #ff758c, #ff7eb3)" id="settings_background_type_preset_four" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-four"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_five" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(292.2deg, #3355ff 33.7%, #0088ff 93.7%)" id="settings_background_type_preset_five" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-five"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_six" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(to bottom, #fc5c7d, #6a82fb)" id="settings_background_type_preset_six" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-six"></div>
+                                            </label>
+                                        </div>
+
+
+                                        <div id="background_type_gradient" class="d-none">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="">Color One</label>
+                                                <input type="color" id="settings_background_type_gradient_color_one" name="color_one" class="form-control" value="#B54E4E">
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="">Color Two</label>
+                                                <input type="color" id="settings_background_type_gradient_color_two" name="color_two" class="form-control" value="#2F1E1E">
+                                            </div>
+                                        </div>
+
+
+                                        <div id="background_type_color" class="mb-3 d-none">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">Custom Color</label>
+                                                <input type="color" id="settings_background_type_color" name="custom_color" class="form-control" value="#2F1E1E">
+                                            </div>
+                                        </div>
+
+
+                                        <div id="background_type_image" class="mb-3 d-none">
+                                            <div class="form-group">
+                                                <img id="background_type_image_preview" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" class="link-background-type-image">
+                                                <input id="background_type_image_input" type="file" name="background" accept=".gif, .ico, .png, .jpg, .jpeg, .svg" class="form-control-file">
+                                            </div>
+                                        </div>
+
+
+                                        <div id="background_type_video" class="mb-3 d-none">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">Custom Video</label>
+                                                <input id="background_type_video_input" type="file" accept="video/mp4,video/x-m4v,video/*" name="file[]" >
+                                            </div>
+                                        </div>
+
+
+                                         {{-- primary color new design --}}
+
+
+
+
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Primary Background</div>
@@ -903,6 +1000,9 @@ Page Template
                 <div class="preview-layout">
                     <div id="preview_size" class="preview-details">
                         <div class="card-layout">
+                            <video id="bgVideo" autoplay muted loop class="d-none">
+                                <source src="" type="video/mp4" id="video_here" />
+                            </video>
                             <div class="preview-all">
                                 <div class="share_vcard_icons">
                                     <div class="preview_share">
