@@ -690,8 +690,18 @@ Page Template
 
                                         <div id="background_type_image" class="mb-3 d-none">
                                             <div class="form-group">
-                                                <img id="background_type_image_preview" src="{{ asset('static/template_svg/new-link/img/empty-state.jpg') }}" class="link-background-type-image">
+                                                <img id="background_type_image_preview" src="" class="link-background-type-image">
                                                 <input id="background_type_image_input" type="file" name="background" accept=".gif, .ico, .png, .jpg, .jpeg, .svg" class="form-control-file">
+                                                <div class="form-group mt-3">
+                                                    <label class="form-label" for="">Overlay Image Color</label>
+                                                    <input type="color" id="overlay_background_type_color" name="custom_color" class="form-control" value="#000">
+                                                </div>
+                                                <div class="my-3">
+                                                    <div class="range-row">
+                                                        <div class="range-label">Background Overlay</div>
+                                                        <input id="overlay_background_type_opacity" type="range" class="form-range" value="0.9" min="0.3" max="0.9" step="0.1">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -700,6 +710,12 @@ Page Template
                                             <div class="form-group">
                                                 <label class="form-label" for="">Custom Video</label>
                                                 <input id="background_type_video_input" type="file" accept="video/mp4,video/x-m4v,video/*" name="file[]" >
+                                                <div class="my-3">
+                                                    <div class="range-row">
+                                                        <div class="range-label">Background Overlay</div>
+                                                        <input id="overlay_background_video_type_opacity" type="range" class="form-range" value="0.9" min="0.3" max="0.9" step="0.1">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 

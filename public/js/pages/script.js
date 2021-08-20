@@ -505,6 +505,49 @@ $(document).ready(function () {
         $("#preview_size .card-layout").css("min-height", "100%");
     });
 
+    $(document).on("input", "#overlay_background_type_color", function () {
+        var overLayColor = $(this).val();
+        var rgbaOverlayCol =
+            "rgba(" +
+            parseInt(overLayColor.slice(-6, -4), 16) +
+            "," +
+            parseInt(overLayColor.slice(-4, -2), 16) +
+            "," +
+            parseInt(overLayColor.slice(-2), 16) +
+            ",0.4)";
+
+        var backgroundShadow = "inset 2000px 0 0 0 " + rgbaOverlayCol;
+        $("#preview_size .card-layout").css("box-shadow", backgroundShadow);
+    });
+
+    $(document).on("input", "#overlay_background_type_opacity", function () {
+        // console.log("shadow", $(this).val());
+        if ($(this).val() > 0.3) {
+            var overLayColor = $("#overlay_background_type_color").val();
+            var rgbaOverlayCol =
+                "rgba(" +
+                parseInt(overLayColor.slice(-6, -4), 16) +
+                "," +
+                parseInt(overLayColor.slice(-4, -2), 16) +
+                "," +
+                parseInt(overLayColor.slice(-2), 16) +
+                "," +
+                $(this).val() +
+                ")";
+
+            var backgroundShadow = "inset 2000px 0 0 0 " + rgbaOverlayCol;
+            $("#preview_size .card-layout").css("box-shadow", backgroundShadow);
+        }
+    });
+
+    $(document).on(
+        "input",
+        "#overlay_background_video_type_opacity",
+        function () {
+            $("#bgVideo").css("opacity", $(this).val());
+        }
+    );
+
     $(document).on("change", "#background_type_video_input", function (evt) {
         var $source = $("#video_here");
         $source[0].src = URL.createObjectURL(this.files[0]);

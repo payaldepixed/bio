@@ -1636,6 +1636,12 @@ input[type="radio"]:checked ~ .link-background-type-preset {
     }
 }
 
+#overlay_background_type_color {
+    padding: 0;
+    height: 30px;
+    cursor: pointer;
+}
+
 #background_type_image {
     .form-group {
         .link-background-type-image {

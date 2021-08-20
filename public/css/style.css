@@ -1688,6 +1688,12 @@ input[type="radio"]:checked ~ .link-background-type-preset {
   cursor: pointer;
 }
 
+#overlay_background_type_color {
+  padding: 0;
+  height: 30px;
+  cursor: pointer;
+}
+
 #background_type_image .form-group .link-background-type-image {
   border-radius: 0.25rem;
   margin-bottom: 0.5rem;
