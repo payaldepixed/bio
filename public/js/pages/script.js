@@ -522,7 +522,7 @@ $(document).ready(function () {
 
     $(document).on("input", "#overlay_background_type_opacity", function () {
         // console.log("shadow", $(this).val());
-        if ($(this).val() > 0.3) {
+        if ($(this).val() > 0) {
             var overLayColor = $("#overlay_background_type_color").val();
             var rgbaOverlayCol =
                 "rgba(" +

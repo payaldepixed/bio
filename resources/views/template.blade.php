@@ -699,7 +699,7 @@ Page Template
                                                 <div class="my-3">
                                                     <div class="range-row">
                                                         <div class="range-label">Background Overlay</div>
-                                                        <input id="overlay_background_type_opacity" type="range" class="form-range" value="0.9" min="0.3" max="0.9" step="0.1">
+                                                        <input id="overlay_background_type_opacity" type="range" class="form-range" value="0.9" min="0.1" max="0.9" step="0.1">
                                                     </div>
                                                 </div>
                                             </div>
