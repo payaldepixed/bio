@@ -1582,6 +1582,11 @@ div#Design {
     color: #fff;
     background: #999;
 }
+#background_type_preset {
+    label {
+        cursor: pointer;
+    }
+}
 
 .link-background-type-preset {
     width: 100%;
@@ -1634,6 +1639,12 @@ input[type="radio"]:checked ~ .link-background-type-preset {
             cursor: pointer;
         }
     }
+}
+
+#overlay_background_type_color {
+    padding: 0;
+    height: 30px;
+    cursor: pointer;
 }
 
 #background_type_image {
