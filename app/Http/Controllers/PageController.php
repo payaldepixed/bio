@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\UserLink;
 use App\Models\UserPageSocial;
 use App\Models\UserPageDesign;
 use App\Models\UserPageBlock;
@@ -14,30 +15,99 @@ use Auth;
 
 class PageController extends Controller
 {
+
     public function index()
     {
-        $user = User::find(Auth::user()->id);
-        $design = UserPageDesign::where('user_id',$user->id)->first();
-        return view('page.index', compact('user','design'));
+        $links = UserLink::where('user_id',Auth::user()->id)->paginate(5);
+        return view('link.listing', compact('links'));
     }
 
-    public function getBlocks(Request $request)
+    public function getAjaxData(Request $request)
     {
-        $blocks = UserPageBlock::where('user_id',Auth::user()->id)->orderBy('order_by','asc')->get();
+        $linkData = UserLink::where('user_id',Auth::user()->id);
+        if(isset($request->filter)){
+            $linkData->where('is_active',$request->get('filter'));
+        }
+        if($request->get('search') && $request->get('search') != ''){
+            $search = $request->get('search');
+            $search = str_replace('%20', ' ', $search);
+            $linkData->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                      ->orWhere('created_at', 'like', "%{$search}%");
+            });
+        }
+        if(@$request->get('sort_by') && @$request->get('sort_type')){
+            $linkData->orderBy($request->sort_by, $request->sort_type);
+        }else{
+            $linkData->orderBy('id','desc');
+        }
+        $links = $linkData->paginate(5);
+        return view('link.data-list', compact('links'))->render();
+    }
+
+    public function addLink()
+    {
+        return view('link.form');
+    }
+
+    public function storeLink(Request $request)
+    {
+        $rules = [];
+        if($request->id){
+            $rules['name'] = 'required|unique:user_links,name,'.$request->id;
+        }
+        else{
+            $rules['name'] = 'required|unique:user_links,name';
+        }
+        $validator = Validator::make($request->all(),$rules);
+        if (@$validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors()->first());
+        }
+        //insert user data
+        $data = $request->only('name');
+        if($request->id){
+            UserLink::where('id',$request->id)->update($data);
+        }else{
+            $data['user_id'] = Auth::user()->id;
+            UserLink::create($data);
+        }
+        return redirect('admin/link')->with('success','Link added successfully!');
+    }
+
+    public function removeLink(Request $request)
+    {
+        UserLink::where('id',$request->id)->update(['is_active'=>0]);
+        return redirect()->back()->with('success','Link removed successfully!');
+    }
+
+    public function page($id)
+    {
+        $user = User::find(Auth::user()->id);
+        $design = UserPageDesign::where('link_id',$id)->first();
+        $link_id = $id;
+        $linkname = UserLink::where('id',$id)->value('name');
+        return view('page.page', compact('user','design','link_id','linkname'));
+    }
+
+    public function getBlocks($id)
+    {
+        $blocks = UserPageBlock::where('link_id',$id)->orderBy('order_by','asc')->get();
         return view('page.block', compact('blocks'));
     }
 
-    public function previewBlocks(Request $request)
+    public function previewBlocks($id)
     {
-        $blocks = UserPageBlock::with('medias')->where('user_id',Auth::user()->id)->orderBy('order_by','asc')->get();
+        $blocks = UserPageBlock::with('medias')->where('link_id',$id)->orderBy('order_by','asc')->get();
         return view('page.previewblock', compact('blocks'));
     }
 
-    public function view()
+    public function view($name)
     {
-        $user = Auth::user();
-        $design = UserPageDesign::where('user_id',$user->id)->first();
-        return view('page.view', compact('user','design'));
+        $link = UserLink::where('name',$name)->first();
+        $user = User::find($link->user_id);
+        $link_id = $link->id;
+        $design = UserPageDesign::where('link_id',$link_id)->first();
+        return view('page.view', compact('user','design','link_id'));
     }
 
     public function social()
@@ -56,10 +126,11 @@ class PageController extends Controller
                 if($link != ''){
                     $data = array(
                         'user_id' => $user_id,
+                        'link_id' => $request->link_id,
                         'social_type' => $type,
                         'social_link' => $link
                     );
-                    UserPageSocial::firstOrCreate(['user_id' => $user_id,'social_type' => $type],$data);
+                    UserPageSocial::firstOrCreate(['user_id' => $user_id,'social_type' => $type,'link_id' => $request->link_id],$data);
                 }
             }
         }
@@ -81,7 +152,7 @@ class PageController extends Controller
         if (@$validator->fails()) {
             return redirect()->back()->withErrors($validator->errors()->first());
         }
-        $data = $request->only('title','url','type','description','layout','animation','grid_size','label');
+        $data = $request->only('title','url','type','description','layout','animation','grid_size','label','link_id');
         if($request->id){
             UserPageBlock::where('id',$request->id)->update($data);
             $block_id = $request->id;
@@ -171,13 +242,14 @@ class PageController extends Controller
         //insert user data
         User::where('id',$user_id)->update($userdata);
         //insert design data
-        $design = UserPageDesign::where('user_id',$user_id)->first();
-        $data = $request->only('primary_text_color','primary_background','profile_picture_shadow',
-        'profile_picture_border','profile_picture_border_color','card_shadow','card_spacing','text_font',
-        'button_color','tactile_card','button_text_color','button_corner','button_border','button_border_color','');
+        $design = UserPageDesign::where('link_id',$request->link_id)->first();
+        $data = $request->only('primary_text_color','primary_background','profile_picture_shadow','primary_background_type',
+        'profile_picture_border','profile_picture_border_color','card_shadow','card_spacing','text_font','secondary_background',
+        'button_color','tactile_card','button_text_color','button_corner','button_border','button_border_color','link_id');
         $data['enable_vcard'] = @$request->enable_vcard ? 1 : 0;
         $data['enable_share_button'] = @$request->enable_share_button ? 1 : 0;
         $data['hide_link_binding'] = @$request->hide_link_binding ? 1 : 0;
+        $data['primary_background_type'] = @$request->primary_background_type ? $request->primary_background_type : 'color';
         if($design){
             $design->fill($data);
             $design->save();

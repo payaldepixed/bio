@@ -70,20 +70,21 @@
         // $('#card-border-color').jColorPicker();
         // $('#button-text-color').jColorPicker();
         // $('#button-border-color').jColorPicker();
-
-        $('#summernote').summernote({
-            placeholder: 'Add text here...',
-            height: 100,
-             toolbar: [
-                // ['style', ['style']],
-                ['font', ['bold', 'underline', 'clear']],
-                // ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                // ['table', ['table']],
-                ['insert', ['link']],
-                // ['view', ['fullscreen', 'codeview', 'help']]
-                ]
-        });
+        if($('#summernote').length){
+            $('#summernote').summernote({
+                placeholder: 'Add text here...',
+                height: 100,
+                toolbar: [
+                    // ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    // ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    // ['table', ['table']],
+                    ['insert', ['link']],
+                    // ['view', ['fullscreen', 'codeview', 'help']]
+                    ]
+            });
+        }
 
     });
   </script>

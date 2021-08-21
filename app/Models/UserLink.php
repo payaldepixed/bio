@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserPageSocial extends Model
+class UserLink extends Model
 {
-    protected $table = 'user_page_social_links';
+    protected $table = 'user_links';
 
     protected $fillable = [
-        'user_id','social_type','social_link','link_id'
+        'user_id','name','is_active'
     ];
 
     public function user(){

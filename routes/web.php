@@ -50,10 +50,14 @@ Route::group(['middleware' => ['auth']], function () {
 
         });
 
-        Route::get('page', 'PageController@index')->name('page');
-        Route::get('getblocks', 'PageController@getBlocks')->name('block');
+        Route::get('link', 'PageController@index')->name('link');
+        Route::get('link/getdata', 'PageController@getAjaxData')->name('link.get-ajax-data');
+        Route::get('link/add', 'PageController@addLink')->name('link.add');
+        Route::post('link/store', 'PageController@storeLink')->name('link.store');
+        Route::get('link/delete', 'PageController@removeLink')->name('link.remove');
+
+        Route::get('page/{id}', 'PageController@page')->name('page');
         Route::post('getblock', 'PageController@getBlock');
-        Route::get('previewblocks', 'PageController@previewBlocks')->name('block.preview');
         Route::post('block/store', 'PageController@storeBlock')->name('block.store');
         Route::post('block/remove', 'PageController@deleteBlock')->name('block.remove');
         Route::post('block/copy', 'PageController@copyBlock')->name('block.copy');
@@ -83,7 +87,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     });
 
-    Route::get('/link/{username}', 'PageController@view')->name('mypage');
-    Route::get('/block/view/{id}', 'PageController@addBlockView')->name('block.add.view');
-
  });
+
+Route::get('/link/{name}', 'PageController@view')->name('mypage');
+Route::get('/block/view/{id}', 'PageController@addBlockView')->name('block.add.view');
+Route::get('/previewblocks/{id}', 'PageController@previewBlocks')->name('block.preview');
+Route::get('/getblocks/{id}', 'PageController@getBlocks')->name('block');

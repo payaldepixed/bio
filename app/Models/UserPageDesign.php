@@ -12,7 +12,7 @@ class UserPageDesign extends Model
         'user_id','theme','primary_text_color','primary_background','secondary_background','secondary_background_color',
         'profile_picture_shadow','profile_picture_border','profile_picture_border_color','card_shadow','card_spacing','button_color',
         'button_text_color','button_corner','button_border','button_border_color','title_font','text_font','enable_vcard',
-        'enable_share_button','click_qr_code','hide_link_binding','tactile_card'
+        'enable_share_button','click_qr_code','hide_link_binding','tactile_card','link_id','primary_background_type'
     ];
 
     public function user(){

@@ -9,8 +9,8 @@ class UserPageBlock extends Model
     protected $table = 'user_page_blocks';
 
     protected $fillable = [
-        'user_id','type','url','title','description','layout','animation'
-        ,'is_active','grid_size','label','views','order_by'
+        'user_id','type','url','title','description','layout','animation',
+        'is_active','grid_size','label','views','order_by','link_id'
     ];
 
     public function user(){

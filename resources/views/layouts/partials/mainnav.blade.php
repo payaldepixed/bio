@@ -9,8 +9,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="navbar-nav pt-lg-3">
-            <li class="nav-item {{ active(['admin/page']) }}">
-                <a class="nav-link" href="{{route('page')}}">
+            <li class="nav-item {{ active(['admin/link','admin/page*']) }}">
+                <a class="nav-link" href="{{route('link')}}">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                         <!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
@@ -21,7 +21,7 @@
                             <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
                     </span>
                     <span class="nav-link-title">
-                        My Page
+                        Links
                     </span>
                 </a>
             </li>

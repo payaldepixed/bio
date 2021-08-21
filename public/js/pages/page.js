@@ -1,18 +1,7 @@
 $(document).ready(function () {
     //block script
+    var link_id = $('#link_id').val();
     fetchBlocks();
-    if ($("#generalForm").length) {
-        $("#profile_picture").on("change", function () {
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-                $("#img").show();
-                reader.onload = function (e) {
-                    $("#image").attr("src", e.target.result);
-                };
-                reader.readAsDataURL(this.files[0]); // convert to base64 string
-            }
-        });
-    }
 
     if ($("#socialForm").length) {
         $(".sociallinks").on("change", function (e) {
@@ -108,14 +97,14 @@ $(document).ready(function () {
 
     function fetchBlocks() {
         $.ajax({
-            url: "/admin/getblocks",
+            url: window.location.origin+"/getblocks/"+link_id,
             method: "get",
             success: function (data) {
                 $("#blocks").html(data);
             },
         });
         $.ajax({
-            url: "/admin/previewblocks",
+            url: window.location.origin+"/previewblocks/"+link_id,
             method: "get",
             success: function (data) {
                 $("#preview-blocks").html(data);
@@ -133,17 +122,60 @@ $(document).ready(function () {
         );
         $(".link-img path, .share_vcard_icons svg").css("stroke", color);
 
-        var color = $("input[name='primary_background']").val();
-        $(".card-layout").css("background-color", color);
-        var rgbaCol =
-            "rgba(" +
-            parseInt(color.slice(-6, -4), 16) +
-            "," +
-            parseInt(color.slice(-4, -2), 16) +
-            "," +
-            parseInt(color.slice(-2), 16) +
-            ",0.9)";
-        $("#preview_size").css("background-color", rgbaCol);
+        var type = $("input[name='primary_background_type']").val();
+        type = type ? type : 'color';
+        $("#selectColor .select-color.selected").removeClass("selected");
+        $('.custom-'+type).addClass("selected");
+
+        if(type == 'preset'){
+            var background = $("#preset_color").val();
+            $("#preview_size .card-layout").css("background-image", background);
+        }
+        if(type == 'gradient'){
+            var background = $("#settings_background_type_gradient_color_one").val();
+            var background2 = $("input[name='secondary_background']").val();
+            $("#preview_size .card-layout").css(
+                "background-image",
+                "linear-gradient(135deg, " +
+                    background +
+                    " 10%, " +
+                    background2 +
+                    " 100%)"
+            );
+        }
+        if(type == 'color'){
+            var background = $("#settings_background_type_color").val();
+            $("#preview_size .card-layout").css("background-image", "");
+            $("#preview_size .card-layout").css("background-color", background);
+        }
+        if(type == 'image'){
+            var imgurl = $("#imgurl").val();
+            $("#background_type_image_preview").attr("src", imgurl);
+            $("#preview_size .card-layout").css(
+                "background-image",
+                "url(" + imgurl + ")"
+            );
+            $("#preview_size .card-layout").css("background-color", "");
+            $("#preview_size .card-layout").css("background-repeat", "no-repeat");
+            $("#preview_size .card-layout").css("background-size", "cover");
+            $("#preview_size .card-layout").css(
+                "background-position",
+                "center center"
+            );
+            $("#preview_size .card-layout").css("min-height", "100%");
+        }
+
+        // var color = $("input[name='primary_background']").val();
+        // $(".card-layout").css("background-color", color);
+        // var rgbaCol =
+        //     "rgba(" +
+        //     parseInt(color.slice(-6, -4), 16) +
+        //     "," +
+        //     parseInt(color.slice(-4, -2), 16) +
+        //     "," +
+        //     parseInt(color.slice(-2), 16) +
+        //     ",0.9)";
+        // $("#preview_size").css("background-color", rgbaCol);
 
         var value = $("input[name='profile_picture_shadow']").val();
         var profileShadow = "#0000004d 0px 10px 30px " + value + "px";
@@ -207,10 +239,11 @@ $(document).ready(function () {
         if (formname == "addText") {
             var data = form.serialize();
             var description = $("#summernote").summernote("code");
-            data = data + "&description=" + description;
+            data = data + "&description=" + description + "&link_id=" + link_id;
             contentType = "application/x-www-form-urlencoded";
         } else {
             var data = new FormData(form[0]);
+            data.append("link_id", link_id)
         }
         $.ajax({
             headers: {
@@ -817,5 +850,103 @@ $(document).ready(function () {
         });
     }
     // drag and drop js
+
+    // custom background js
+    $("#selectColor .select-color").on("click", function () {
+        $("#selectColor .select-color.selected").removeClass("selected");
+        $(this).addClass("selected");
+        $('#primary_background_type').val($(this).data('type'));
+        $("#background_type_preset").addClass("d-none");
+        $("#background_type_gradient").addClass("d-none");
+        $("#background_type_color").addClass("d-none");
+        $("#background_type_image").addClass("d-none");
+        $("#background_type_video").addClass("d-none");
+        $("#bgVideo").addClass("d-none");
+
+        if ($(this).hasClass("preset")) {
+            $("#mainTitleBackground").html("Preset");
+            $("#background_type_preset").removeClass("d-none");
+        } else if ($(this).hasClass("custom-gradient")) {
+            $("#mainTitleBackground").html("Custom Gradient");
+            $("#background_type_gradient").removeClass("d-none");
+        } else if ($(this).hasClass("custom-color")) {
+            $("#mainTitleBackground").html("Custom Color");
+            $("#background_type_color").removeClass("d-none");
+        } else if ($(this).hasClass("custom-image")) {
+            $("#mainTitleBackground").html("Custom Image");
+            $("#background_type_image").removeClass("d-none");
+        } else if ($(this).hasClass("custom-video")) {
+            $("#mainTitleBackground").html("Custom Video");
+            $("#background_type_video").removeClass("d-none");
+            $("#background_type_video_input").val("");
+        }
+
+        // console.log("selecttype", $(this).text());
+    });
+
+    $("#background_type_preset input").on("click", function () {
+        // console.log("sdfas", $(this).val());
+        $("#preview_size .card-layout").css("background-image", $(this).val());
+    });
+
+    $(document).on(
+        "input",
+        "#settings_background_type_gradient_color_one",
+        function () {
+            $("#preview_size .card-layout").css(
+                "background-image",
+                "linear-gradient(135deg, " +
+                    $(this).val() +
+                    " 10%, " +
+                    $("#settings_background_type_gradient_color_two").val() +
+                    " 100%)"
+            );
+        }
+    );
+    $(document).on(
+        "input",
+        "#settings_background_type_gradient_color_two",
+        function () {
+            $("#preview_size .card-layout").css(
+                "background-image",
+                "linear-gradient(135deg, " +
+                    $("#settings_background_type_gradient_color_one").val() +
+                    " 10%, " +
+                    $(this).val() +
+                    " 100%)"
+            );
+        }
+    );
+
+    $(document).on("input", "#settings_background_type_color", function () {
+        $("#preview_size .card-layout").css("background-image", "");
+        $("#preview_size .card-layout").css("background-color", $(this).val());
+    });
+
+    $(document).on("input", "#background_type_image_input", function (event) {
+        var imageUrl = URL.createObjectURL(event.target.files[0]);
+        $("#background_type_image_preview").attr("src", imageUrl);
+        $("#preview_size .card-layout").css(
+            "background-image",
+            "url(" + imageUrl + ")"
+        );
+        $("#preview_size .card-layout").css("background-color", "");
+        $("#preview_size .card-layout").css("background-repeat", "no-repeat");
+        $("#preview_size .card-layout").css("background-size", "cover");
+        $("#preview_size .card-layout").css(
+            "background-position",
+            "center center"
+        );
+        $("#preview_size .card-layout").css("min-height", "100%");
+    });
+
+    $(document).on("change", "#background_type_video_input", function (evt) {
+        var $source = $("#video_here");
+        $source[0].src = URL.createObjectURL(this.files[0]);
+        $source.parent()[0].load();
+        $("#bgVideo").removeClass("d-none");
+        $("#preview_size .card-layout").removeAttr("style");
+    });
+
 
 });

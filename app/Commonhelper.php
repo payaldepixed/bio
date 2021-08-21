@@ -57,8 +57,8 @@ class Commonhelper
         return $target_dir.$filename;
     }
 
-    public static function getSocial($type) {
-        return UserPageSocial::where('social_type',$type)->where('user_id',Auth::user()->id)->value('social_link');
+    public static function getSocial($type,$link_id) {
+        return UserPageSocial::where('social_type',$type)->where('link_id',$link_id)->value('social_link');
     }
 
     public static function getSocials() {

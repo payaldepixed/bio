@@ -21,6 +21,7 @@ Page
 <div class="page-body template-layout">
     <div class="container-fluid">
         <div class="template-header">
+            <input type="hidden" id="link_id" value="{{@$link_id}}">
             <div class="tab-item">
                 <ul class="nav nav-tabs" data-bs-toggle="tabs">
                 <li class="nav-item">
@@ -39,7 +40,7 @@ Page
             </div>
             <div class="link-item">
                 <div class="my-link">
-                   <span class="my-page"> My Page:</span>  <a href="{{route('mypage',['username'=>@$user->username])}}" target="_blank">{{request()->getHttpHost()}}/link/{{@$user->username}}</a>
+                   <span class="my-page"> My Page:</span>  <a href="{{route('mypage',['name'=>@$linkname])}}" target="_blank">{{request()->getHttpHost()}}/link/{{@$linkname}}</a>
                 </div>
                 <div class="button-links">
                     <button href="#" class="btn btn-primary">
@@ -71,12 +72,13 @@ Page
                                             <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordion-example">
                                                 <div class="accordion-body p-2">
                                                     <form id="socialForm" action="{{route('social.store')}}" method="post">
+                                                        <input type="hidden" name="link_id" value="{{@$link_id}}">
                                                         <div class="social_icons_lists mb-4">
                                                             @php $socials = Commonhelper::getSocials(); @endphp
                                                             @foreach($socials as $social)
                                                                 @php $name = ucwords(str_replace("_", " ", $social)); @endphp
                                                                 <div class="checkbox-social">
-                                                                    <input type="checkbox" id="type_{{$social}}" @if(Commonhelper::getSocial($social)) checked @endif value="{{$social}}" name="types[]" class="sociallinks" style="display: none;">
+                                                                    <input type="checkbox" id="type_{{$social}}" @if(Commonhelper::getSocial($social,$link_id)) checked @endif value="{{$social}}" name="types[]" class="sociallinks" style="display: none;">
                                                                     <label for="type_{{$social}}" class="social-icon">
                                                                         <img class="social-img" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="{{$social}}"> <span class="social-icon-name">{{$name}}</span>
                                                                     </label>
@@ -85,7 +87,7 @@ Page
                                                         </div>
                                                         @foreach($socials as $social)
                                                             @php $name = ucwords(str_replace("_", " ", $social)); @endphp
-                                                            <div id="social_{{$social}}" class="social-inputs" @if(!Commonhelper::getSocial($social)) style="display:none;" @endif>
+                                                            <div id="social_{{$social}}" class="social-inputs" @if(!Commonhelper::getSocial($social,$link_id)) style="display:none;" @endif>
                                                                 <div class="social-details mb-2">
                                                                     <div class="drag_drop">
                                                                         <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="">
@@ -93,7 +95,7 @@ Page
                                                                     </div>
                                                                     <div class="input-url">
                                                                         <div class="inputStyle">
-                                                                            <input type="{{$social == 'email' ? 'email' : 'url' }}" id="{{$social}}" name="{{$social}}" class="form-control types" placeholder="{{$social == 'email' ? 'Email Address' : $name.' URL' }}" value="{{Commonhelper::getSocial($social)}}">
+                                                                            <input type="{{$social == 'email' ? 'email' : 'url' }}" id="{{$social}}" name="{{$social}}" class="form-control types" placeholder="{{$social == 'email' ? 'Email Address' : $name.' URL' }}" value="{{Commonhelper::getSocial($social,$link_id)}}">
                                                                             <div class="social-input-icon">
                                                                                 <img class="" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="">
                                                                             </div>
@@ -124,6 +126,7 @@ Page
                             <div class="tab-pane" id="Design">
                                 <form id="designForm" action="{{route('design.store')}}" method="post" enctype='multipart/form-data'>
                                     @csrf
+                                    <input type="hidden" name="link_id" value="{{@$link_id}}">
                                     <div class="general-option">
                                         {{-- General option --}}
                                         <div class="title-row mb-3">
@@ -162,14 +165,93 @@ Page
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
+                                        <input name="primary_background_type" id="primary_background_type" type="hidden" value="{{@$design->primary_background_type}}">
+                                        <div class="social-links mb-3">
+                                            <div class="accordion" id="accordion-example">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading-2">
+                                                    <button id="mainTitleBackground" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-colors" aria-expanded="false">
+                                                        Primary Background
+                                                    </button>
+                                                    </h2>
+                                                    <div id="collapse-colors" class="accordion-collapse collapse" data-bs-parent="#accordion-example">
+                                                        <div class="accordion-body p-2">
+                                                          <div id="selectColor" class="primary-colors">
+                                                            <div data-type="preset" class="select-color preset custom-preset selected">Preset</div>
+                                                            <div data-type="gradient" class="select-color custom-gradient">Custom Gradient</div>
+                                                            <div data-type="color" class="select-color custom-color">Custom Color</div>
+                                                            <div data-type="image" class="select-color custom-image">Custom Image</div>
+                                                            <div data-type="video" class="select-color custom-video">Custom Video</div>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="background_type_preset" class="row @if(@$design->primary_background_type != 'preset') d-none @endif">
+                                            <input type="hidden" value="{{@$design->primary_background_type}}" id="preset_color">
+                                            <label for="settings_background_type_preset_one" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(111.7deg, #a529b9 19.9%, #50b1e1 95%)" id="settings_background_type_preset_one" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-one"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_two" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="background" value="linear-gradient(109.6deg, #ffb418 11.2%, #f73131 91.1%)" id="settings_background_type_preset_two" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-two"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_three" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="primary_background" value="linear-gradient(135deg, #79f1a4 10%, #0e5cad 100%)" id="settings_background_type_preset_three" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-three"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_four" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="primary_background" value="linear-gradient(to bottom, #ff758c, #ff7eb3)" id="settings_background_type_preset_four" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-four"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_five" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="primary_background" value="linear-gradient(292.2deg, #3355ff 33.7%, #0088ff 93.7%)" id="settings_background_type_preset_five" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-five"></div>
+                                            </label>
+                                            <label for="settings_background_type_preset_six" class="m-0 col-4 mb-4">
+                                                <input type="radio" name="primary_background" value="linear-gradient(to bottom, #fc5c7d, #6a82fb)" id="settings_background_type_preset_six" class="d-none">
+                                                <div class="link-background-type-preset link-body-background-six"></div>
+                                            </label>
+                                        </div>
+                                        <div id="background_type_gradient" class="@if(@$design->primary_background_type != 'gradient') d-none @endif">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="">Color One</label>
+                                                <input type="color" id="settings_background_type_gradient_color_one" name="primary_background" class="form-control" value="{{@$design->primary_background ? $design->primary_background : '#ffffff'}}">
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="">Color Two</label>
+                                                <input type="color" id="settings_background_type_gradient_color_two" name="secondary_background" class="form-control" value="{{@$design->secondary_background ? $design->secondary_background : '#ffffff'}}">
+                                            </div>
+                                        </div>
+                                        <div id="background_type_color" class="mb-3 @if(@$design->primary_background_type && $design->primary_background_type != 'color') d-none @endif">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">Custom Color</label>
+                                                <input type="color" id="settings_background_type_color" name="primary_background" class="form-control" value="{{@$design->primary_background ? $design->primary_background : '#ffffff'}}">
+                                            </div>
+                                        </div>
+                                        <div id="background_type_image" class="mb-3 @if(@$design->primary_background_type != 'image') d-none @endif">
+                                            <input type="hidden" value="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : '' }}" id="imgurl">
+                                            <div class="form-group">
+                                                <img id="background_type_image_preview" src="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : asset('static/template_svg/new-link/img/empty-state.jpg') }}" class="link-background-type-image">
+                                                <input id="background_type_image_input" type="file" name="primary_background" accept=".gif, .ico, .png, .jpg, .jpeg, .svg" class="form-control-file">
+                                            </div>
+                                        </div>
+                                        <div id="background_type_video" class="mb-3 @if(@$design->primary_background_type != 'video') d-none @endif">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">Custom Video</label>
+                                                <input id="background_type_video_input" type="file" accept="video/mp4,video/x-m4v,video/*" name="file[]" >
+                                            </div>
+                                        </div>
+                                        {{-- <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Primary Background</div>
                                                 <div id="primary-background">
                                                     <input name="primary_background" type="color" value="{{@$design->primary_background ? $design->primary_background : '#ffffff'}}">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="mb-3">
                                             <div class="range-row">
                                                 <div class="range-label">Profile Picture Shadow</div>
@@ -377,7 +459,7 @@ Page
                                 </div>
                                 <div class="selected-social-icon" id="socialData">
                                     @foreach($socials as $social)
-                                        <a @if(!$value = Commonhelper::getSocial($social)) style="display:none;" @endif id="social_link_{{$social}}" href="@if($social == 'email')mailto:@endif{{strpos($value, 'http') === false ? 'https://' . $value : $value}}" target="_blank"><img class="selected-icon" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt=""></a>
+                                        <a @if(!$value = Commonhelper::getSocial($social,$link_id)) style="display:none;" @endif id="social_link_{{$social}}" href="@if($social == 'email')mailto:@endif{{strpos($value, 'http') === false ? 'https://' . $value : $value}}" target="_blank"><img class="selected-icon" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt=""></a>
                                     @endforeach
                                 </div>
                                 <div class="preview-card" id="preview-blocks">
