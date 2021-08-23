@@ -128,7 +128,7 @@ $(document).ready(function () {
         $('.custom-'+type).addClass("selected");
 
         if(type == 'preset'){
-            var background = $("#preset_color").val();
+            var background = $("#primary_background_preset").val();
             $("#preview_size .card-layout").css("background-image", background);
         }
         if(type == 'gradient'){
@@ -163,6 +163,14 @@ $(document).ready(function () {
                 "center center"
             );
             $("#preview_size .card-layout").css("min-height", "100%");
+        }
+        if(type == 'video'){
+            var videourl = $("#videourl").val();
+            var $source = $("#video_here");
+            $source[0].src = videourl;
+            $source.parent()[0].load();
+            $("#bgVideo").removeClass("d-none");
+            $("#preview_size .card-layout").removeAttr("style");
         }
 
         // var color = $("input[name='primary_background']").val();
@@ -885,7 +893,7 @@ $(document).ready(function () {
     });
 
     $("#background_type_preset input").on("click", function () {
-        // console.log("sdfas", $(this).val());
+        $('#primary_background_preset').val($(this).val());
         $("#preview_size .card-layout").css("background-image", $(this).val());
     });
 

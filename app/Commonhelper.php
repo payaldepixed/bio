@@ -44,6 +44,10 @@ class Commonhelper
             $width = 500;
             $height = 500;
             break;
+        case "background":
+            $width = 1000;
+            $height = 1000;
+            break;
         default:
             $height=null;
             $width=null;

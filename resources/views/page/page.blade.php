@@ -190,6 +190,7 @@ Page
                                         </div>
                                         <div id="background_type_preset" class="row @if(@$design->primary_background_type != 'preset') d-none @endif">
                                             <input type="hidden" value="{{@$design->primary_background_type}}" id="preset_color">
+                                            <input type="hidden" value="{{@$design->primary_background}}" name="primary_background_preset" id="primary_background_preset">
                                             <label for="settings_background_type_preset_one" class="m-0 col-4 mb-4">
                                                 <input type="radio" name="background" value="linear-gradient(111.7deg, #a529b9 19.9%, #50b1e1 95%)" id="settings_background_type_preset_one" class="d-none">
                                                 <div class="link-background-type-preset link-body-background-one"></div>
@@ -199,26 +200,26 @@ Page
                                                 <div class="link-background-type-preset link-body-background-two"></div>
                                             </label>
                                             <label for="settings_background_type_preset_three" class="m-0 col-4 mb-4">
-                                                <input type="radio" name="primary_background" value="linear-gradient(135deg, #79f1a4 10%, #0e5cad 100%)" id="settings_background_type_preset_three" class="d-none">
+                                                <input type="radio" name="background" value="linear-gradient(135deg, #79f1a4 10%, #0e5cad 100%)" id="settings_background_type_preset_three" class="d-none">
                                                 <div class="link-background-type-preset link-body-background-three"></div>
                                             </label>
                                             <label for="settings_background_type_preset_four" class="m-0 col-4 mb-4">
-                                                <input type="radio" name="primary_background" value="linear-gradient(to bottom, #ff758c, #ff7eb3)" id="settings_background_type_preset_four" class="d-none">
+                                                <input type="radio" name="background" value="linear-gradient(to bottom, #ff758c, #ff7eb3)" id="settings_background_type_preset_four" class="d-none">
                                                 <div class="link-background-type-preset link-body-background-four"></div>
                                             </label>
                                             <label for="settings_background_type_preset_five" class="m-0 col-4 mb-4">
-                                                <input type="radio" name="primary_background" value="linear-gradient(292.2deg, #3355ff 33.7%, #0088ff 93.7%)" id="settings_background_type_preset_five" class="d-none">
+                                                <input type="radio" name="background" value="linear-gradient(292.2deg, #3355ff 33.7%, #0088ff 93.7%)" id="settings_background_type_preset_five" class="d-none">
                                                 <div class="link-background-type-preset link-body-background-five"></div>
                                             </label>
                                             <label for="settings_background_type_preset_six" class="m-0 col-4 mb-4">
-                                                <input type="radio" name="primary_background" value="linear-gradient(to bottom, #fc5c7d, #6a82fb)" id="settings_background_type_preset_six" class="d-none">
+                                                <input type="radio" name="background" value="linear-gradient(to bottom, #fc5c7d, #6a82fb)" id="settings_background_type_preset_six" class="d-none">
                                                 <div class="link-background-type-preset link-body-background-six"></div>
                                             </label>
                                         </div>
                                         <div id="background_type_gradient" class="@if(@$design->primary_background_type != 'gradient') d-none @endif">
                                             <div class="form-group mb-3">
                                                 <label class="form-label" for="">Color One</label>
-                                                <input type="color" id="settings_background_type_gradient_color_one" name="primary_background" class="form-control" value="{{@$design->primary_background ? $design->primary_background : '#ffffff'}}">
+                                                <input type="color" id="settings_background_type_gradient_color_one" name="primary_background_one" class="form-control" value="{{@$design->primary_background ? $design->primary_background : '#ffffff'}}">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label class="form-label" for="">Color Two</label>
@@ -234,14 +235,15 @@ Page
                                         <div id="background_type_image" class="mb-3 @if(@$design->primary_background_type != 'image') d-none @endif">
                                             <input type="hidden" value="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : '' }}" id="imgurl">
                                             <div class="form-group">
-                                                <img id="background_type_image_preview" src="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : asset('static/template_svg/new-link/img/empty-state.jpg') }}" class="link-background-type-image">
-                                                <input id="background_type_image_input" type="file" name="primary_background" accept=".gif, .ico, .png, .jpg, .jpeg, .svg" class="form-control-file">
+                                                <img id="background_type_image_preview" height="50" width="50" src="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : asset('static/template_svg/new-link/img/empty-state.jpg') }}" class="link-background-type-image">
+                                                <input id="background_type_image_input" type="file" name="primary_background_image" accept=".gif, .ico, .png, .jpg, .jpeg, .svg" class="form-control-file">
                                             </div>
                                         </div>
                                         <div id="background_type_video" class="mb-3 @if(@$design->primary_background_type != 'video') d-none @endif">
+                                            <input type="hidden" value="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : '' }}" id="videourl">
                                             <div class="form-group">
                                                 <label class="form-label" for="">Custom Video</label>
-                                                <input id="background_type_video_input" type="file" accept="video/mp4,video/x-m4v,video/*" name="file[]" >
+                                                <input id="background_type_video_input" name="primary_background_video" type="file" accept="video/mp4,video/x-m4v,video/*" name="file[]" >
                                             </div>
                                         </div>
                                         {{-- <div class="mb-3">
@@ -439,6 +441,9 @@ Page
                 <div class="preview-layout">
                     <div id="preview_size" class="preview-details mobile_size">
                         <div class="card-layout">
+                            <video id="bgVideo" autoplay muted loop class="d-none">
+                                <source src="" type="video/mp4" id="video_here" />
+                            </video>
                             <div class="preview-all">
                                 <div class="share_vcard_icons">
                                     <div class="preview_share" @if(@$design->enable_share_button == 1) @else style="display:none;" @endif>

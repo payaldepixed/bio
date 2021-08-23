@@ -32,8 +32,9 @@
                             <input type="hidden" name="primary_background_type" value="{{@$design->primary_background_type}}">
                             <input type="hidden" name="primary_background" value="{{@$design->primary_background}}">
                             <input type="hidden" id="settings_background_type_color" value="{{@$design->primary_background}}">
+                            <input type="hidden" id="primary_background_preset" value="{{@$design->primary_background}}">
+                            <input type="hidden" id="videourl" value="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : '' }}">
                             <input type="hidden" id="imgurl" value="{{ @$design->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : '' }}">
-                            <input type="hidden" id="preset_color" value="{{@$design->primary_background}}">
                             <input type="hidden" id="settings_background_type_gradient_color_one" value="{{@$design->primary_background}}">
                             <input type="hidden" name="secondary_background" value="{{@$design->secondary_background}}">
                             <input type="hidden" name="profile_picture_shadow" value="{{@$design->profile_picture_shadow}}">
@@ -51,6 +52,9 @@
                             <div class="preview-layout">
                                 <div id="preview_size" class="preview-details">
                                     <div class="card-layout">
+                                        <video id="bgVideo" autoplay muted loop class="d-none">
+                                            <source src="" type="video/mp4" id="video_here" />
+                                        </video>
                                         <div style="display: none;" id="tactileCard" class="tactile-cards">
                                             <div class="tactile-item tactile_no @if(!@$design->tactile_card) selected @endif">
                                                 <img class="tactile_img" src="{{ asset('static/template_svg/tactile_cards/no_tactile.svg') }}" alt="">

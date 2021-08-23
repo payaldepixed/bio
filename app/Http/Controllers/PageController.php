@@ -243,13 +243,29 @@ class PageController extends Controller
         User::where('id',$user_id)->update($userdata);
         //insert design data
         $design = UserPageDesign::where('link_id',$request->link_id)->first();
-        $data = $request->only('primary_text_color','primary_background','profile_picture_shadow','primary_background_type',
+        $data = $request->only('primary_text_color','profile_picture_shadow','primary_background_type',
         'profile_picture_border','profile_picture_border_color','card_shadow','card_spacing','text_font','secondary_background',
         'button_color','tactile_card','button_text_color','button_corner','button_border','button_border_color','link_id');
         $data['enable_vcard'] = @$request->enable_vcard ? 1 : 0;
         $data['enable_share_button'] = @$request->enable_share_button ? 1 : 0;
         $data['hide_link_binding'] = @$request->hide_link_binding ? 1 : 0;
         $data['primary_background_type'] = @$request->primary_background_type ? $request->primary_background_type : 'color';
+        if($request->primary_background_type == 'image' || $request->primary_background_type == 'video'){
+            if($request->has('primary_background_image'))
+            {
+                $file = $request->primary_background_image;
+                $data['primary_background'] = Commonhelper::resizeImage("backgrounds/",$file,'background');
+            }
+            if($request->has('primary_background_video'))
+            {
+                $file = $request->primary_background_video;
+                $data['primary_background'] = Commonhelper::uploadFile("backgrounds/",$file);
+            }
+        }else{
+            if($request->primary_background_type == 'color'){$data['primary_background'] = $request->primary_background;}
+            else if($request->primary_background_type == 'preset'){$data['primary_background'] = $request->primary_background_preset;}
+            else{$data['primary_background'] = $request->primary_background_one;}
+        }
         if($design){
             $design->fill($data);
             $design->save();
