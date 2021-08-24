@@ -25,6 +25,7 @@ Route::get('/', function () {
     return redirect('login');
 });
 
+Route::get('/{name}', 'PageController@view')->name('mypage');
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -89,7 +90,6 @@ Route::group(['middleware' => ['auth']], function () {
 
  });
 
-Route::get('/link/{name}', 'PageController@view')->name('mypage');
 Route::get('/block/view/{id}', 'PageController@addBlockView')->name('block.add.view');
 Route::get('/previewblocks/{id}', 'PageController@previewBlocks')->name('block.preview');
 Route::get('/getblocks/{id}', 'PageController@getBlocks')->name('block');

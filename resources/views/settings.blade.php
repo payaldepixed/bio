@@ -64,16 +64,16 @@ Settings
                             </div> --}}
                         </div>
                         <div class="row">
-                            <div class="col-xl-12">
+                            {{-- <div class="col-xl-12">
                                 <div class="mb-3">
                                     <label class="form-label required">Username</label>
                                     <div class="input-group mb-2">
-                                        <span class="input-group-text">{{request()->getHttpHost()}}/link/</span>
+                                        <span class="input-group-text">{{request()->getHttpHost()}}/</span>
                                         <input type="text" value="{{Auth::user()->username}}" name="username" class="form-control" placeholder="Enter username" required>
                                         <small class="form-hint"></small>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- <div class="col-xl-6">
                                 <div class="mb-3">
                                     <label class="form-label">Profile Picture</label>

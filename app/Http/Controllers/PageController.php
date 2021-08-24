@@ -229,6 +229,17 @@ class PageController extends Controller
 
     public function storeDesign(Request $request)
     {
+        if(isset($request->linkname) && $request->linkname != ''){
+            $rules = ['linkname'=>'unique:user_links,name,'.$request->link_id];
+            $validator = Validator::make($request->all(),$rules);
+            if (@$validator->fails()) {
+                return redirect()->back()->withErrors($validator->errors()->first());
+            }else{
+                $link = UserLink::find($request->link_id);
+                $link->name = $request->linkname;
+                $link->save();
+            }
+        }
         $userdata = $request->only('name','bio');
         $user_id = Auth::user()->id;
         if($request->hasFile('profile_picture'))

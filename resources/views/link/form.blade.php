@@ -49,7 +49,7 @@ Links
                                 <div class="mb-3">
                                     <label class="form-label required">Name</label>
                                     <div class="input-group mb-2">
-                                        <span class="input-group-text">{{request()->getHttpHost()}}/link/</span>
+                                        <span class="input-group-text">{{request()->getHttpHost()}}/</span>
                                         <input type="text" value="{{@$link->name}}" name="name" class="form-control" placeholder="Enter name" maxlength="255" required>
                                         <small class="form-hint"></small>
                                     </div>

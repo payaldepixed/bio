@@ -20,6 +20,7 @@ Page
 @section('content')
 <div class="page-body template-layout">
     <div class="container-fluid">
+        @include('errors.formerror')
         <div class="template-header">
             <input type="hidden" id="link_id" value="{{@$link_id}}">
             <div class="tab-item">
@@ -40,7 +41,7 @@ Page
             </div>
             <div class="link-item">
                 <div class="my-link">
-                   <span class="my-page"> My Page:</span>  <a href="{{route('mypage',['name'=>@$linkname])}}" target="_blank">{{request()->getHttpHost()}}/link/{{@$linkname}}</a>
+                   <span class="my-page"> My Page:</span>  <a href="{{route('mypage',['name'=>@$linkname])}}" target="_blank">{{request()->getHttpHost()}}/{{@$linkname}}</a>
                 </div>
                 <div class="button-links">
                     <button href="#" class="btn btn-primary">
@@ -133,6 +134,13 @@ Page
                                             <div class="line"></div>
                                             <div class="design-title">General</div>
                                             <div class="line"></div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">URl</label>
+                                            <div class="input-group mb-2">
+                                                <span class="input-group-text">{{request()->getHttpHost()}}/</span>
+                                                <input id="linkname" name="linkname" value="{{@$linkname}}" type="text" class="form-control">
+                                            </div>
                                         </div>
                                         <div class="mb-3 input_file_bg">
                                             <label for="inputFile" class="input-file">
