@@ -7,6 +7,8 @@ use Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\UserPageSocial;
 use App\Models\UserPageBlock;
+use App\Models\UserLink;
+use App\Models\User;
 use Auth;
 
 class Commonhelper
@@ -78,6 +80,27 @@ class Commonhelper
         $block->views = $block->views + 1;
         $block->save();
         return 1;
+    }
+
+    public static function totalLinks() {
+        $data = UserLink::orderBy('id');
+        if(@Auth::user()->role_id != 1){
+            $data->where('user_id',Auth::user()->id);
+        }
+        return $data->count();
+    }
+
+    public static function totalClicks() {
+        $data = UserPageBlock::orderBy('id');
+        if(@Auth::user()->role_id != 1){
+            $data->where('user_id',Auth::user()->id);
+        }
+        return $data->sum('views');
+    }
+
+    public static function totalUsers() {
+        $data = User::orderBy('id');
+        return $data->count();
     }
 
 }

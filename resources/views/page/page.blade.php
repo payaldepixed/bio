@@ -5,9 +5,26 @@ Page
 @endsection
 
 @section('css_before')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css"/>
 @endsection
 
 @section('css_after')
+<style type="text/css">
+    img {
+    display: block;
+    max-width: 100%;
+    }
+    .preview {
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    margin: 10px;
+    border: 1px solid red;
+    }
+    .modal-lg{
+    max-width: 1000px !important;
+    }
+    </style>
 @endsection
 
 @section('js_after')
@@ -15,6 +32,9 @@ Page
 <script src="{{ asset('js/pages/jquery-ui.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="{{ asset('js/pages/page.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
+
 @endsection
 
 @section('content')
@@ -147,7 +167,7 @@ Page
                                                 <input name="profile_picture" type="file" id="inputFile" >
                                                 <div class="fileRow">
                                                     <div class="fileLabel">Profile Picture</div>
-                                                    <div id="designImg" class="fileImg" style="background-image: url('{{ asset('static/template_svg/image_icon.svg') }}')">
+                                                    <div id="designImg" class="fileImg" style="background-image: url('{{ @$user->profile_picture ? Storage::disk(Config::get('constants.DISK'))->url($user->profile_picture) : asset('static/template_svg/image_icon.svg') }}')">
                                                     </div>
                                                 </div>
                                             </label>
@@ -954,4 +974,29 @@ Page
     </div>
 </div>
 {{-- delete block model --}}
+
+{{-- crop image model --}}
+<div class="modal modal-blur fade" id="crop-image" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-status bg-danger"></div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img id="image" src="">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="preview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn me-auto" data-bs-dismiss="modal">Cancel</a>
+                <a href="#" class="btn btn-primary deleteBlockBtn" id="crop" data-bs-dismiss="modal">Crop</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection

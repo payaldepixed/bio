@@ -12,6 +12,8 @@ use App\Models\UserPageBlockMedia;
 use Validator;
 use Commonhelper;
 use Auth;
+use Storage;
+use Config;
 
 class PageController extends Controller
 {
@@ -103,11 +105,20 @@ class PageController extends Controller
 
     public function view($name)
     {
-        $link = UserLink::where('name',$name)->first();
-        $user = User::find($link->user_id);
-        $link_id = $link->id;
-        $design = UserPageDesign::where('link_id',$link_id)->first();
-        return view('page.view', compact('user','design','link_id'));
+        $link = UserLink::where('name',$name)->where('is_active',1)->first();
+        if($link){
+            $user = User::find($link->user_id);
+            $link_id = $link->id;
+            $design = UserPageDesign::where('link_id',$link_id)->first();
+            return view('page.view', compact('user','design','link_id'));
+        }else{
+            return redirect('admin/dashboard');
+            // if(@Auth::user()->id){
+            //     return redirect('admin/dashboard');
+            // }else{
+            //     return redirect('notactive');
+            // }
+        }
     }
 
     public function social()
@@ -244,11 +255,16 @@ class PageController extends Controller
         $user_id = Auth::user()->id;
         if($request->hasFile('profile_picture'))
         {
-            if(!in_array(strtolower($request->profile_picture->getClientOriginalExtension()),['jpg','jpeg','png','webp'])) {
-                return redirect()->back()->withErrors('Sorry, Only jpg/jpeg/png/webp files allowed.');
+            if(!in_array(strtolower($request->profile_picture->getClientOriginalExtension()),['jpg','jpeg','png','webp','gif'])) {
+                return redirect()->back()->withErrors('Sorry, Only jpg/jpeg/png/webp/gif files allowed.');
             }
-            Commonhelper::deleteFile(User::where('id',$user_id)->value('profile_picture'));
-            $userdata['profile_picture'] = Commonhelper::resizeImage("avatars/",$request->profile_picture,'avatar');
+            if(strtolower($request->profile_picture->getClientOriginalExtension()) == 'gif'){
+                Commonhelper::deleteFile(User::where('id',$user_id)->value('profile_picture'));
+                $userdata['profile_picture'] = Commonhelper::uploadFile("avatars/",$request->profile_picture);
+            }
+            // else{
+            //     $userdata['profile_picture'] = Commonhelper::resizeImage("avatars/",$request->profile_picture,'avatar');
+            // }
         }
         //insert user data
         User::where('id',$user_id)->update($userdata);
@@ -306,6 +322,19 @@ class PageController extends Controller
             $sort = $i + 1;
             UserPageBlock::where('id',$block)->update(['order_by'=>$sort]);
         }
+        return 1;
+    }
+
+    public function cropImage(Request $request)
+    {
+        $base64_image = $request->input('image'); // your base64 encoded
+        @list($type, $file_data) = explode(';', $base64_image);
+        @list(, $file_data) = explode(',', $file_data);
+        $user = User::find(Auth::user()->id);
+        $filename = rand(100000, 999999).time(). ".png";
+        @Storage::disk(Config::get('constants.DISK'))->put("avatars/".$filename, base64_decode($file_data));
+        $user->profile_picture = "avatars/".$filename;
+        $user->save();
         return 1;
     }
 
