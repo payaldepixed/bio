@@ -9,7 +9,9 @@ use App\Models\UserPageSocial;
 use App\Models\UserPageBlock;
 use App\Models\UserLink;
 use App\Models\User;
+use App\Models\RecentActivity;
 use Auth;
+use Carbon\Carbon;
 
 class Commonhelper
 {
@@ -75,31 +77,39 @@ class Commonhelper
         ,'twitch','twitter','unsplash','vimeo','wechat','whatsapp','youtube'];
     }
 
-    public static function setBlockView($id) {
-        $block = UserPageBlock::find($id);
-        $block->views = $block->views + 1;
-        $block->save();
+    // public static function setBlockView($id) {
+    //     $block = UserPageBlock::find($id);
+    //     $block->views = $block->views + 1;
+    //     $block->save();
+    //     return 1;
+    // }
+
+
+    public static function addRecentActivity($link_id,$block_id='') {
+        $data = array('link_id'=>$link_id,'user_id'=>Auth::user()->id);
+        if(@$block_id){$data['block_id'] = $block_id;}
+        RecentActivity::create($data);
         return 1;
     }
 
-    public static function totalLinks() {
+    public static function totalLinks($time) {
         $data = UserLink::orderBy('id');
-        if(@Auth::user()->role_id != 1){
+        $data->whereRaw('Date(created_at) >= (DATE(NOW()) + INTERVAL -'.$time.' DAY)');
+        if(@Auth::user()->user_type != 1){
             $data->where('user_id',Auth::user()->id);
         }
         return $data->count();
     }
 
-    public static function totalClicks() {
-        $data = UserPageBlock::orderBy('id');
-        if(@Auth::user()->role_id != 1){
-            $data->where('user_id',Auth::user()->id);
+    public static function getRecentActivity($type,$time) {
+        $data = RecentActivity::orderBy('id');
+        $data->whereRaw('Date(created_at) >= (DATE(NOW()) + INTERVAL -'.$time.' DAY)');
+        if($type == 'link'){$data->whereNull('block_id');}
+        if($type == 'block'){$data->whereNotNull('block_id');}
+        if(@Auth::user()->user_type != 1){
+            $link_ids = UserLink::where('user_id',Auth::user()->id)->pluck('id')->toArray();
+            $data->whereIn('link_id',$link_ids);
         }
-        return $data->sum('views');
-    }
-
-    public static function totalUsers() {
-        $data = User::orderBy('id');
         return $data->count();
     }
 

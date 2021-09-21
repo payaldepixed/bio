@@ -110,6 +110,7 @@ class PageController extends Controller
             $user = User::find($link->user_id);
             $link_id = $link->id;
             $design = UserPageDesign::where('link_id',$link_id)->first();
+            Commonhelper::addRecentActivity($link_id);
             return view('page.view', compact('user','design','link_id'));
         }else{
             return redirect('admin/dashboard');
@@ -312,7 +313,8 @@ class PageController extends Controller
 
     public function addBlockView($id)
     {
-        return Commonhelper::setBlockView($id);
+        $link_id = UserPageBlock::where('id',$id)->value('link_id');
+        return Commonhelper::addRecentActivity($link_id,$id);
     }
 
     public function sortingBlock(Request $request)
@@ -336,6 +338,16 @@ class PageController extends Controller
         $user->profile_picture = "avatars/".$filename;
         $user->save();
         return 1;
+    }
+
+    public function getActivity(Request $request)
+    {
+        if($request->type == 'totallink'){
+            $count = Commonhelper::totalLinks($request->time);
+        }else{
+            $count = Commonhelper::getRecentActivity($request->type,$request->time);
+        }
+        return $count;
     }
 
 }

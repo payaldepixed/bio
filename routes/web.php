@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('settings', 'DashboardController@settings')->name('settings');
         Route::post('updateprofile', 'DashboardController@updateProfile')->name('updateprofile');
         Route::post('changepassword', 'DashboardController@changePassword')->name('changepassword');
+        Route::get('getactivity','PageController@getActivity');
 
         Route::group(['middleware' => ['admin']], function () {
 

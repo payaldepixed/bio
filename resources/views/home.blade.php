@@ -11,7 +11,8 @@ Home
 @endsection
 
 @section('js_after')
-{{-- <script src="{{ asset('libs/apexcharts/dist/apexcharts.min.js') }}"></script> --}}
+<script src="{{ asset('js/pages/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('js/pages/user.js') }}"></script>
 @endsection
 
 @section('content')
@@ -37,36 +38,96 @@ Home
 <div class="page-body">
     <div class="container-xl">
         <div class="row row-deck row-cards">
-          <div class="col-sm-6 col-lg-3">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex align-items-center">
-                  <div class="subheader">Total links</div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="subheader">Total Links</div>
+                        <div class="ms-auto lh-1">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle text-muted totallinktext" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item totallink active" data-id="7" href="javascript:void(0);">Last 7 days</a>
+                                <a class="dropdown-item totallink" data-id="30" href="javascript:void(0);">Last 30 days</a>
+                                <a class="dropdown-item totallink" data-id="90" href="javascript:void(0);">Last 3 months</a>
+                                <a class="dropdown-item totallink" data-id="365" href="javascript:void(0);">In Year</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-baseline">
+                        <div class="h1 mb-3 me-2" id="totallinks">{{Commonhelper::totalLinks(7)}}</div>
+                        {{-- <div class="me-auto">
+                        <span class="text-green d-inline-flex align-items-center lh-1">
+                            4% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                        </span>
+                        </div> --}}
+                    </div>
+                    <div id="chart-active-users" class="chart-sm"></div>
+                    </div>
                 </div>
-                <div class="h1 mb-3">{{Commonhelper::totalLinks()}}</div>
-              </div>
             </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex align-items-center">
-                  <div class="subheader">Total clicks</div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                    <div class="subheader">Link Views</div>
+                    <div class="ms-auto lh-1">
+                        <div class="dropdown">
+                        <a class="dropdown-toggle text-muted linkviewtext" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item linkview active" data-id="7" href="javascript:void(0);">Last 7 days</a>
+                            <a class="dropdown-item linkview" data-id="30" href="javascript:void(0);">Last 30 days</a>
+                            <a class="dropdown-item linkview" data-id="90" href="javascript:void(0);">Last 3 months</a>
+                            <a class="dropdown-item linkview" data-id="365" href="javascript:void(0);">In Year</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="d-flex align-items-baseline">
+                    <div class="h1 mb-3 me-2" id="linkviews">{{Commonhelper::getRecentActivity('link',7)}}</div>
+                    {{-- <div class="me-auto">
+                        <span class="text-green d-inline-flex align-items-center lh-1">
+                        4% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                        </span>
+                    </div> --}}
+                    </div>
+                    <div id="chart-active-users" class="chart-sm"></div>
                 </div>
-                <div class="h1 mb-3">{{Commonhelper::totalClicks()}}</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex align-items-center">
-                  <div class="subheader">Active Users</div>
                 </div>
-                <div class="h1 mb-3">{{Commonhelper::totalUsers()}}</div>
-              </div>
             </div>
-          </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                    <div class="subheader">Total Clicks</div>
+                    <div class="ms-auto lh-1">
+                        <div class="dropdown">
+                        <a class="dropdown-toggle text-muted totalclicktext" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item totalclick active" data-id="7" href="javascript:void(0);">Last 7 days</a>
+                            <a class="dropdown-item totalclick" data-id="30" href="javascript:void(0);">Last 30 days</a>
+                            <a class="dropdown-item totalclick" data-id="90" href="javascript:void(0);">Last 3 months</a>
+                            <a class="dropdown-item totalclick" data-id="365" href="javascript:void(0);">In Year</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="d-flex align-items-baseline">
+                    <div class="h1 mb-3 me-2" id="totalclicks">{{Commonhelper::getRecentActivity('block',7)}}</div>
+                    {{-- <div class="me-auto">
+                        <span class="text-green d-inline-flex align-items-center lh-1">
+                        4% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                        </span>
+                    </div> --}}
+                    </div>
+                    <div id="chart-active-users" class="chart-sm"></div>
+                </div>
+                </div>
+            </div>
           {{-- <div class="col-sm-6 col-lg-3">
             <div class="card">
               <div class="card-body">

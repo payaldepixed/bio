@@ -212,3 +212,63 @@ $( document ).ready(function() {
 if($('#userForm').length){
 
 }
+
+$(document).on("click", ".totallink", function () {
+    var time = $(this).data('id');
+    $.ajax({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        type: "GET",
+        url: "/admin/getactivity?type=totallink&time="+time,
+        success:function(data)
+        {
+            $('#totallinks').html(data);
+            if(time == '7'){ var txt = 'Last 7 days';}
+            if(time == '30'){ var txt = 'Last 30 days';}
+            if(time == '90'){ var txt = 'Last 3 months';}
+            if(time == '365'){ var txt = 'In Year';}
+            $('.totallinktext').text(txt);
+        }
+    });
+});
+
+$(document).on("click", ".linkview", function () {
+    var time = $(this).data('id');
+    $.ajax({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        type: "GET",
+        url: "/admin/getactivity?type=link&time="+time,
+        success:function(data)
+        {
+            $('#linkviews').html(data);
+            if(time == '7'){ var txt = 'Last 7 days';}
+            if(time == '30'){ var txt = 'Last 30 days';}
+            if(time == '90'){ var txt = 'Last 3 months';}
+            if(time == '365'){ var txt = 'In Year';}
+            $('.linkviewtext').text(txt);
+        }
+    });
+});
+
+$(document).on("click", ".totalclick", function () {
+    var time = $(this).data('id');
+    $.ajax({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        type: "GET",
+        url: "/admin/getactivity?type=block&time="+time,
+        success:function(data)
+        {
+            $('#totalclicks').html(data);
+            if(time == '7'){ var txt = 'Last 7 days';}
+            if(time == '30'){ var txt = 'Last 30 days';}
+            if(time == '90'){ var txt = 'Last 3 months';}
+            if(time == '365'){ var txt = 'In Year';}
+            $('.totalclicktext').text(txt);
+        }
+    });
+});
