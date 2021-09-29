@@ -6,12 +6,9 @@ use Mail;
 use Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\UserPageSocial;
-use App\Models\UserPageBlock;
 use App\Models\UserLink;
-use App\Models\User;
 use App\Models\RecentActivity;
 use Auth;
-use Carbon\Carbon;
 
 class Commonhelper
 {
@@ -86,9 +83,11 @@ class Commonhelper
 
 
     public static function addRecentActivity($link_id,$block_id='') {
-        $data = array('link_id'=>$link_id,'user_id'=>Auth::user()->id);
+        $data = array('link_id'=>$link_id);
+        if(@Auth::user()->id){$data['user_id'] = Auth::user()->id;}
         if(@$block_id){$data['block_id'] = $block_id;}
-        RecentActivity::create($data);
+        $recent = RecentActivity::create($data);
+        self::getLocation($recent->id);
         return 1;
     }
 
@@ -111,6 +110,67 @@ class Commonhelper
             $data->whereIn('link_id',$link_ids);
         }
         return $data->count();
+    }
+
+    public static function getLocation($id) {
+        $ip = \Request::ip();
+		if ($ip) {
+            $url = 'http://api.ipapi.com/'.$ip.'?access_key=e7d41ff277a3af257f3801b971be9c49&format=1';
+            $ch = curl_init();
+            $headers = [
+                'Content-Type: application/json',
+            ];
+			// Set the url, number of POST vars, POST data
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_POST, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			// Disabling SSL Certificate support temporarly
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			// Execute post
+			$result = curl_exec($ch);
+			if ($result === FALSE) {
+                curl_close($ch);
+				// die('Curl failed: ' . curl_error($ch));
+			}else{
+                // Close connection
+                curl_close($ch);
+                $result = json_decode($result);
+                $data = ['country_code'=>@$result->country_code,
+                'country_name'=>@$result->country_name,
+                'region_code'=>@$result->region_code,
+                'region_name'=>@$result->region_name,
+                'city'=>@$result->city,
+                'zip'=>@$result->zip,
+                'latitude'=>@$result->latitude,
+                'longitude'=>@$result->longitude];
+                return RecentActivity::where('id',$id)->update($data);
+                // echo "<pre>";
+                // print_r(json_decode($result)); die();
+            }
+		}
+    }
+
+    public static function getMarkers($time) {
+        $data = RecentActivity::select('link_id','created_at','country_code','country_name','latitude','longitude',\DB::raw('count(*) as visitors'));
+        $data->whereRaw('Date(created_at) >= (DATE(NOW()) + INTERVAL -'.$time.' DAY)');
+        if(@Auth::user()->user_type != 1){
+            $link_ids = UserLink::where('user_id',Auth::user()->id)->pluck('id')->toArray();
+            $data->whereIn('link_id',$link_ids);
+        }
+        return $data->groupBy('country_code')->get();
+    }
+
+    public static function getLinkVisitors($time) {
+        $data = \DB::table('user_links as l')->select('name',\DB::raw('count(r.id) as visitors'))
+        ->leftjoin('recent_activities as r', function($join) {
+            $join->on('l.id', '=', 'r.link_id');
+        });
+        $data->whereRaw('Date(r.created_at) >= (DATE(NOW()) + INTERVAL -'.$time.' DAY)');
+        if(@Auth::user()->user_type != 1){
+            $data->where('l.user_id',Auth::user()->id);
+        }
+        return $data->orderBy('visitors','desc')->groupBy('l.id')->get();
     }
 
 }

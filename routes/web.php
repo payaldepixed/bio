@@ -88,6 +88,8 @@ Route::group(['middleware' => ['auth']], function () {
             return view('template');
         })->name('template');
 
+        Route::get('getmarkers', 'PageController@getMarkers');
+
     });
 
  });

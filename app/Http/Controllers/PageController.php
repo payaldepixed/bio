@@ -343,11 +343,31 @@ class PageController extends Controller
     public function getActivity(Request $request)
     {
         if($request->type == 'totallink'){
-            $count = Commonhelper::totalLinks($request->time);
+            return Commonhelper::totalLinks($request->time);
+        }else if($request->type == 'block' || $request->type == 'link'){
+            return Commonhelper::getRecentActivity($request->type,$request->time);
         }else{
-            $count = Commonhelper::getRecentActivity($request->type,$request->time);
+            $pages = Commonhelper::getLinkVisitors($request->time);
+            $html = '';
+            if(@$pages){
+                foreach($pages as $link){
+                    $url = route('mypage',['name'=>@$link->name]);
+                    $html .= '<tr><td>'.$link->name.'
+                            <a target="_blank" href="'.$url.'" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                            </a>
+                        </td>
+                        <td class="text-muted">'.$link->visitors.'</td>
+                    </tr>';
+                }
+            }
+            return $html;
         }
-        return $count;
+    }
+
+    public function getMarkers(Request $request)
+    {
+        return Commonhelper::getMarkers($request->time);
     }
 
 }
