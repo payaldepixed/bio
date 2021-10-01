@@ -272,6 +272,7 @@ Page
                                                     <input type="color" id="settings_background_type_color" name="primary_background" class="form-control" value="{{@$design->primary_background ? $design->primary_background : '#ffffff'}}">
                                                 </div>
                                             </div>
+                                            <input type="hidden" id="back_url" name="back_url">
                                             <div id="background_type_image" class="mb-3 @if(@$design->primary_background_type != 'image') d-none @endif">
                                                 <input type="hidden" value="{{ (@$design->primary_background && @$design->primary_background_type == 'image') ? Storage::disk(Config::get('constants.DISK'))->url($design->primary_background) : '' }}" id="imgurl">
                                                 <div class="form-group">

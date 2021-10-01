@@ -79,7 +79,9 @@ class PageController extends Controller
 
     public function removeLink(Request $request)
     {
-        UserLink::where('id',$request->id)->update(['is_active'=>0]);
+        $link = UserLink::find($request->id);
+        $link->is_active = $link->is_active == 1 ? 0 : 1;
+        $link->save();
         return redirect()->back()->with('success','Link removed successfully!');
     }
 
@@ -290,6 +292,9 @@ class PageController extends Controller
             {
                 $file = $request->primary_background_video;
                 $data['primary_background'] = Commonhelper::uploadFile("backgrounds/",$file);
+            }
+            if($request->back_url){
+                $data['primary_background'] = $request->back_url;
             }
         }else{
             if($request->primary_background_type == 'color'){$data['primary_background'] = $request->primary_background;}

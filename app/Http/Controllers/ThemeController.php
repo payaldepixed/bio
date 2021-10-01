@@ -7,6 +7,8 @@ use Auth;
 use Validator;
 use App\Models\Theme;
 use App\Models\User;
+use Storage;
+use Config;
 
 class ThemeController extends Controller
 {
@@ -104,7 +106,14 @@ class ThemeController extends Controller
 
     public function details(Request $request)
     {
-        return Theme::where('id',$request->id)->first();
+        $theme = Theme::where('id',$request->id)->first();
+        if($theme->primary_background_type == 'image'){
+            $theme->imgurl = $theme->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($theme->primary_background) : '';
+        }
+        if($theme->primary_background_type == 'video'){
+            $theme->videourl = $theme->primary_background ? Storage::disk(Config::get('constants.DISK'))->url($theme->primary_background) : '';
+        }
+        return $theme;
     }
 
 

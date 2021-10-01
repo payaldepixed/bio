@@ -162,7 +162,7 @@ $(document).ready(function () {
                 "background-position",
                 "center center"
             );
-            $("#preview_size .card-layout").css("min-height", "100%");
+            // $("#preview_size .card-layout").css("min-height", "100%");
         }
         if(type == 'video'){
             var videourl = $("#videourl").val();
@@ -1014,6 +1014,8 @@ $(document).ready(function () {
                     if(type == 'image'){
                         var imgurl = data.imgurl;
                         $("#imgurl").val(imgurl);
+                        $("#back_url").val(data.primary_background);
+                        console.log(data.primary_background);
                         $("#background_type_image_preview").attr("src", imgurl);
                         $("#preview_size .card-layout").css(
                             "background-image",
@@ -1026,7 +1028,7 @@ $(document).ready(function () {
                             "background-position",
                             "center center"
                         );
-                        $("#preview_size .card-layout").css("min-height", "100%");
+                        // $("#preview_size .card-layout").css("min-height", "100%");
                     }
                     if(type == 'video'){
                         var videourl = data.videourl;
@@ -1036,6 +1038,21 @@ $(document).ready(function () {
                         $source.parent()[0].load();
                         $("#bgVideo").removeClass("d-none");
                         $("#preview_size .card-layout").removeAttr("style");
+                        $("#back_url").val(data.primary_background);
+                        console.log(data.primary_background);
+                    }
+
+                    if(type != 'image'){
+                        $("#imgurl").val('');
+                        $("#background_type_image_preview").attr("src", '');
+                    }
+
+                    if(type != 'video'){
+                        $("#bgVideo").addClass("d-none");
+                        // $("#preview_size .card-layout").addAttr("style");
+                        $("#videourl").val('');
+                        var $source = $("#video_here");
+                        $source[0].src = '';
                     }
 
                     var value = data.profile_picture_shadow;
