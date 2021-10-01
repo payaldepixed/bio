@@ -58,6 +58,14 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('link/store', 'PageController@storeLink')->name('link.store');
         Route::get('link/delete', 'PageController@removeLink')->name('link.remove');
 
+        Route::get('theme', 'ThemeController@index')->name('theme');
+        Route::get('theme/getdata', 'ThemeController@getAjaxData')->name('theme.get-ajax-data');
+        Route::get('theme/add', 'ThemeController@add')->name('theme.add');
+        Route::get('theme/edit', 'ThemeController@edit')->name('theme.edit');
+        Route::post('theme/store', 'ThemeController@store')->name('theme.store');
+        Route::get('theme/delete', 'ThemeController@delete')->name('theme.remove');
+        Route::get('theme/details', 'ThemeController@details')->name('theme.detail');
+
         Route::get('page/{id}', 'PageController@page')->name('page');
         Route::post('getblock', 'PageController@getBlock');
         Route::post('block/store', 'PageController@storeBlock')->name('block.store');

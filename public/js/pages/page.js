@@ -625,7 +625,7 @@ $(document).ready(function () {
         $(".noTactileCard").css("display", "block");
         $(".preview-card-body").css("border-width", "0px");
         $(".preview-card-body").css("margin-bottom", "15px");
-        $("#card_border").val(0);
+        $("#button_border").val(0);
 
         if ($(this).hasClass("tactile_no")) {
             // $("#card-color input").val();
@@ -786,14 +786,28 @@ $(document).ready(function () {
         ).css("color", $(this).val());
     });
 
-    $(document).on("input", "#card_corner", function () {
-        $(".preview-card-body").css("border-radius", $(this).val() + "px");
-        // $("#previewImg").css("border-color", "#000000");
+    $(document).on("input", "#button_corner", function () {
+
+        $(
+            ".live-preview, .live-preview a, .preview-card-body, iframe, .live-preview .thumbnail-grid-img img, .link_preview.button-image-background .live-preview .details "
+        ).css("border-radius", $(this).val() + "px");
+        $(
+            ".live-preview .thumbnail-carousel-img img, .live-preview .thumbnail-highlight-img img, .link_preview.thumbnail-basic .live-preview .thumbnail-img img "
+        ).css("border-top-left-radius", $(this).val() + "px");
+        $(
+            ".live-preview .thumbnail-carousel-img img, .live-preview .thumbnail-highlight-img img, .link_preview.thumbnail-basic .live-preview .details "
+        ).css("border-top-right-radius", $(this).val() + "px");
+        $(
+            ".link_preview.thumbnail-carousel .live-preview .details, .link_preview.thumbnail-highlight .live-preview .details, .link_preview.thumbnail-basic .live-preview .thumbnail-img img "
+        ).css("border-bottom-left-radius", $(this).val() + "px");
+        $(
+            ".link_preview.thumbnail-carousel .live-preview .details, .link_preview.thumbnail-highlight .live-preview .details, .link_preview.thumbnail-basic .live-preview .details "
+        ).css("border-bottom-right-radius", $(this).val() + "px");
     });
 
-    $(document).on("input", "#card_border", function () {
+    $(document).on("input", "#button_border", function () {
         $(".preview-card-body").css("border-width", $(this).val() + "px");
-        $(".preview-card-body").css("border-color", "#000000");
+        // $(".preview-card-body").css("border-color", "#000000");
     });
 
     $(document).on("input", "#card-border-color input", function () {
@@ -947,6 +961,135 @@ $(document).ready(function () {
         $source.parent()[0].load();
         $("#bgVideo").removeClass("d-none");
         $("#preview_size .card-layout").removeAttr("style");
+    });
+
+    $(document).on("change", "#theme", function () {
+        if($(this).val()){
+            $.ajax({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+                type: "GET",
+                url: "/admin/theme/details?id="+$(this).val(),
+                success:function(data)
+                {
+                    var primary_text_color = data.primary_text_color;
+                    $("input[name='primary_text_color']").val(primary_text_color);
+                    $(".preview-all, .powered-by, .link-text").css("color", primary_text_color);
+                    $(".preview-all .selected-social-icon .selected-icon path").css(
+                        "fill",
+                        primary_text_color
+                    );
+
+                    var type = data.primary_background_type;
+                    $("input[name='primary_background_type']").val(type);
+                    type = type ? type : 'color';
+                    $("#selectColor .select-color.selected").removeClass("selected");
+                    $('.custom-'+type).addClass("selected");
+                    if(type == 'preset'){
+                        var background = data.primary_background;
+                        $("#primary_background_preset").val(background);
+                        $("#preview_size .card-layout").css("background-image", background);
+                    }
+                    if(type == 'gradient'){
+                        var background = data.primary_background;
+                        $("#settings_background_type_gradient_color_one").val(background);
+                        var background2 = data.secondary_background;
+                        $("input[name='secondary_background']").val(background2);
+                        $("#preview_size .card-layout").css(
+                            "background-image",
+                            "linear-gradient(135deg, " +
+                                background +
+                                " 10%, " +
+                                background2 +
+                                " 100%)"
+                        );
+                    }
+                    if(type == 'color'){
+                        var background = data.primary_background;
+                        $("#settings_background_type_color").val(background);
+                        $("#preview_size .card-layout").css("background-image", "");
+                        $("#preview_size .card-layout").css("background-color", background);
+                    }
+                    if(type == 'image'){
+                        var imgurl = data.imgurl;
+                        $("#imgurl").val(imgurl);
+                        $("#background_type_image_preview").attr("src", imgurl);
+                        $("#preview_size .card-layout").css(
+                            "background-image",
+                            "url(" + imgurl + ")"
+                        );
+                        $("#preview_size .card-layout").css("background-color", "");
+                        $("#preview_size .card-layout").css("background-repeat", "no-repeat");
+                        $("#preview_size .card-layout").css("background-size", "cover");
+                        $("#preview_size .card-layout").css(
+                            "background-position",
+                            "center center"
+                        );
+                        $("#preview_size .card-layout").css("min-height", "100%");
+                    }
+                    if(type == 'video'){
+                        var videourl = data.videourl;
+                        $("#videourl").val(videourl);
+                        var $source = $("#video_here");
+                        $source[0].src = videourl;
+                        $source.parent()[0].load();
+                        $("#bgVideo").removeClass("d-none");
+                        $("#preview_size .card-layout").removeAttr("style");
+                    }
+
+                    var value = data.profile_picture_shadow;
+                    $("input[name='profile_picture_shadow']").val(value);
+                    var profileShadow = "#0000004d 0px 10px 30px " + value + "px";
+                    $("#previewImg").css("box-shadow", profileShadow);
+
+                    var value = data.profile_picture_border;
+                    $("input[name='profile_picture_border']").val(value);
+                    $("#previewImg").css("border-width", value + "px");
+                    $("#previewImg").css("border-color", "#000000");
+
+                    var value = data.profile_picture_border_color;
+                    $("input[name='profile_picture_border_color']").val(value);
+                    $("#previewImg").css("border-color", value);
+
+                    var value = data.text_font;
+                    $("input[name='text_font']").val(value);
+                    var font = '"' + value + '", sans-serif';
+                    $("#preview_size").css("font-family", font);
+                }
+            });
+        }else{
+            var primary_text_color = '#000000';
+            $("input[name='primary_text_color']").val(primary_text_color);
+            $(".preview-all, .powered-by, .link-text").css("color", primary_text_color);
+            $(".preview-all .selected-social-icon .selected-icon path").css(
+                "fill",
+                primary_text_color
+            );
+            var type = 'color';
+            $("input[name='primary_background_type']").val(type);
+            $("#selectColor .select-color.selected").removeClass("selected");
+            $('.custom-'+type).addClass("selected");
+            var background = '#ffffff';
+            $("#settings_background_type_color").val(background);
+            $("#preview_size .card-layout").css("background-image", "");
+            $("#preview_size .card-layout").css("background-color", background);
+            var value = 0;
+            $("input[name='profile_picture_shadow']").val(value);
+            var profileShadow = "#0000004d 0px 10px 30px " + value + "px";
+            $("#previewImg").css("box-shadow", profileShadow);
+            var value = 0;
+            $("input[name='profile_picture_border']").val(value);
+            $("#previewImg").css("border-width", value + "px");
+            $("#previewImg").css("border-color", "#000000");
+            var value = '#000000';
+            $("input[name='profile_picture_border_color']").val(value);
+            $("#previewImg").css("border-color", value);
+            var value = 'Open Sans';
+            $("input[name='text_font']").val(value);
+            var font = '"' + value + '", sans-serif';
+            $("#preview_size").css("font-family", font);
+        }
     });
 
 

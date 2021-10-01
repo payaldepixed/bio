@@ -9,6 +9,7 @@ use App\Models\UserPageSocial;
 use App\Models\UserPageDesign;
 use App\Models\UserPageBlock;
 use App\Models\UserPageBlockMedia;
+use App\Models\Theme;
 use Validator;
 use Commonhelper;
 use Auth;
@@ -88,7 +89,8 @@ class PageController extends Controller
         $design = UserPageDesign::where('link_id',$id)->first();
         $link_id = $id;
         $linkname = UserLink::where('id',$id)->value('name');
-        return view('page.page', compact('user','design','link_id','linkname'));
+        $themes = Theme::all();
+        return view('page.page', compact('user','design','link_id','linkname','themes'));
     }
 
     public function getBlocks($id)
@@ -273,7 +275,7 @@ class PageController extends Controller
         $design = UserPageDesign::where('link_id',$request->link_id)->first();
         $data = $request->only('primary_text_color','profile_picture_shadow','primary_background_type',
         'profile_picture_border','profile_picture_border_color','card_shadow','card_spacing','text_font','secondary_background',
-        'button_color','tactile_card','button_text_color','button_corner','button_border','button_border_color','link_id');
+        'button_color','tactile_card','button_text_color','button_corner','button_border','button_border_color','link_id','theme');
         $data['enable_vcard'] = @$request->enable_vcard ? 1 : 0;
         $data['enable_share_button'] = @$request->enable_share_button ? 1 : 0;
         $data['hide_link_binding'] = @$request->hide_link_binding ? 1 : 0;

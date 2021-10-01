@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Commonhelper;
 use Illuminate\Http\Request;
 use Auth;
 use Validator;
