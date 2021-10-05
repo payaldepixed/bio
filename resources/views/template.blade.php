@@ -603,6 +603,205 @@ Page Template
                                             <input id="profileName" type="text" class="form-control" placeholder="Profile Name">
                                         </div>
 
+
+                                        <div class="mb-3">
+                                            <div class="themeLayout">
+                                                <div class="item_two">
+                                                    <div class="preview-layout active">
+                                                        <div class="checkOverlay">
+                                                            <div class="checkIcon">
+                                                                <img class="checkIconImg" src="{{ asset('static/template_svg/check-mark.svg') }}" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div id="preview_size" class="preview-details mobile_size">
+                                                            <div class="card-layout" style="background-image: linear-gradient(135deg, rgb(128, 255, 0) 10%, rgb(192, 192, 192) 100%); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                                                                <video id="bgVideo" autoplay muted loop class="d-none">
+                                                                    <source src="" type="video/mp4" id="video_here" />
+                                                                </video>
+                                                                <div class="preview-all">
+                                                                    <div id="previewImg" class="preview-img">
+                                                                        <img src="{{asset('static/default.png')}}" alt="">
+                                                                    </div>
+                                                                    <div id="PreviewName" class="preview-title">
+                                                                        user name
+                                                                    </div>
+                                                                    <div id="previewBio" class="preview-description">
+                                                                        decscription
+                                                                    </div>
+                                                                    {{-- <div class="preview-card">
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div> --}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="themeName">
+                                                                linear-gradient
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                  <div class="item_two">
+                                                    <div class="preview-layout">
+                                                         <div class="checkOverlay">
+                                                            <div class="checkIcon">
+                                                                <img class="checkIconImg" src="{{ asset('static/template_svg/check-mark.svg') }}" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div id="preview_size" class="preview-details mobile_size">
+                                                            <div class="card-layout" style="background-repeat: no-repeat; background-size: cover; background-position: center center; background-color: rgb(0, 128, 64);">
+                                                                <video id="bgVideo" autoplay muted loop class="d-none">
+                                                                    <source src="" type="video/mp4" id="video_here" />
+                                                                </video>
+                                                                <div class="preview-all">
+                                                                    <div id="previewImg" class="preview-img">
+                                                                        <img src="{{asset('static/default.png')}}" alt="">
+                                                                    </div>
+                                                                    <div id="PreviewName" class="preview-title">
+                                                                        user name
+                                                                    </div>
+                                                                    <div id="previewBio" class="preview-description">
+                                                                        decscription
+                                                                    </div>
+                                                                    {{-- <div class="preview-card">
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div> --}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="themeName">
+                                                                background color
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                  <div class="item_two">
+                                                    <div class="preview-layout">
+                                                         <div class="checkOverlay">
+                                                            <div class="checkIcon">
+                                                                <img class="checkIconImg" src="{{ asset('static/template_svg/check-mark.svg') }}" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div id="preview_size" class="preview-details mobile_size">
+                                                            <div class="card-layout" style="background-image: url('{{ asset('img/bg1.jpg') }}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                                                                <video id="bgVideo" autoplay muted loop class="d-none">
+                                                                    <source src="" type="video/mp4" id="video_here" />
+                                                                </video>
+                                                                <div class="preview-all">
+                                                                    <div id="previewImg" class="preview-img">
+                                                                        <img src="{{asset('static/default.png')}}" alt="">
+                                                                    </div>
+                                                                    <div id="PreviewName" class="preview-title">
+                                                                        user name
+                                                                    </div>
+                                                                    <div id="previewBio" class="preview-description">
+                                                                        decscription
+                                                                    </div>
+                                                                    {{-- <div class="preview-card">
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div> --}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="themeName">
+                                                                background image
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                  <div class="item_two">
+                                                    <div class="preview-layout">
+                                                         <div class="checkOverlay">
+                                                            <div class="checkIcon">
+                                                                <img class="checkIconImg" src="{{ asset('static/template_svg/check-mark.svg') }}" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div id="preview_size" class="preview-details mobile_size">
+                                                            <div class="card-layout">
+                                                                <video id="bgVideo" autoplay muted loop class="">
+                                                                    <source src="http://b-i-o.co/public/uploads/backgrounds/9053241633089368.mp4" type="video/mp4" id="video_here" />
+                                                                </video>
+                                                                <div class="preview-all">
+                                                                    <div id="previewImg" class="preview-img">
+                                                                        <img src="{{asset('static/default.png')}}" alt="">
+                                                                    </div>
+                                                                    <div id="PreviewName" class="preview-title">
+                                                                        user name
+                                                                    </div>
+                                                                    <div id="previewBio" class="preview-description">
+                                                                        decscription
+                                                                    </div>
+                                                                    {{-- <div class="preview-card">
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="link_preview normal">
+                                                                            <div class="preview-card-body card-style">
+                                                                                <div class="main-title">{{@$user->name}}</div>
+                                                                                <div class="subtitle-title">Text</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div> --}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="themeName">
+                                                                background video
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+
+
+
                                         <div class="mb-3">
                                             <div class="color-row">
                                                 <div class="color-label">Primary Text Color</div>

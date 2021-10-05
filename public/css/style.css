@@ -1760,6 +1760,89 @@ input[type="radio"]:checked ~ .link-background-type-preset {
   background-color: #fff;
 }
 
+.template-layout .template .themeLayout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  padding-bottom: 15px;
+}
+
+.template-layout .template .themeLayout .item_two {
+  padding: 0;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.template-layout .template .themeLayout .item_two .preview-layout {
+  position: relative;
+}
+
+.template-layout .template .themeLayout .item_two .preview-layout .preview-details.mobile_size {
+  max-width: 300px;
+  margin: auto;
+  min-width: 250px;
+  border-radius: 20px;
+}
+
+.template-layout .template .themeLayout .item_two .preview-layout .preview-details .card-layout {
+  padding-bottom: 33px;
+}
+
+.template-layout .template .themeLayout .item_two .preview-layout .preview-details .themeName {
+  position: absolute;
+  background-color: #fff;
+  right: 0px;
+  left: 0px;
+  bottom: -1px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid;
+}
+
+.template-layout .template .themeLayout .item_two .preview-layout .checkOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  z-index: 1;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #7e6e6e80;
+}
+
+.template-layout .template .themeLayout .item_two .preview-layout .checkOverlay .checkIcon .checkIconImg {
+  width: 50px;
+  height: 50px;
+}
+
+.template-layout .template .themeLayout .item_two .preview-layout.active .checkOverlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @media screen and (max-width: 1300px) {
   .template-layout .template-header .link-item .my-link .my-page {
     display: none;

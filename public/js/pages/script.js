@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(
-        '.preview-layout img[src$=".svg"], .tactile-item img[src$=".svg"], .preview_share img[src$=".svg"]'
+        '.preview-layout img[src$=".svg"], .tactile-item img[src$=".svg"], .preview_share img[src$=".svg"], .checkIcon img[src$=".svg"]'
     ).each(function () {
         var $img = jQuery(this);
         var imgURL = $img.attr("src");
@@ -557,4 +557,12 @@ $(document).ready(function () {
     });
 
     // custom background js
+
+    // theme selctor
+    $(".themeLayout .preview-layout").on("click", function () {
+        $(".themeLayout .preview-layout.active").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    // theme selctor
 });
