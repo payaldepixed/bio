@@ -1774,6 +1774,703 @@ input[type="radio"]:checked ~ .link-background-type-preset {
                         }
                         .card-layout {
                             padding-bottom: 33px;
+                            position: relative;
+                            margin: auto;
+                            max-width: 530px;
+                            padding-top: 33px;
+                            padding-right: 33px;
+                            padding-left: 33px;
+                            box-shadow: 0 7px 29px 0 #64646f33;
+                            text-align: center;
+                            background-color: transparent;
+                        }
+                        .preset-card-layout {
+                            padding-bottom: 33px;
+                            position: relative;
+                            margin: auto;
+                            max-width: 530px;
+                            padding-top: 33px;
+                            padding-right: 33px;
+                            padding-left: 33px;
+                            box-shadow: 0 7px 29px 0 #64646f33;
+                            text-align: center;
+                            background-color: transparent;
+                            .preview-all {
+                                color: $primary-color;
+                                position: relative;
+
+                                .share_vcard_icons {
+                                    position: absolute;
+                                    top: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 100%;
+
+                                    .preview_share {
+                                        cursor: pointer;
+
+                                        .upper_icon {
+                                            stroke: #000;
+                                        }
+                                    }
+                                    .preview_vcard {
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .preview-img {
+                                    width: 120px;
+                                    height: 120px;
+                                    margin: auto;
+                                    margin-bottom: 15px;
+                                    border-radius: 50%;
+                                    border-color: $preview-profile-border-color;
+                                    border-style: solid;
+                                    border-width: $preview-profile-border-width;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        -webkit-border-radius: 50%;
+                                        -moz-border-radius: 50%;
+                                        -ms-border-radius: 50%;
+                                        -o-border-radius: 50%;
+                                    }
+                                }
+
+                                .preview-title {
+                                    font-weight: 700;
+                                    font-size: 15px;
+                                    margin-bottom: 20px;
+                                }
+
+                                .preview-description {
+                                    font-size: 13.8px;
+                                    font-weight: 400;
+                                    margin-bottom: 20px;
+                                }
+
+                                .selected-social-icon {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-bottom: 20px;
+
+                                    .selected-icon {
+                                        width: 24px;
+                                        margin: 5px;
+
+                                        path {
+                                            fill: $primary-color;
+                                        }
+                                    }
+                                }
+
+                                .preview-card {
+                                    .preview-card-body {
+                                        color: rgb(51, 51, 51);
+                                        background: #ffffff;
+                                        box-shadow: #0000004d 0px 10px 30px 0px;
+                                        margin-bottom: 15px;
+                                        text-align: left;
+                                        border-radius: 10px;
+                                        padding: 16.5px 13.75px;
+
+                                        &.card-style {
+                                            border-color: $preview-card-border-color;
+                                            border-style: solid;
+                                            margin-bottom: $preview-card-margin-bottom;
+                                            border-width: $preview-card-border-width;
+                                            border-radius: $preview-card-border-radius;
+                                            -webkit-border-radius: $preview-card-border-radius;
+                                            -moz-border-radius: $preview-card-border-radius;
+                                            -ms-border-radius: $preview-card-border-radius;
+                                            -o-border-radius: $preview-card-border-radius;
+                                        }
+
+                                        .main-title {
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        .subtitle-title {
+                                            font-size: 13px;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        &.tactile_one {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac,
+                                                #aeeeb0
+                                            );
+                                        }
+
+                                        &.tactile_two {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #9dd79e,
+                                                #bbffbe
+                                            );
+                                        }
+
+                                        &.tactile_three {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #bbffbe,
+                                                #a0dba2
+                                            );
+                                        }
+
+                                        &.tactile_four {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #0000000a -6px -6px 13px
+                                                    inset,
+                                                #00000026 6px 6px 13px inset;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac00,
+                                                #aeeeb000
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .gradient-card-layout {
+                            padding-bottom: 33px;
+                            position: relative;
+                            margin: auto;
+                            max-width: 530px;
+                            padding-top: 33px;
+                            padding-right: 33px;
+                            padding-left: 33px;
+                            box-shadow: 0 7px 29px 0 #64646f33;
+                            text-align: center;
+                            background-color: transparent;
+                            .preview-all {
+                                color: $primary-color;
+                                position: relative;
+
+                                .share_vcard_icons {
+                                    position: absolute;
+                                    top: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 100%;
+
+                                    .preview_share {
+                                        cursor: pointer;
+
+                                        .upper_icon {
+                                            stroke: #000;
+                                        }
+                                    }
+                                    .preview_vcard {
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .preview-img {
+                                    width: 120px;
+                                    height: 120px;
+                                    margin: auto;
+                                    margin-bottom: 15px;
+                                    border-radius: 50%;
+                                    border-color: $preview-profile-border-color;
+                                    border-style: solid;
+                                    border-width: $preview-profile-border-width;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        -webkit-border-radius: 50%;
+                                        -moz-border-radius: 50%;
+                                        -ms-border-radius: 50%;
+                                        -o-border-radius: 50%;
+                                    }
+                                }
+
+                                .preview-title {
+                                    font-weight: 700;
+                                    font-size: 15px;
+                                    margin-bottom: 20px;
+                                }
+
+                                .preview-description {
+                                    font-size: 13.8px;
+                                    font-weight: 400;
+                                    margin-bottom: 20px;
+                                }
+
+                                .selected-social-icon {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-bottom: 20px;
+
+                                    .selected-icon {
+                                        width: 24px;
+                                        margin: 5px;
+
+                                        path {
+                                            fill: $primary-color;
+                                        }
+                                    }
+                                }
+
+                                .preview-card {
+                                    .preview-card-body {
+                                        color: rgb(51, 51, 51);
+                                        background: #ffffff;
+                                        box-shadow: #0000004d 0px 10px 30px 0px;
+                                        margin-bottom: 15px;
+                                        text-align: left;
+                                        border-radius: 10px;
+                                        padding: 16.5px 13.75px;
+
+                                        &.card-style {
+                                            border-color: $preview-card-border-color;
+                                            border-style: solid;
+                                            margin-bottom: $preview-card-margin-bottom;
+                                            border-width: $preview-card-border-width;
+                                            border-radius: $preview-card-border-radius;
+                                            -webkit-border-radius: $preview-card-border-radius;
+                                            -moz-border-radius: $preview-card-border-radius;
+                                            -ms-border-radius: $preview-card-border-radius;
+                                            -o-border-radius: $preview-card-border-radius;
+                                        }
+
+                                        .main-title {
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        .subtitle-title {
+                                            font-size: 13px;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        &.tactile_one {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac,
+                                                #aeeeb0
+                                            );
+                                        }
+
+                                        &.tactile_two {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #9dd79e,
+                                                #bbffbe
+                                            );
+                                        }
+
+                                        &.tactile_three {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #bbffbe,
+                                                #a0dba2
+                                            );
+                                        }
+
+                                        &.tactile_four {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #0000000a -6px -6px 13px
+                                                    inset,
+                                                #00000026 6px 6px 13px inset;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac00,
+                                                #aeeeb000
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .color-card-layout {
+                            padding-bottom: 33px;
+                            position: relative;
+                            margin: auto;
+                            max-width: 530px;
+                            padding-top: 33px;
+                            padding-right: 33px;
+                            padding-left: 33px;
+                            box-shadow: 0 7px 29px 0 #64646f33;
+                            text-align: center;
+                            background-color: transparent;
+                            .preview-all {
+                                color: $primary-color;
+                                position: relative;
+
+                                .share_vcard_icons {
+                                    position: absolute;
+                                    top: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 100%;
+
+                                    .preview_share {
+                                        cursor: pointer;
+
+                                        .upper_icon {
+                                            stroke: #000;
+                                        }
+                                    }
+                                    .preview_vcard {
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .preview-img {
+                                    width: 120px;
+                                    height: 120px;
+                                    margin: auto;
+                                    margin-bottom: 15px;
+                                    border-radius: 50%;
+                                    border-color: $preview-profile-border-color;
+                                    border-style: solid;
+                                    border-width: $preview-profile-border-width;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        -webkit-border-radius: 50%;
+                                        -moz-border-radius: 50%;
+                                        -ms-border-radius: 50%;
+                                        -o-border-radius: 50%;
+                                    }
+                                }
+
+                                .preview-title {
+                                    font-weight: 700;
+                                    font-size: 15px;
+                                    margin-bottom: 20px;
+                                }
+
+                                .preview-description {
+                                    font-size: 13.8px;
+                                    font-weight: 400;
+                                    margin-bottom: 20px;
+                                }
+
+                                .selected-social-icon {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-bottom: 20px;
+
+                                    .selected-icon {
+                                        width: 24px;
+                                        margin: 5px;
+
+                                        path {
+                                            fill: $primary-color;
+                                        }
+                                    }
+                                }
+
+                                .preview-card {
+                                    .preview-card-body {
+                                        color: rgb(51, 51, 51);
+                                        background: #ffffff;
+                                        box-shadow: #0000004d 0px 10px 30px 0px;
+                                        margin-bottom: 15px;
+                                        text-align: left;
+                                        border-radius: 10px;
+                                        padding: 16.5px 13.75px;
+
+                                        &.card-style {
+                                            border-color: $preview-card-border-color;
+                                            border-style: solid;
+                                            margin-bottom: $preview-card-margin-bottom;
+                                            border-width: $preview-card-border-width;
+                                            border-radius: $preview-card-border-radius;
+                                            -webkit-border-radius: $preview-card-border-radius;
+                                            -moz-border-radius: $preview-card-border-radius;
+                                            -ms-border-radius: $preview-card-border-radius;
+                                            -o-border-radius: $preview-card-border-radius;
+                                        }
+
+                                        .main-title {
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        .subtitle-title {
+                                            font-size: 13px;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        &.tactile_one {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac,
+                                                #aeeeb0
+                                            );
+                                        }
+
+                                        &.tactile_two {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #9dd79e,
+                                                #bbffbe
+                                            );
+                                        }
+
+                                        &.tactile_three {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #bbffbe,
+                                                #a0dba2
+                                            );
+                                        }
+
+                                        &.tactile_four {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #0000000a -6px -6px 13px
+                                                    inset,
+                                                #00000026 6px 6px 13px inset;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac00,
+                                                #aeeeb000
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .image-card-layout {
+                            padding-bottom: 33px;
+                            position: relative;
+                            margin: auto;
+                            max-width: 530px;
+                            padding-top: 33px;
+                            padding-right: 33px;
+                            padding-left: 33px;
+                            box-shadow: 0 7px 29px 0 #64646f33;
+                            text-align: center;
+                            background-color: transparent;
+                            .preview-all {
+                                color: $primary-color;
+                                position: relative;
+
+                                .share_vcard_icons {
+                                    position: absolute;
+                                    top: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 100%;
+
+                                    .preview_share {
+                                        cursor: pointer;
+
+                                        .upper_icon {
+                                            stroke: #000;
+                                        }
+                                    }
+                                    .preview_vcard {
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .preview-img {
+                                    width: 120px;
+                                    height: 120px;
+                                    margin: auto;
+                                    margin-bottom: 15px;
+                                    border-radius: 50%;
+                                    border-color: $preview-profile-border-color;
+                                    border-style: solid;
+                                    border-width: $preview-profile-border-width;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        -webkit-border-radius: 50%;
+                                        -moz-border-radius: 50%;
+                                        -ms-border-radius: 50%;
+                                        -o-border-radius: 50%;
+                                    }
+                                }
+
+                                .preview-title {
+                                    font-weight: 700;
+                                    font-size: 15px;
+                                    margin-bottom: 20px;
+                                }
+
+                                .preview-description {
+                                    font-size: 13.8px;
+                                    font-weight: 400;
+                                    margin-bottom: 20px;
+                                }
+
+                                .selected-social-icon {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-bottom: 20px;
+
+                                    .selected-icon {
+                                        width: 24px;
+                                        margin: 5px;
+
+                                        path {
+                                            fill: $primary-color;
+                                        }
+                                    }
+                                }
+
+                                .preview-card {
+                                    .preview-card-body {
+                                        color: rgb(51, 51, 51);
+                                        background: #ffffff;
+                                        box-shadow: #0000004d 0px 10px 30px 0px;
+                                        margin-bottom: 15px;
+                                        text-align: left;
+                                        border-radius: 10px;
+                                        padding: 16.5px 13.75px;
+
+                                        &.card-style {
+                                            border-color: $preview-card-border-color;
+                                            border-style: solid;
+                                            margin-bottom: $preview-card-margin-bottom;
+                                            border-width: $preview-card-border-width;
+                                            border-radius: $preview-card-border-radius;
+                                            -webkit-border-radius: $preview-card-border-radius;
+                                            -moz-border-radius: $preview-card-border-radius;
+                                            -ms-border-radius: $preview-card-border-radius;
+                                            -o-border-radius: $preview-card-border-radius;
+                                        }
+
+                                        .main-title {
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        .subtitle-title {
+                                            font-size: 13px;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+
+                                        &.tactile_one {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac,
+                                                #aeeeb0
+                                            );
+                                        }
+
+                                        &.tactile_two {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #9dd79e,
+                                                #bbffbe
+                                            );
+                                        }
+
+                                        &.tactile_three {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #baffbc -6px -6px 13px,
+                                                #94cb96 6px 6px 13px;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #bbffbe,
+                                                #a0dba2
+                                            );
+                                        }
+
+                                        &.tactile_four {
+                                            border-color: #b1f3b3;
+                                            box-shadow: #0000000a -6px -6px 13px
+                                                    inset,
+                                                #00000026 6px 6px 13px inset;
+                                            background: linear-gradient(
+                                                145deg,
+                                                #aaeaac00,
+                                                #aeeeb000
+                                            );
+                                        }
+                                    }
+                                }
+                            }
                         }
                         .themeName {
                             position: absolute;

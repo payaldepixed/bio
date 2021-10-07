@@ -186,6 +186,11 @@ Page
                                             <input id="profileName" name="name" value="{{@$user->name}}" type="text" class="form-control" placeholder="Profile Name">
                                         </div>
                                         @if(@count(@$themes) > 0)
+                                        <div class="title-row mb-3">
+                                            <div class="line"></div>
+                                            <div class="design-title">Themes</div>
+                                            <div class="line"></div>
+                                        </div>
                                         <div class="mb-3" id="themes">
                                             {{-- <select id="theme" name="theme">
                                                 <option value="">Select Theme</option>
@@ -196,7 +201,7 @@ Page
                                             @include('page.previewtheme', ['themes' => $themes])
                                         </div>
                                         @endif
-                                        <a href="{{route('theme.add')}}">Create New Theme</a>
+                                        <a href="{{route('theme.add')}}" class="btn btn-primary w-100">Create New Theme</a>
                                         <div style="display:none;">
                                             <div class="mb-3">
                                                 <div class="color-row">

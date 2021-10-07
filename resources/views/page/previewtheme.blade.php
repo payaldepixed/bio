@@ -6,6 +6,9 @@
             $borderwidth = $theme->profile_picture_border.'px';
             $fontfamily = $theme->text_font.', sans-serif';
         @endphp
+        {{-- {{$theme->primary_background_type}}
+        {{$theme->primary_background}}
+        {{$theme->secondary_background}} --}}
         <div class="item_two themepreview" data-id="{{$theme->id}}">
             <div class="preview-layout">
                 <div class="checkOverlay">
@@ -15,16 +18,16 @@
                 </div>
                 <div id="preview_size" style="font-family:{{$fontfamily}}" class="preview-details mobile_size">
                     @if($theme->primary_background_type == 'preset')
-                        <div class="card-layout" style="background-image: {{$theme->primary_background}};">
+                        <div class="preset-card-layout" style="background-image: {{$theme->primary_background}};">
                     @endif
                     @if($theme->primary_background_type == 'gradient')
-                    <div class="card-layout" style="background-image: linear-gradient(135deg, {{$theme->primary_background}} 10%, {{$theme->secondary_background}} 100%); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-                        @endif
+                    <div class="gradient-card-layout" style="background-image: linear-gradient(135deg, {{$theme->primary_background}} 10%, {{$theme->secondary_background}} 100%); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                    @endif
                     @if($theme->primary_background_type == 'color')
-                        <div class="card-layout" style="background-repeat: no-repeat; background-size: cover; background-position: center center; background-color: {{$theme->primary_background}};">
+                        <div class="color-card-layout" style="background-color: {{$theme->primary_background}};">
                     @endif
                     @if($theme->primary_background_type == 'image')
-                        <div class="card-layout" style="background-image: url('{{ Storage::disk(Config::get('constants.DISK'))->url($theme->primary_background)}}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                        <div class="image-card-layout" style="background-image: url('{{ Storage::disk(Config::get('constants.DISK'))->url($theme->primary_background)}}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
                     @endif
                     @if($theme->primary_background_type == 'video')
                     <div class="card-layout">
