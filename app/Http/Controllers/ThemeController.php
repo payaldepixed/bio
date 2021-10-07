@@ -116,5 +116,11 @@ class ThemeController extends Controller
         return $theme;
     }
 
+    public function getThemes()
+    {
+        $themes = Theme::all();
+        return view('page.previewtheme', compact('themes'));
+    }
+
 
 }

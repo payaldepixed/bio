@@ -186,13 +186,14 @@ Page
                                             <input id="profileName" name="name" value="{{@$user->name}}" type="text" class="form-control" placeholder="Profile Name">
                                         </div>
                                         @if(@count(@$themes) > 0)
-                                        <div class="mb-3">
-                                            <select id="theme" name="theme">
+                                        <div class="mb-3" id="themes">
+                                            {{-- <select id="theme" name="theme">
                                                 <option value="">Select Theme</option>
                                                 @foreach ($themes as $theme)
                                                     <option value="{{$theme->id}}" @if(@$design->theme == $theme->id) selected @endif>{{$theme->title}}</option>
                                                 @endforeach
-                                            </select>
+                                            </select> --}}
+                                            @include('page.previewtheme', ['themes' => $themes])
                                         </div>
                                         @endif
                                         <a href="{{route('theme.add')}}">Create New Theme</a>

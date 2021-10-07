@@ -2,7 +2,6 @@ $(document).ready(function () {
     //block script
     var link_id = $('#link_id').val();
     fetchBlocks();
-
     if ($("#socialForm").length) {
         $(".sociallinks").on("change", function (e) {
             var type = $(this).val();
@@ -963,14 +962,15 @@ $(document).ready(function () {
         $("#preview_size .card-layout").removeAttr("style");
     });
 
-    $(document).on("change", "#theme", function () {
-        if($(this).val()){
+    $(document).on("click", ".themepreview", function () {
+        var id = $(this).data('id');
+        if(id){
             $.ajax({
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
                 type: "GET",
-                url: "/admin/theme/details?id="+$(this).val(),
+                url: "/admin/theme/details?id="+id,
                 success:function(data)
                 {
                     var primary_text_color = data.primary_text_color;
@@ -1015,7 +1015,6 @@ $(document).ready(function () {
                         var imgurl = data.imgurl;
                         $("#imgurl").val(imgurl);
                         $("#back_url").val(data.primary_background);
-                        console.log(data.primary_background);
                         $("#background_type_image_preview").attr("src", imgurl);
                         $("#preview_size .card-layout").css(
                             "background-image",
@@ -1039,7 +1038,7 @@ $(document).ready(function () {
                         $("#bgVideo").removeClass("d-none");
                         $("#preview_size .card-layout").removeAttr("style");
                         $("#back_url").val(data.primary_background);
-                        console.log(data.primary_background);
+                        // console.log(data.primary_background);
                     }
 
                     if(type != 'image'){
@@ -1108,6 +1107,20 @@ $(document).ready(function () {
             $("#preview_size").css("font-family", font);
         }
     });
+
+    function getThemes(){
+        $.ajax({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+            type: "GET",
+            url: "/admin/getthemes",
+            success:function(data)
+            {
+                $('#themes').html(data);
+            }
+        });
+    }
 
 
 });
@@ -1191,3 +1204,8 @@ $("#crop").click(function(){
         }
     });
 })
+
+$(".themeLayout .preview-layout").on("click", function () {
+    $(".themeLayout .preview-layout.active").removeClass("active");
+    $(this).addClass("active");
+});

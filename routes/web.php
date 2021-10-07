@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('theme/store', 'ThemeController@store')->name('theme.store');
         Route::get('theme/delete', 'ThemeController@delete')->name('theme.remove');
         Route::get('theme/details', 'ThemeController@details')->name('theme.detail');
+        Route::get('getthemes', 'ThemeController@getThemes')->name('getthemes');
 
         Route::get('page/{id}', 'PageController@page')->name('page');
         Route::post('getblock', 'PageController@getBlock');
