@@ -1108,19 +1108,19 @@ $(document).ready(function () {
         }
     });
 
-    function getThemes(){
-        $.ajax({
-            headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-            },
-            type: "GET",
-            url: "/admin/getthemes",
-            success:function(data)
-            {
-                $('#themes').html(data);
-            }
-        });
-    }
+    // function getThemes(){
+    //     $.ajax({
+    //         headers: {
+    //             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+    //         },
+    //         type: "GET",
+    //         url: "/admin/getthemes",
+    //         success:function(data)
+    //         {
+    //             $('#themes').html(data);
+    //         }
+    //     });
+    // }
 
 
 });
@@ -1208,4 +1208,5 @@ $("#crop").click(function(){
 $(".themeLayout .preview-layout").on("click", function () {
     $(".themeLayout .preview-layout.active").removeClass("active");
     $(this).addClass("active");
+    $('#theme').val($(this).data("id"));
 });

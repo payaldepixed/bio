@@ -4,19 +4,19 @@
             $profileShadow = "box-shadow:#0000004d 0px 10px 30px " .$theme->profile_picture_shadow. "px";
             $bordercolor = $theme->profile_picture_border_color ? $theme->profile_picture_border_color : '#000000';
             $borderwidth = $theme->profile_picture_border.'px';
-            $fontfamily = $theme->text_font.', sans-serif';
+            $fontfamily = @$theme->text_font ? $theme->text_font.', sans-serif' : '';
         @endphp
         {{-- {{$theme->primary_background_type}}
         {{$theme->primary_background}}
         {{$theme->secondary_background}} --}}
         <div class="item_two themepreview" data-id="{{$theme->id}}">
-            <div class="preview-layout">
+            <div class="preview-layout @if(@$themeid == $theme->id) active @endif" data-id="{{$theme->id}}">
                 <div class="checkOverlay">
                     <div class="checkIcon">
                         <img class="checkIconImg" src="{{ asset('static/template_svg/check-mark.svg') }}" alt="">
                     </div>
                 </div>
-                <div id="preview_size" style="font-family:{{$fontfamily}}" class="preview-details mobile_size">
+                <div id="" @if($fontfamily) style="font-family:{{$fontfamily}}" @endif class="preview-details mobile_size">
                     @if($theme->primary_background_type == 'preset')
                         <div class="preset-card-layout" style="background-image: {{$theme->primary_background}};">
                     @endif
