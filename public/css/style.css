@@ -1381,6 +1381,7 @@ img.question_mark {
   border: 1px solid #dfe0e1;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .input_file_bg .file_action {
