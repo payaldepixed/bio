@@ -412,15 +412,15 @@ Page Template
                                         My Blocks
                                     </div>
                                     <div class="block-body">
-                                        <div class="block-details">
-                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
-                                                <div class="plus">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                    </svg>
-                                                </div>
+                                        <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
+                                            <div class="plus">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                </svg>
                                             </div>
+                                        </div>
+                                        <div class="block-details">
 
                                             <div class="block-card">
                                                 <div class="card-details">
@@ -462,14 +462,7 @@ Page Template
 
                                         </div>
                                         <div class="block-details">
-                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
-                                                <div class="plus">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                    </svg>
-                                                </div>
-                                            </div>
+
 
                                             <div class="block-card">
                                                 <div class="card-details">
@@ -511,14 +504,7 @@ Page Template
 
                                         </div>
                                         <div class="block-details">
-                                            <div class="plus-icon" data-bs-toggle="modal" data-bs-target="#modal-large">
-                                                <div class="plus">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                    </svg>
-                                                </div>
-                                            </div>
+
 
                                             <div class="block-card">
                                                 <div class="card-details">
@@ -1204,17 +1190,17 @@ Page Template
             <div class="item_two">
                 <div class="change_preview_layout">
                     <div class="change_layout">
-                        <div id="mobile_layout" class="change_item">
+                        <div id="mobile_layout" class="change_item selected">
                             <img class="show_preview" src="{{ asset('static/template_svg/mobile.svg') }}" alt="">
                         </div>
-                        <div id="website_layout" class="change_item selected">
+                        <div id="website_layout" class="change_item">
                             <img class="show_preview" src="{{ asset('static/template_svg/website.svg') }}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="preview-layout">
-                    <div id="preview_size" class="preview-details">
-                        <div class="card-layout">
+                    <div id="preview_size" class="previewSizeMain preview-details mobile_size">
+                        <div class="card-layout minHeight">
                             <video id="bgVideo" autoplay muted loop class="d-none">
                                 <source src="" type="video/mp4" id="video_here" />
                             </video>

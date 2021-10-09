@@ -154,6 +154,61 @@ img.question_mark {
   cursor: pointer;
 }
 
+small.form-hint {
+  text-align: center;
+  margin-top: -6px;
+  padding-bottom: 10px;
+  color: red;
+}
+
+.plus-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.plus-icon:hover .plus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.plus-icon .plus {
+  background: #1b97f5;
+  border-radius: 50%;
+  padding: 3px;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.plus-icon .plus svg {
+  width: 12px;
+  height: auto;
+}
+
+.plus-icon .plus svg line {
+  vector-effect: non-scaling-stroke;
+}
+
 .template-layout {
   background-color: #f7f7f7;
 }
@@ -287,6 +342,7 @@ img.question_mark {
 .template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .checkbox-social .social-icon {
   border: 1px solid;
   padding: 0 5px;
+  text-align: center;
   cursor: pointer;
   width: 100%;
   white-space: nowrap;
@@ -310,6 +366,8 @@ img.question_mark {
 
 .template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social_icons_lists .checkbox-social .social-icon .social-img {
   height: 15px;
+  margin: auto;
+  margin-top: 5px;
 }
 
 .template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social-inputs .social-details {
@@ -390,7 +448,7 @@ img.question_mark {
 }
 
 .template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social-inputs .social-details .input-url .inputStyle .social-input-icon img {
-  width: 30px;
+  width: 20px;
 }
 
 .template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social-inputs .social-details .delete_icon {
@@ -409,7 +467,7 @@ img.question_mark {
 }
 
 .template-layout .template .item_one .card-section .social-links .accordion .accordion-item .accordion-body .social-inputs .social-details .delete_icon img {
-  width: 30px;
+  width: 24px;
   cursor: pointer;
 }
 
@@ -850,6 +908,10 @@ img.question_mark {
   height: 16px;
   margin-right: 4px;
   margin-top: -2px;
+}
+
+.template-layout .template .item_two .preview-layout .preview-details .card-layout.minHeight {
+  min-height: 700px;
 }
 
 .newBlockModel {
@@ -1593,9 +1655,9 @@ div#Design {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   height: 66px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1609,7 +1671,6 @@ div#Design {
   background-color: #f5f5f5;
   border-radius: 20px;
   padding: 5px 6px;
-  border: 1px solid #dfe0e1;
 }
 
 .change_preview_layout .change_layout .change_item {
@@ -1619,6 +1680,14 @@ div#Design {
 
 .change_preview_layout .change_layout .change_item:not(.selected) {
   opacity: 0.6;
+}
+
+.change_preview_layout .change_layout .change_item.selected {
+  display: none;
+}
+
+.change_preview_layout .change_layout .change_item img {
+  height: 30px;
 }
 
 .select-color {
@@ -2599,6 +2668,17 @@ input[type="radio"]:checked ~ .link-background-type-preset {
 .card-layout {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .change_preview_layout {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .change_preview_layout {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -74,13 +74,13 @@ $(document).ready(function () {
 
     $("#mobile_layout").on("click", function () {
         $("#website_layout").removeClass("selected");
-        $("#preview_size").addClass("mobile_size");
+        $(".previewSizeMain").addClass("mobile_size");
         $(this).addClass("selected");
     });
 
     $("#website_layout").on("click", function () {
         $("#mobile_layout").removeClass("selected");
-        $("#preview_size").removeClass("mobile_size");
+        $(".previewSizeMain").removeClass("mobile_size");
         $(this).addClass("selected");
     });
 
@@ -399,6 +399,20 @@ $(document).ready(function () {
     // New Instagram Scraper model end
 
     // drag and drop js
+
+    $(".social-inputs").sortable({
+        connectWith: ".social-inputs",
+        update: function (event, ui) {
+            var changedList = this.id;
+            var order = $(this).sortable("toArray");
+            var positions = order.join(";");
+
+            console.log({
+                id: changedList,
+                positions: positions,
+            });
+        },
+    });
 
     $(".block-body").sortable({
         connectWith: ".block-body",
