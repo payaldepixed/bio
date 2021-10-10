@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // 	->middleware(['auth', 'verified']);
 
 Route::get('/', function () {
-    return redirect('login');
+    return view('home');
 });
 
 Route::get('/{name}', 'PageController@view')->name('mypage');

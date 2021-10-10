@@ -82,7 +82,7 @@ class PageController extends Controller
         $link = UserLink::find($request->id);
         $link->is_active = $link->is_active == 1 ? 0 : 1;
         $link->save();
-        return redirect()->back()->with('success','Link removed successfully!');
+        return redirect()->back()->with('success','Link edited successfully!');
     }
 
     public function page($id)
