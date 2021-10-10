@@ -186,7 +186,7 @@ Page
                                             <input id="profileName" name="name" value="{{@$user->name}}" type="text" class="form-control" placeholder="Profile Name">
                                         </div>
                                         @if(@count(@$themes) > 0)
-                                        <input type="hidden" id="theme" name="theme">
+                                        <input type="hidden" value="{{@$design->theme}}" id="theme" name="theme">
                                         <div class="title-row mb-3">
                                             <div class="line"></div>
                                             <div class="design-title">Themes</div>
