@@ -121,12 +121,12 @@ Page
                                                                                 <img class="" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="">
                                                                             </div>
                                                                         </div>
-                                                                        <small id="social_error_{{$social}}" class="form-hint"></small>
                                                                     </div>
                                                                     <div class="delete_icon removeSocial" data-type="{{$social}}">
                                                                         <img class="" src="{{ asset('static/template_svg/delete.svg') }}" alt="">
                                                                     </div>
                                                                 </div>
+                                                                <small id="social_error_{{$social}}" class="form-hint"></small>
                                                             </div>
                                                         @endforeach
                                                     </form>
@@ -483,7 +483,7 @@ Page
                 </div>
                 <div class="preview-layout">
                     <div id="preview_size" class="preview-details mobile_size">
-                        <div class="card-layout">
+                        <div class="card-layout minHeight">
                             <video id="bgVideo" autoplay muted loop class="d-none">
                                 <source src="" type="video/mp4" id="video_here" />
                             </video>
