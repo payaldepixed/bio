@@ -1117,6 +1117,32 @@ section {
   min-height: 700px;
 }
 
+.block-card .block-card-action {
+  transform: translate(100%, 0px);
+  -webkit-transform: translate(100%, 0px);
+  -moz-transform: translate(100%, 0px);
+  -ms-transform: translate(100%, 0px);
+  -o-transform: translate(100%, 0px);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.block-card:hover .block-card-action {
+  transform: translate(0%, 0px);
+  -webkit-transform: translate(0%, 0px);
+  -moz-transform: translate(0%, 0px);
+  -ms-transform: translate(0%, 0px);
+  -o-transform: translate(0%, 0px);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 .newBlockModel {
   max-width: 450px;
 }
