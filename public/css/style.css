@@ -263,6 +263,24 @@ body.antialiased {
   background: #fffeff;
 }
 
+.btn-style {
+  font-size: 16px;
+  padding: 8px 15px;
+  border: 0px;
+}
+
+.btn-style.gradient-color-left {
+  background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 100%);
+}
+
+.btn-style.gradient-color-right {
+  background: linear-gradient(63deg, #c0ffc5 0, #ffe0d3 80%);
+}
+
+.btn-style.gradient-color {
+  background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 50%, #ffe0d3 80%);
+}
+
 .home-page {
   margin-top: 100px;
 }
@@ -281,24 +299,6 @@ body.antialiased {
   font-size: 16px;
   line-height: 1.5;
   font-weight: normal;
-}
-
-.home-page .btn-style {
-  font-size: 16px;
-  padding: 8px 15px;
-  border: 0px;
-}
-
-.home-page .btn-style.gradient-color-left {
-  background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 100%);
-}
-
-.home-page .btn-style.gradient-color-right {
-  background: linear-gradient(63deg, #c0ffc5 0, #ffe0d3 80%);
-}
-
-.home-page .btn-style.gradient-color {
-  background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 50%, #ffe0d3 80%);
 }
 
 .home-page .section_two .section-tow-content {

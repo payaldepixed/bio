@@ -267,7 +267,20 @@ small.form-hint {
 body.antialiased {
     background: #fffeff;
 }
-
+.btn-style {
+    font-size: 16px;
+    padding: 8px 15px;
+    border: 0px;
+    &.gradient-color-left {
+        background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 100%);
+    }
+    &.gradient-color-right {
+        background: linear-gradient(63deg, #c0ffc5 0, #ffe0d3 80%);
+    }
+    &.gradient-color {
+        background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 50%, #ffe0d3 80%);
+    }
+}
 .home-page {
     margin-top: 100px;
     .section_one {
@@ -285,26 +298,6 @@ body.antialiased {
             }
             .bio-main-btn {
             }
-        }
-    }
-
-    .btn-style {
-        font-size: 16px;
-        padding: 8px 15px;
-        border: 0px;
-        &.gradient-color-left {
-            background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 100%);
-        }
-        &.gradient-color-right {
-            background: linear-gradient(63deg, #c0ffc5 0, #ffe0d3 80%);
-        }
-        &.gradient-color {
-            background: linear-gradient(
-                63deg,
-                #c8c0ff 0,
-                #c0ffc5 50%,
-                #ffe0d3 80%
-            );
         }
     }
 

@@ -7,9 +7,9 @@
             <div class="header-logo text-center">
                 <a href="."><img src="{{ asset('img/logo.png') }}" alt="Bio"></a>
             </div>
-            {{-- <div class="header-menu text-center text-muted">
-                <a href="{{ route('login') }}" tabindex="-1">{{ __('auth.login') }}</a>
-            </div> --}}
+            <div class="header-menu text-center text-muted d-sm-none">
+                <a href="{{ route('login') }}" class="btn btn-style text-black w-100 gradient-color-left"> Sign In</a>
+            </div>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@
         <section class="section_one pt-0">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="bio-content  w-100">
+                    <div class="bio-content">
                         <h1 class="">Multiple Links for your Link in Bio</h1>
                         <h6 class="mb-5">Supercharge your Link in Bio on Instagram, TikTok, YouTube ...</h6>
                         <div class="bio-main-btn w-100 ">
