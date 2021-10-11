@@ -146,7 +146,7 @@ Home
                     </div>
                     <br>
                     <div class="d-flex align-items-baseline">
-                        <div id="map1" style="width: 600px; height: 400px"></div>
+                        <div id="map1" style="width: 100%; height: 400px"></div>
                     </div>
                 </div>
             </div>
