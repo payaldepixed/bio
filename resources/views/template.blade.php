@@ -1190,16 +1190,16 @@ Page Template
             <div class="item_two">
                 <div class="change_preview_layout">
                     <div class="change_layout">
-                        <div id="mobile_layout" class="change_item selected">
+                        <div id="mobile_layout" class="change_item ">
                             <img class="show_preview" src="{{ asset('static/template_svg/mobile.svg') }}" alt="">
                         </div>
-                        <div id="website_layout" class="change_item">
+                        <div id="website_layout" class="change_item selected">
                             <img class="show_preview" src="{{ asset('static/template_svg/website.svg') }}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="preview-layout">
-                    <div id="preview_size" class="previewSizeMain preview-details mobile_size">
+                    <div id="preview_size" class="previewSizeMain preview-details">
                         <div class="card-layout minHeight">
                             <video id="bgVideo" autoplay muted loop class="d-none">
                                 <source src="" type="video/mp4" id="video_here" />

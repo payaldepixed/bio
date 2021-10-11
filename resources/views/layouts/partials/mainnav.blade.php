@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h1 class="navbar-brand navbar-brand-autodark">
         <a href="{{route('dashboard')}}">
-            <img src="{{ asset('static/logos/logo.png') }}" width="110" alt="ap" class="navbar-brand-image">
+            <img src="{{ asset('img/logo_white.png') }}" width="110" alt="ap" class="navbar-brand-image">
         </a>
     </h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">

@@ -18,7 +18,13 @@ $fuggles-font: "Fuggles", cursive;
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&family=Fuggles&family=Lato:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@300;700&display=swap");
 
 // comman css
-
+// img {
+//     display: inline-block;
+// }
+.modal-body .form-control {
+    border: 1px solid #dadcde;
+    box-shadow: inset 0 1px 8px #00000029, inset 0 0.25px 2px #00000052;
+}
 .form-control {
     border: 0px solid #dadcde;
     box-shadow: inset 0 1px 8px #00000029, inset 0 0.25px 2px #00000052;
@@ -212,6 +218,224 @@ small.form-hint {
 
 // comman css
 
+// auth page css
+
+.auth-layout {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    .auth-section {
+        width: 100%;
+    }
+}
+
+// auth page css
+
+// home page header css
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    border-color: #ebeced;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #fff;
+    .header-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .header-logo {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-right: 1rem;
+            a {
+                img {
+                    max-height: 50px;
+                }
+            }
+        }
+    }
+}
+
+// home page header css
+
+// home page contant css
+
+body.antialiased {
+    background: #fffeff;
+}
+
+.home-page {
+    margin-top: 100px;
+    .section_one {
+        .bio-content {
+            padding-top: 175px;
+            padding-bottom: 175px;
+            h1 {
+                text-transform: none;
+                font-size: 35px;
+            }
+            h6 {
+                font-size: 16px;
+                line-height: 1.5;
+                font-weight: normal;
+            }
+            .bio-main-btn {
+            }
+        }
+    }
+
+    .btn-style {
+        font-size: 16px;
+        padding: 8px 15px;
+        border: 0px;
+        &.gradient-color-left {
+            background: linear-gradient(63deg, #c8c0ff 0, #c0ffc5 100%);
+        }
+        &.gradient-color-right {
+            background: linear-gradient(63deg, #c0ffc5 0, #ffe0d3 80%);
+        }
+        &.gradient-color {
+            background: linear-gradient(
+                63deg,
+                #c8c0ff 0,
+                #c0ffc5 50%,
+                #ffe0d3 80%
+            );
+        }
+    }
+
+    .section_two {
+        .section-tow-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h1 {
+                text-transform: none;
+                font-size: 42px;
+            }
+            h6 {
+                font-size: 24px;
+                line-height: 1.5;
+                font-weight: normal;
+            }
+        }
+        .intro-mockup {
+            .video-parent {
+                video {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .section_three {
+        .third-section {
+            h2 {
+                font-size: 30px;
+            }
+            h6 {
+                font-size: 16px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+section {
+    padding: 75px 0;
+}
+
+@media screen and (min-width: 992px) {
+    .home-page {
+        .section_one {
+            .bio-content {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    .home-page {
+        .section_one {
+            .bio-content {
+                padding-top: 120px;
+                padding-bottom: 120px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .home-page {
+        .section_one {
+            .bio-content {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+        }
+        .section_two {
+            .row {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .bio-main-btn.d-block.mt-5 {
+        margin-top: 30px !important;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .home-page {
+        .section_two {
+            .section-tow-content {
+                h1 {
+                    text-transform: none;
+                    font-size: 35px;
+                }
+                h6 {
+                    font-size: 18px;
+                    line-height: 1.5;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    section {
+        padding: 30px 0;
+    }
+    .home-page .bio-content h6.mb-5 {
+        margin-bottom: 30px !important;
+    }
+    .home-page {
+        .section_two {
+            .section-tow-content {
+                h1 {
+                    text-transform: none;
+                    font-size: 30px;
+                }
+                h6 {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
+
+// home page contant css
+
 .template-layout {
     background-color: #f7f7f7;
     .container-fluid {
@@ -367,6 +591,7 @@ small.form-hint {
                                                 height: 15px;
                                                 margin: auto;
                                                 margin-top: 5px;
+                                                display: block;
                                             }
                                         }
                                     }
@@ -440,7 +665,7 @@ small.form-hint {
                                             justify-content: center;
 
                                             img {
-                                                width: 24px;
+                                                width: 20px;
                                                 cursor: pointer;
                                             }
                                         }
@@ -619,6 +844,9 @@ small.form-hint {
                     overflow-y: auto;
                     max-height: calc(100vh - 170px);
                     scrollbar-width: none;
+                    margin: auto;
+                    transition: all 0.5s ease;
+                    max-width: 100%;
                     &::-webkit-scrollbar {
                         width: 0px;
                     }
@@ -877,6 +1105,7 @@ small.form-hint {
                 cursor: pointer;
 
                 img {
+                    margin: auto;
                     margin-bottom: 6px;
                 }
 

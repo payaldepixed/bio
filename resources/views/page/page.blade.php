@@ -11,7 +11,7 @@ Page
 @section('css_after')
 <style type="text/css">
     img {
-    display: block;
+    /* display: block; */
     max-width: 100%;
     }
     .preview {

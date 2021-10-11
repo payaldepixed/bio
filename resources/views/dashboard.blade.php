@@ -39,9 +39,9 @@ Home
     </div>
 </div>
 <div class="page-body">
-    <div class="container-xl">
+    <div class="container-fluid">
         <div class="row row-deck row-cards">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="card">
                     <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -71,7 +71,7 @@ Home
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -101,7 +101,7 @@ Home
                 </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -128,7 +128,7 @@ Home
         </div>
         <br>
         <div class="row row-deck row-cards">
-            <div class="col-sm-8 col-lg-8">
+            <div class="col-sm-12 col-lg-12">
                 <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -151,54 +151,52 @@ Home
                 </div>
             </div>
         </div>
-        <div class="row"></div><br>
-        <div class="row">
-            <div class="col-sm-8 col-lg-8">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Most Visited Pages</h3>
-                    <div class="ms-auto lh-1">
-                        <div class="dropdown">
-                            <a class="dropdown-toggle text-muted totalpagestext" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item totalpage active" data-id="7" href="javascript:void(0);">Last 7 days</a>
-                                <a class="dropdown-item totalpage" data-id="30" href="javascript:void(0);">Last 30 days</a>
-                                <a class="dropdown-item totalpage" data-id="90" href="javascript:void(0);">Last 3 months</a>
-                                <a class="dropdown-item totalpage" data-id="365" href="javascript:void(0);">In Year</a>
-                            </div>
+
+         <div class="col-sm-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                <h3 class="card-title">Most Visited Pages</h3>
+                <div class="ms-auto lh-1">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle text-muted totalpagestext" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item totalpage active" data-id="7" href="javascript:void(0);">Last 7 days</a>
+                            <a class="dropdown-item totalpage" data-id="30" href="javascript:void(0);">Last 30 days</a>
+                            <a class="dropdown-item totalpage" data-id="90" href="javascript:void(0);">Last 3 months</a>
+                            <a class="dropdown-item totalpage" data-id="365" href="javascript:void(0);">In Year</a>
                         </div>
                     </div>
-                  </div>
-                  <div class="card-table table-responsive">
-                    <table class="table table-vcenter">
-                      <thead>
-                        <tr>
-                          <th>Page name</th>
-                          <th>Visitors</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tblpages">
-                        @php $links = Commonhelper::getLinkVisitors(7);  @endphp
-                        @if(@$links)
-                        @foreach ($links as $link)
-                            <tr>
-                                <td>
-                                    {{$link->name}}
-                                    <a target="_blank" href="{{route('mypage',['name'=>@$link->name])}}" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
-                                    </a>
-                                </td>
-                                <td class="text-muted">{{$link->visitors}}</td>
-                            </tr>
-                        @endforeach
-                        @endif
-                      </tbody>
-                    </table>
-                  </div>
                 </div>
-              </div>
-        </div><br>
-        <div class="row"></div><br>
+                </div>
+                <div class="card-table table-responsive">
+                <table class="table table-vcenter">
+                    <thead>
+                    <tr>
+                        <th>Page name</th>
+                        <th>Visitors</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tblpages">
+                    @php $links = Commonhelper::getLinkVisitors(7);  @endphp
+                    @if(@$links)
+                    @foreach ($links as $link)
+                        <tr>
+                            <td>
+                                {{$link->name}}
+                                <a target="_blank" href="{{route('mypage',['name'=>@$link->name])}}" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                                </a>
+                            </td>
+                            <td class="text-muted">{{$link->visitors}}</td>
+                        </tr>
+                    @endforeach
+                    @endif
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
+
       </div>
 </div>
 @endsection

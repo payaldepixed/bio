@@ -20,15 +20,16 @@
     <link href="{{ asset('css/tabler-payments.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/tabler-vendors.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     @yield('css_after')
 </head>
 
-<body class="antialiased border-top-wide border-primary d-flex flex-column">
-    <div class="page page-center">
-        <div class="container-tight py-4">
-            <div class="text-center mb-4">
-                <a href="."><img src="{{ asset('static/logos/logo.png') }}" height="70" alt=""></a>
-            </div>
+<body class="antialiased">
+    <div class="page">
+        <div class="container-fluid p-0">
+
+
+
             @if ($errors->any())
             <div class="alert alert-danger" role="alert">
                 {{ __('auth.error') }}: {{ $errors->first() }}

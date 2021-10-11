@@ -74,13 +74,17 @@ $(document).ready(function () {
 
     $("#mobile_layout").on("click", function () {
         $("#website_layout").removeClass("selected");
-        $(".previewSizeMain").addClass("mobile_size");
+        // $(".previewSizeMain").addClass("mobile_size");
+        $(".previewSizeMain").css("max-width", "400px");
+        $(".previewSizeMain").css("margin", "auto");
         $(this).addClass("selected");
     });
 
     $("#website_layout").on("click", function () {
         $("#mobile_layout").removeClass("selected");
-        $(".previewSizeMain").removeClass("mobile_size");
+        // $(".previewSizeMain").removeClass("mobile_size");
+        $(".previewSizeMain").css("max-width", "100%");
+        $(".previewSizeMain").css("margin", "");
         $(this).addClass("selected");
     });
 

@@ -10,7 +10,7 @@ Theme
 @section('css_after')
 <style type="text/css">
     img {
-    display: block;
+    /* display: block; */
     max-width: 100%;
     }
     .preview {
@@ -229,7 +229,7 @@ Theme
                 </div>
                 <div class="preview-layout">
                     <div id="preview_size" class="preview-details mobile_size">
-                        <div class="card-layout">
+                        <div class="card-layout minHeight">
                             <video id="bgVideo" autoplay muted loop class="d-none">
                                 <source src="" type="video/mp4" id="video_here" />
                             </video>
