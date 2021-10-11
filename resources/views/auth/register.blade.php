@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="form-footer">
-                    <button type="submit" class="btn btn-primary btn-block"
+                    <button type="submit" class="btn btn-primary btn-block w-100"
                         tabindex="5">{{ __('auth.registerbutton') }}</button>
                 </div>
 
