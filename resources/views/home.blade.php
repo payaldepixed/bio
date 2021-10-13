@@ -46,6 +46,8 @@
             </div>
         </section>
 
+
+
         <section class="section_two">
             <div class="row">
                 <div class="col-lg-6">
@@ -65,6 +67,22 @@
                 </div>
             </div>
         </section>
+
+            <section class="section_one">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="bio-content">
+                            <h1 class="">Sit and watch your social media traffic increase</h1>
+                            <h6 class="mb-5">Built to drive traffic on mobile and give Instagram followers a clear call to action share links, making it easier for them to discover more about your posts or buy your products. Click stats are available for each Bio Link.</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="intro-mockup">
+                                <img src="{{ asset('img/home/analytics.webp') }}" alt="" class="img-one ">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         <section class="section_three">
             <div class="text-center">
