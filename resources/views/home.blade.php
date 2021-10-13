@@ -84,6 +84,27 @@
                 </div>
             </section>
 
+
+            <section class="section_two">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="intro-mockup">
+                            <div class="video-parent">
+                                <video class="" key="{{ asset('img/videos/security.mp4') }}" playsinline="" autoplay="" muted="" loop="">
+                                    <source src="{{ asset('img/videos/security.mp4') }}">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-tow-content">
+                            <h1 class="">Safe, trusted, private</h1>
+                            <h6 class="mb-5">Privacy is non-negotiable. Bio doesn’t<br> track any personal data on your visitors, so<br> your Bio remains your place on the internet.</h6>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         <section class="section_three">
             <div class="text-center">
 				<div class="third-section">
