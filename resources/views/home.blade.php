@@ -62,7 +62,7 @@
                 <div class="col-lg-6">
                     <div class="section-tow-content">
                         <h1 class="">Use it anywhere</h1>
-                        <h6 class="mb-5">Take your Bio wherever your audience<br> is, to help them to discover all your<br> important content.</h6>
+                        <h6 class="mb-5">Take your Bio wherever your audience is, to help them to discover all your important content.</h6>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                     <div class="col-lg-6">
                         <div class="section-tow-content">
                             <h1 class="">Safe, trusted, private</h1>
-                            <h6 class="mb-5">Privacy is non-negotiable. Bio doesn’t<br> track any personal data on your visitors, so<br> your Bio remains your place on the internet.</h6>
+                            <h6 class="mb-5">Privacy is non-negotiable. Bio doesn’t track any personal data on your visitors, so your Bio remains your place on the internet.</h6>
                         </div>
                     </div>
                 </div>
