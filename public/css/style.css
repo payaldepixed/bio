@@ -321,7 +321,7 @@ body.antialiased {
 }
 
 .home-page .section_two .section-tow-content h6 {
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: normal;
 }
@@ -1885,9 +1885,9 @@ div#Design {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 66px;
   -webkit-box-align: center;
       -ms-flex-align: center;
