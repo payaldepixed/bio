@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <h1 class="navbar-brand navbar-brand-autodark">
-        <a href="{{route('dashboard')}}">
+        <a href="{{url('/')}}">
             <img src="{{ asset('img/logo_white.png') }}" width="110" alt="ap" class="navbar-brand-image">
         </a>
     </h1>

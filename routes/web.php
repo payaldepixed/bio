@@ -76,6 +76,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/media', 'PageController@deleteMedia')->name('block.delete.media');
         Route::post('block/sorting', 'PageController@sortingBlock')->name('block.sort');
         Route::post('crop/image', 'PageController@cropImage');
+        Route::post('social/sorting', 'PageController@sortingSocial')->name('social.sort');
 
         Route::get('page/general', function () {
             return view('page.general');

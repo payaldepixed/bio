@@ -146,7 +146,12 @@ class PageController extends Controller
                         'social_type' => $type,
                         'social_link' => $link
                     );
-                    UserPageSocial::firstOrCreate(['user_id' => $user_id,'social_type' => $type,'link_id' => $request->link_id],$data);
+                    if($id = UserPageSocial::where(['user_id' => $user_id,'social_type' => $type,'link_id' => $request->link_id])->value('id')){
+                        UserPageSocial::where('id',$id)->update($data);
+                    }else{
+                        $data['order_by'] = UserPageSocial::where('user_id',$user_id)->orderBy('order_by','desc')->value('order_by') + 1;
+                        UserPageSocial::create($data);
+                    }
                 }
             }
         }
@@ -330,6 +335,16 @@ class PageController extends Controller
         foreach($blocks as $i=>$block){
             $sort = $i + 1;
             UserPageBlock::where('id',$block)->update(['order_by'=>$sort]);
+        }
+        return 1;
+    }
+
+    public function sortingSocial(Request $request)
+    {
+        $links = explode(',',$request->positions);
+        foreach($links as $i=>$link){
+            $sort = $i + 1;
+            UserPageSocial::where('social_type',$link)->update(['order_by'=>$sort]);
         }
         return 1;
     }

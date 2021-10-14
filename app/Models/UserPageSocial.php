@@ -9,7 +9,7 @@ class UserPageSocial extends Model
     protected $table = 'user_page_social_links';
 
     protected $fillable = [
-        'user_id','social_type','social_link','link_id'
+        'user_id','social_type','social_link','link_id','order_by'
     ];
 
     public function user(){

@@ -67,11 +67,21 @@ class Commonhelper
     }
 
     public static function getSocials() {
-        return ['email','newsletter','phone','website','apple_music','apple_podcast'
-        ,'bandcamp','behance','clubhouse','discord','dribble','facebook','google_podcast','instagram'
-        ,'kofi','last_fm','linkedin','medium','meetup','only_fans','patreon','pinterest','reddit'
-        ,'signal','slack','snapchat','soundcloud','spotify','telegram','tidal','tiktok','tumblr'
-        ,'twitch','twitter','unsplash','vimeo','wechat','whatsapp','youtube'];
+        if($linksocials = UserPageSocial::where('user_id',@Auth::user()->id)->orderBy('order_by','asc')->pluck('social_type')->toArray())
+        {
+            array_push($linksocials,'email','newsletter','phone','website','apple_music','apple_podcast'
+            ,'bandcamp','behance','clubhouse','discord','dribble','facebook','google_podcast','instagram'
+            ,'kofi','last_fm','linkedin','medium','meetup','only_fans','patreon','pinterest','reddit'
+            ,'signal','slack','snapchat','soundcloud','spotify','telegram','tidal','tiktok','tumblr'
+            ,'twitch','twitter','unsplash','vimeo','wechat','whatsapp','youtube');
+            return array_unique($linksocials);
+        }else{
+            return ['email','newsletter','phone','website','apple_music','apple_podcast'
+            ,'bandcamp','behance','clubhouse','discord','dribble','facebook','google_podcast','instagram'
+            ,'kofi','last_fm','linkedin','medium','meetup','only_fans','patreon','pinterest','reddit'
+            ,'signal','slack','snapchat','soundcloud','spotify','telegram','tidal','tiktok','tumblr'
+            ,'twitch','twitter','unsplash','vimeo','wechat','whatsapp','youtube'];
+        }
     }
 
     // public static function setBlockView($id) {

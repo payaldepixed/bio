@@ -5,7 +5,7 @@
     <div class="container">
         <div class="header-details">
             <div class="header-logo text-center">
-                <a href="."><img src="{{ asset('img/logo.png') }}" alt="Bio"></a>
+                <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="Bio"></a>
             </div>
             <div class="header-menu text-center text-muted d-sm-none">
                 <a href="{{ route('login') }}" class="btn btn-style text-black w-100 gradient-color-left"> Sign In</a>
@@ -24,12 +24,18 @@
                         <h6 class="mb-5">Supercharge your Link in Bio on Instagram, TikTok, YouTube ...</h6>
                         <div class="bio-main-btn w-100 ">
                             <div class="row">
-                                <div class="col pr-2">
-                                    <a href="{{ route('login') }}" class="btn btn-style text-black w-100 gradient-color-left"> Sign In</a>
-                                </div>
-                                <div class="col pl-2">
-                                    <a href="{{ route('register') }}" class="btn btn-style text-black w-100 gradient-color-right"> Sign Up</a>
-                                </div>
+                                @if(@Auth::user())
+                                    <div class="col pl-2">
+                                        <a href="{{ route('dashboard') }}" class="btn btn-style text-black w-100 gradient-color-left"> Dashboard</a>
+                                    </div>
+                                @else
+                                    <div class="col pr-2">
+                                        <a href="{{ route('login') }}" class="btn btn-style text-black w-100 gradient-color-left"> Sign In</a>
+                                    </div>
+                                    <div class="col pl-2">
+                                        <a href="{{ route('register') }}" class="btn btn-style text-black w-100 gradient-color-right"> Sign Up</a>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         <div class="bio-main-btn d-block mt-5">

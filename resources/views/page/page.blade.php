@@ -99,36 +99,38 @@ Page
                                                             @foreach($socials as $social)
                                                                 @php $name = ucwords(str_replace("_", " ", $social)); @endphp
                                                                 <div class="checkbox-social">
-                                                                    <input type="checkbox" id="type_{{$social}}" @if(Commonhelper::getSocial($social,$link_id)) checked @endif value="{{$social}}" name="types[]" class="sociallinks" style="display: none;">
+                                                                    <input type="checkbox" id="type_{{$social}}" @if(Commonhelper::getSocial($social,$link_id) != '') checked @endif value="{{$social}}" name="types[]" class="sociallinks" style="display: none;">
                                                                     <label for="type_{{$social}}" class="social-icon">
                                                                         <img class="social-img" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="{{$social}}"> <span class="social-icon-name">{{$name}}</span>
                                                                     </label>
                                                                 </div>
                                                             @endforeach
                                                         </div>
-                                                        @foreach($socials as $social)
-                                                            @php $name = ucwords(str_replace("_", " ", $social)); @endphp
-                                                            <div id="social_{{$social}}" class="social-inputs" @if(!Commonhelper::getSocial($social,$link_id)) style="display:none;" @endif>
-                                                                <div class="social-details mb-2">
-                                                                    <div class="drag_drop">
-                                                                        <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="">
-                                                                        <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="" style="margin-left: -12px;">
-                                                                    </div>
-                                                                    <div class="input-url">
-                                                                        <div class="inputStyle">
-                                                                            <input type="{{$social == 'email' ? 'email' : 'url' }}" id="{{$social}}" name="{{$social}}" class="form-control types" placeholder="{{$social == 'email' ? 'Email Address' : $name.' URL' }}" value="{{Commonhelper::getSocial($social,$link_id)}}">
-                                                                            <div class="social-input-icon">
-                                                                                <img class="" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="">
+                                                        <div id="socialSort">
+                                                            @foreach($socials as $social)
+                                                                @php $name = ucwords(str_replace("_", " ", $social)); @endphp
+                                                                <div id="{{$social}}" class="social-inputs social_{{$social}}" @if(!Commonhelper::getSocial($social,$link_id)) style="display:none;" @endif>
+                                                                    <div class="social-details mb-2">
+                                                                        <div class="drag_drop">
+                                                                            <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="">
+                                                                            <img class="" src="{{ asset('static/template_svg/three_dot.svg') }}" alt="" style="margin-left: -12px;">
+                                                                        </div>
+                                                                        <div class="input-url">
+                                                                            <div class="inputStyle">
+                                                                                <input type="{{$social == 'email' ? 'email' : 'url' }}" id="{{$social}}" name="{{$social}}" class="form-control types" placeholder="{{$social == 'email' ? 'Email Address' : $name.' URL' }}" value="{{Commonhelper::getSocial($social,$link_id)}}">
+                                                                                <div class="social-input-icon">
+                                                                                    <img class="" src="{{ asset('static/template_svg/'.$social.'.svg') }}" alt="">
+                                                                                </div>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="delete_icon removeSocial" data-type="{{$social}}">
+                                                                            <img class="" src="{{ asset('static/template_svg/delete.svg') }}" alt="">
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="delete_icon removeSocial" data-type="{{$social}}">
-                                                                        <img class="" src="{{ asset('static/template_svg/delete.svg') }}" alt="">
-                                                                    </div>
+                                                                    <small id="social_error_{{$social}}" class="form-hint"></small>
                                                                 </div>
-                                                                <small id="social_error_{{$social}}" class="form-hint"></small>
-                                                            </div>
-                                                        @endforeach
+                                                            @endforeach
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>

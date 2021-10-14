@@ -6,9 +6,9 @@ $(document).ready(function () {
         $(".sociallinks").on("change", function (e) {
             var type = $(this).val();
             if ($(this).is(":checked")) {
-                $("#social_" + type).show();
+                $(".social_" + type).show();
             } else {
-                $("#social_" + type).hide();
+                $(".social_" + type).hide();
                 $("#social_link_" + type).hide();
                 e.preventDefault();
                 submitSocial();
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
         $(".removeSocial").on("click", function (e) {
             var type = $(this).data("type");
-            $("#social_" + type).hide();
+            $(".social_" + type).hide();
             $("#" + type).val("");
             $("input[id='type_" + type + "']:checkbox").prop("checked", false);
             $("#social_link_" + type).hide();
@@ -89,6 +89,7 @@ $(document).ready(function () {
                 data: form.serialize(),
                 success: function () {
                     //$('#socialData').html(data);
+                    //$('#socialSort').trigger('sortupdate');
                 },
             });
         }
@@ -1121,6 +1122,28 @@ $(document).ready(function () {
     //         }
     //     });
     // }
+
+    // $(".social-inputs").sortable({
+    if($('#socialSort').length){
+        $("#socialSort").sortable({
+            // connectWith: ".social-inputs",
+            update: function () {
+                var order = $(this).sortable("toArray");
+                var positions = order.join(",");
+                $.ajax({
+                    headers: {
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                    },
+                    type: "POST",
+                    url: "/admin/social/sorting",
+                    data: { positions: positions },
+                    success: function () {
+                        fetchBlocks();
+                    }
+                });
+            },
+        });
+    }
 
 
 });
