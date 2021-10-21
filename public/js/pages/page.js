@@ -649,8 +649,8 @@ $(document).ready(function () {
                 "," +
                 parseInt(color.slice(-2), 16) +
                 ",0.9)";
-            // $("#preview_size").css("background-color", rgbaCol);
-            // $("#preview_size .card-layout").css("background-color", color);
+            $("#preview_size").css("background-color", rgbaCol);
+            $("#preview_size .card-layout").css("background-color", color);
             $(
                 "#preview_size .preview-card-body, #preview_size .details "
             ).addClass("tactile_one");
@@ -699,10 +699,10 @@ $(document).ready(function () {
                 ",0.9)";
             // $("#preview_size").css("background-color", rgbaCol);
             // $("#preview_size .card-layout").css("background-color", color);
-            $("#preview_size .preview-card-body, #preview_size .details").css(
-                "background-color",
-                ""
-            );
+            // $("#preview_size .preview-card-body, #preview_size .details").css(
+            //     "background-color",
+            //     ""
+            // );
             $(
                 "#preview_size .preview-card-body, #preview_size .details "
             ).addClass("tactile_four");
