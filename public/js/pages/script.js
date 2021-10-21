@@ -117,7 +117,7 @@ $(document).ready(function () {
 
         if ($(this).hasClass("tactile_no")) {
             // $("#card-color input").val();
-            $("#preview_size .preview-card-body").css(
+            $("#preview_size .preview-card-body, #preview_size .details").css(
                 "background-color",
                 $("#card-color input").val()
             );
