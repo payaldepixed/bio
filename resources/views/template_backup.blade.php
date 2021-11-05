@@ -1763,3 +1763,53 @@ Page Template
 {{-- delete block model --}}
 
 @endsection
+
+
+
+
+ {{-- var shaudow1 =
+                "rgba(" +
+                parseInt($("#card-color input").val().slice(-6, -4), 16) +
+                "," +
+                parseInt($("#card-color input").val().slice(-4, -2), 16) +
+                "," +
+                parseInt($("#card-color input").val().slice(-2), 16) +
+                ",0.8)";
+
+            var shaudow2 =
+                "rgba(" +
+                parseInt($("#card-color input").val().slice(-6, -4), 16) +
+                "," +
+                parseInt($("#card-color input").val().slice(-4, -2), 16) +
+                "," +
+                parseInt($("#card-color input").val().slice(-2), 16) +
+                ",0.9)";
+            var shaudow3 =
+                "rgba(" +
+                parseInt($("#card-color input").val().slice(-6, -4), 16) +
+                "," +
+                parseInt($("#card-color input").val().slice(-4, -2), 16) +
+                "," +
+                parseInt($("#card-color input").val().slice(-2), 16) +
+                ",0.8)";
+            $("#preview_size .preview-card-body, #preview_size .details").css(
+                "border-color",
+                $("#card-color input").val()
+            );
+            // $(
+            //     "#preview_size .preview-card-body, #preview_size .details .card-layout"
+            // ).css("background-color", "transparent");
+
+            $("#preview_size .preview-card-body, #preview_size .details").css(
+                "background-image",
+                "linear-gradient(145deg, " + shaudow1 + ", " + shaudow2 + ")"
+            );
+
+            var boxcardshadow =
+                shaudow1 + " -6px -6px 13px," + shaudow2 + " 6px 6px 13px";
+
+            $("#preview_size .preview-card-body, #preview_size .details").css(
+                "box-shadow",
+                boxcardshadow
+            );
+            $("#preview_size .card-layout").css("background-color", shaudow3); --}}
